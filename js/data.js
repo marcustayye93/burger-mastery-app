@@ -36,3 +36,17 @@ export const storySlides = {
   {image:assets.finished,kicker:"COMPLETE",title:"A burger built to eat",body:"The final test is not height. It is whether the first and last bite feel equally balanced."}
  ]
 };
+
+// Sprint 2 — one continuous ordered lesson sequence built from the
+// existing section and slide data. Section order follows the course list.
+export const lessonSequence = courses.flatMap(course =>
+  (storySlides[course.id] || []).map((slide, i) => ({
+    sectionId: course.id,
+    sectionTitle: course.title,
+    slideId: `${course.id}-${String(i + 1).padStart(2, "0")}`,
+    image: slide.image,
+    kicker: slide.kicker,
+    title: slide.title,
+    body: slide.body
+  }))
+);
