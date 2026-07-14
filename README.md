@@ -1,3 +1,5 @@
-# Burger Mastery v0.3.0
+# Burger Mastery v0.4.0
 
-Sprint 3 adds the interactive Burger Builder with live estimated macros, experience scores, optimizers, persistence and Burger Lab saving.
+Sprint 4 adds ingredient intelligence, estimated cooked-yield nutrition, build comparison and ingredient detail cards while preserving Sprints 1–3.
+
+Nutrition remains an educational estimate, not laboratory analysis.

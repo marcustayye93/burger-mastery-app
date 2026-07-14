@@ -1,58 +1,44 @@
-
 export const builderCatalogue = {
   meats: [
-    {id:"beef80", label:"80/20 beef", kcal100:254, protein100:17.2, fat100:20, carbs100:0,
+    {id:"beef80",label:"80/20 beef",kcal100:254,protein100:17.2,fat100:20,carbs100:0,yield:0.72,fatRetention:0.78,
       scores:{juiciness:94,tenderness:88,beefiness:96,richness:90,crust:91,structure:79},
-      note:"The classic balance: rich, forgiving and strongly beef-forward."},
-    {id:"beef85", label:"85/15 beef", kcal100:215, protein100:19, fat100:15, carbs100:0,
+      flavour:"Deep, familiar beef flavour with a rich finish.",texture:"Loose and succulent when handled gently.",bestUse:"Classic cheeseburgers, smash burgers and forgiving first cooks.",mistake:"Overworking it turns the naturally tender grind dense.",cooking:"Use high heat for thin patties; moderate the heat after searing thick patties.",health:"High flavour and moisture, but more calorie-dense because of its fat content."},
+    {id:"beef85",label:"85/15 beef",kcal100:215,protein100:19,fat100:15,carbs100:0,yield:0.75,fatRetention:0.82,
       scores:{juiciness:84,tenderness:84,beefiness:94,richness:80,crust:92,structure:85},
-      note:"A balanced everyday patty with good crust and slightly fewer calories."},
-    {id:"beef90", label:"90/10 lean beef", kcal100:176, protein100:20.5, fat100:10, carbs100:0,
+      flavour:"Beef-forward with a cleaner, less fatty finish.",texture:"Tender but slightly firmer than 80/20.",bestUse:"Balanced everyday burgers and meal prep.",mistake:"Cooking it like 80/20 can push it past its moist window.",cooking:"Sear firmly, then stop cooking as soon as the centre reaches the target temperature.",health:"A useful balance of protein density, calories and eating quality."},
+    {id:"beef90",label:"90/10 lean beef",kcal100:176,protein100:20.5,fat100:10,carbs100:0,yield:0.79,fatRetention:0.86,
       scores:{juiciness:70,tenderness:75,beefiness:91,richness:66,crust:94,structure:90},
-      note:"Protein-dense and crust-friendly. Gentle handling and careful doneness protect moisture."},
-    {id:"beefpork", label:"80% beef · 20% pork", kcal100:236, protein100:17.5, fat100:18, carbs100:0,
+      flavour:"Clean, pronounced beef flavour without much richness.",texture:"Firm and potentially dry if compressed or overcooked.",bestUse:"High-protein burgers and calorie-conscious builds.",mistake:"Adding more cooking time to create colour dries the centre.",cooking:"Use a hot pan, exterior seasoning and precise doneness; pair with a moisture-rich sauce.",health:"Highest protein per calorie among the beef options."},
+    {id:"beefpork",label:"80% beef · 20% pork",kcal100:236,protein100:17.5,fat100:18,carbs100:0,yield:0.73,fatRetention:0.80,
       scores:{juiciness:92,tenderness:93,beefiness:80,richness:91,crust:87,structure:81},
-      note:"Softer and subtly sweeter, with a particularly tender bite."},
-    {id:"beeflamb", label:"80% beef · 20% lamb", kcal100:248, protein100:17.8, fat100:19, carbs100:0,
+      flavour:"Beef-led with gentle pork sweetness.",texture:"Soft, tender and slightly springier.",bestUse:"Thick patties, freezer meal prep and seasoned blends.",mistake:"Too much mixing creates a sausage-like bite.",cooking:"Cook fully and use slightly gentler heat after browning.",health:"Moist and satisfying, though not as protein-dense as lean beef."},
+    {id:"beeflamb",label:"80% beef · 20% lamb",kcal100:248,protein100:17.8,fat100:19,carbs100:0,yield:0.73,fatRetention:0.80,
       scores:{juiciness:91,tenderness:87,beefiness:76,richness:95,crust:88,structure:82},
-      note:"Deep, aromatic and savoury. Excellent with sharp or acidic condiments."}
+      flavour:"Deep, aromatic and earthy with a savoury finish.",texture:"Juicy and moderately firm.",bestUse:"Herb-forward burgers, sharp cheese and acidic condiments.",mistake:"Heavy sweet sauces can bury the lamb character.",cooking:"Use confident browning and pair with fresh acidity.",health:"Rich in flavour, but similar in calorie density to 80/20 beef."}
   ],
   cheeses: [
-    {id:"none",label:"No cheese",grams:0,kcal:0,protein:0,fat:0,carbs:0,sodium:0,richness:0,structure:0},
-    {id:"american",label:"American-style",grams:20,kcal:62,protein:3.2,fat:5.0,carbs:1.5,sodium:270,richness:9,structure:8},
-    {id:"cheddar",label:"Cheddar",grams:22,kcal:89,protein:5.5,fat:7.3,carbs:0.3,sodium:137,richness:12,structure:5},
-    {id:"swiss",label:"Swiss",grams:22,kcal:84,protein:6.0,fat:6.4,carbs:0.4,sodium:42,richness:9,structure:6},
-    {id:"provolone",label:"Provolone",grams:22,kcal:77,protein:5.7,fat:5.8,carbs:0.5,sodium:193,richness:8,structure:7},
-    {id:"lightcheddar",label:"Reduced-fat cheddar",grams:22,kcal:62,protein:7.0,fat:3.5,carbs:0.6,sodium:170,richness:5,structure:5}
+    {id:"none",label:"No cheese",grams:0,kcal:0,protein:0,fat:0,carbs:0,sodium:0,richness:0,structure:0,flavour:"Lets the patty and condiments lead.",texture:"No melted binding layer.",bestUse:"Lean, condiment-led or lower-calorie builds.",mistake:"Removing cheese without adding acidity or moisture can make a lean burger feel austere.",cooking:"Not applicable.",health:"Eliminates the cheese calories and sodium."},
+    {id:"american",label:"American-style",grams:20,kcal:62,protein:3.2,fat:5,carbs:1.5,sodium:270,richness:9,structure:8,flavour:"Mild, salty and creamy.",texture:"The smoothest, most complete melt.",bestUse:"Smash burgers and classic cheeseburgers.",mistake:"Using multiple slices can dominate a small patty with salt.",cooking:"Add near the end and cover briefly.",health:"Moderate calories, but comparatively high sodium."},
+    {id:"cheddar",label:"Cheddar",grams:22,kcal:89,protein:5.5,fat:7.3,carbs:0.3,sodium:137,richness:12,structure:5,flavour:"Sharp and tangy, stronger with age.",texture:"Rich melt that may split when very mature.",bestUse:"Beef-heavy and steakhouse burgers.",mistake:"Very aged cheddar may oil out rather than drape.",cooking:"Use thin slices and gentle covered heat.",health:"More protein than American-style cheese, with more calories."},
+    {id:"swiss",label:"Swiss",grams:22,kcal:84,protein:6,fat:6.4,carbs:0.4,sodium:42,richness:9,structure:6,flavour:"Nutty, mild and savoury.",texture:"Supple melt with some stretch.",bestUse:"Mushroom, onion and lean beef burgers.",mistake:"A thick slice can stay rubbery in the centre.",cooking:"Slice thinly and cover the pan.",health:"Good protein with comparatively low sodium."},
+    {id:"provolone",label:"Provolone",grams:22,kcal:77,protein:5.7,fat:5.8,carbs:0.5,sodium:193,richness:8,structure:7,flavour:"Mild, savoury and slightly tangy.",texture:"Reliable, cohesive melt.",bestUse:"Beef-pork blends and peppers.",mistake:"Its mild flavour disappears under very sweet sauces.",cooking:"Add for the final minute under a cover.",health:"Moderate calories and useful protein."},
+    {id:"lightcheddar",label:"Reduced-fat cheddar",grams:22,kcal:62,protein:7,fat:3.5,carbs:0.6,sodium:170,richness:5,structure:5,flavour:"Cheddar-like tang with less richness.",texture:"Firmer melt than full-fat cheddar.",bestUse:"High-protein and lower-calorie builds.",mistake:"Overheating makes it tough rather than fluid.",cooking:"Use low residual heat and a cover.",health:"Highest cheese protein per calorie in this Builder."}
   ],
   buns: [
-    {id:"brioche",label:"Brioche bun",kcal:220,protein:7,fat:7,carbs:33,sodium:340,structure:7},
-    {id:"potato",label:"Potato bun",kcal:170,protein:6,fat:3,carbs:31,sodium:280,structure:9},
-    {id:"sesame",label:"Sesame bun",kcal:190,protein:6.5,fat:4,carbs:34,sodium:300,structure:8},
-    {id:"thin",label:"Thin wholemeal bun",kcal:120,protein:6,fat:2,carbs:22,sodium:230,structure:7},
-    {id:"lettuce",label:"Lettuce wrap",kcal:15,protein:1,fat:0.2,carbs:3,sodium:20,structure:4}
+    {id:"brioche",label:"Brioche bun",kcal:220,protein:7,fat:7,carbs:33,sodium:340,structure:7,flavour:"Buttery and gently sweet.",texture:"Soft and rich.",bestUse:"Steakhouse and indulgent burgers.",mistake:"Too much sauce overwhelms its delicate crumb.",cooking:"Toast the cut face until golden.",health:"The most calorie-dense bun option."},
+    {id:"potato",label:"Potato bun",kcal:170,protein:6,fat:3,carbs:31,sodium:280,structure:9,flavour:"Mild with subtle sweetness.",texture:"Soft, resilient and compressible.",bestUse:"Classic and smash burgers.",mistake:"Skipping the toast reduces moisture resistance.",cooking:"Toast lightly so it stays flexible.",health:"Lower calorie than brioche with excellent structure."},
+    {id:"sesame",label:"Sesame bun",kcal:190,protein:6.5,fat:4,carbs:34,sodium:300,structure:8,flavour:"Neutral wheat flavour with toasted sesame.",texture:"Slightly firmer than potato bread.",bestUse:"Classic diner builds.",mistake:"A dry, oversized bun dilutes the patty.",cooking:"Toast the interior only.",health:"Middle-of-the-range calories and protein."},
+    {id:"thin",label:"Thin wholemeal bun",kcal:120,protein:6,fat:2,carbs:22,sodium:230,structure:7,flavour:"Nutty and less sweet.",texture:"Light but moderately firm.",bestUse:"High-protein and calorie-conscious builds.",mistake:"Over-toasting makes it brittle.",cooking:"Use a brief light toast.",health:"Strong protein-to-calorie ratio for a bun."},
+    {id:"lettuce",label:"Lettuce wrap",kcal:15,protein:1,fat:0.2,carbs:3,sodium:20,structure:4,flavour:"Fresh and neutral.",texture:"Crisp but less stable.",bestUse:"Very low-calorie and lower-carb builds.",mistake:"Wet leaves make the burger slippery.",cooking:"Dry thoroughly; no cooking needed.",health:"Lowest calories, but less filling than bread for some users."}
   ],
   sauces: [
-    {id:"classic",label:"Classic burger sauce",kcal:92,protein:0.4,fat:9,carbs:3,sodium:190,moisture:9},
-    {id:"mayo",label:"Mayonnaise",kcal:100,protein:0.1,fat:11,carbs:0.2,sodium:90,moisture:10},
-    {id:"mustard",label:"Yellow mustard",kcal:9,protein:0.5,fat:0.5,carbs:0.8,sodium:180,moisture:3},
-    {id:"ketchup",label:"Ketchup",kcal:20,protein:0.2,fat:0,carbs:5,sodium:160,moisture:4},
-    {id:"yoghurt",label:"Greek-yoghurt sauce",kcal:28,protein:3.0,fat:0.8,carbs:2.1,sodium:75,moisture:8},
-    {id:"none",label:"No sauce",kcal:0,protein:0,fat:0,carbs:0,sodium:0,moisture:0}
+    {id:"classic",label:"Classic burger sauce",kcal:92,protein:0.4,fat:9,carbs:3,sodium:190,moisture:9,flavour:"Creamy, tangy and gently sweet.",texture:"Rich emulsion.",bestUse:"Classic beef and smash burgers.",mistake:"A thick layer makes the stack slide.",cooking:"Spread thinly on a toasted bun.",health:"High flavour impact but calorie-dense."},
+    {id:"mayo",label:"Mayonnaise",kcal:100,protein:0.1,fat:11,carbs:0.2,sodium:90,moisture:10,flavour:"Neutral richness.",texture:"Very creamy.",bestUse:"Lean patties that need lubrication.",mistake:"Using it with a high-fat patty can make the burger feel greasy.",cooking:"Apply after cooking.",health:"Highest-calorie sauce option."},
+    {id:"mustard",label:"Yellow mustard",kcal:9,protein:0.5,fat:0.5,carbs:0.8,sodium:180,moisture:3,flavour:"Sharp, acidic and salty.",texture:"Thin and light.",bestUse:"Rich patties, onions and pickles.",mistake:"Too much can dominate subtle blends.",cooking:"Apply to the bun or sear onto a smash patty.",health:"Very low calories, though sodium remains relevant."},
+    {id:"ketchup",label:"Ketchup",kcal:20,protein:0.2,fat:0,carbs:5,sodium:160,moisture:4,flavour:"Sweet, tangy tomato.",texture:"Smooth and moderately thick.",bestUse:"Classic family-friendly burgers.",mistake:"It can make sweet buns feel cloying.",cooking:"Apply in a controlled thin layer.",health:"Low calorie per serving, but contributes sugar and sodium."},
+    {id:"yoghurt",label:"Greek-yoghurt sauce",kcal:28,protein:3,fat:0.8,carbs:2.1,sodium:75,moisture:8,flavour:"Tangy, fresh and lightly creamy.",texture:"Creamy but lighter than mayonnaise.",bestUse:"Lean beef, lamb and high-protein builds.",mistake:"Heating it directly can make it split.",cooking:"Apply after the patty leaves the heat.",health:"Adds protein and moisture for relatively few calories."},
+    {id:"none",label:"No sauce",kcal:0,protein:0,fat:0,carbs:0,sodium:0,moisture:0,flavour:"No additional flavour layer.",texture:"Drier overall bite.",bestUse:"Very juicy patties or condiment-light testing.",mistake:"Lean patties can feel dry without another moisture source.",cooking:"Not applicable.",health:"Eliminates sauce calories."}
   ],
-  toppings: {
-    standard:{label:"Lettuce, tomato, onion & pickles",kcal:28,protein:1.2,fat:0.2,carbs:6.2,sodium:180,structure:5},
-    minimal:{label:"Pickles & onion",kcal:12,protein:0.4,fat:0.1,carbs:2.7,sodium:170,structure:3}
-  }
+  toppings:{standard:{label:"Lettuce, tomato, onion & pickles",kcal:28,protein:1.2,fat:0.2,carbs:6.2,sodium:180,structure:5},minimal:{label:"Pickles & onion",kcal:12,protein:0.4,fat:0.1,carbs:2.7,sodium:170,structure:3}}
 };
-
-export const defaultBuild = {
-  name:"My Burger",
-  meat:"beef85",
-  weight:150,
-  thickness:16,
-  cheese:"american",
-  bun:"potato",
-  sauce:"classic",
-  toppings:"standard"
-};
+export const defaultBuild={name:"My Burger",meat:"beef85",weight:150,thickness:16,cheese:"american",bun:"potato",sauce:"classic",toppings:"standard"};
