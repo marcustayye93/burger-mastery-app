@@ -1,4 +1,10 @@
-# Sprint 7 Changelog
+# Changelog
+
+## v0.8.0 — Flavours Guide & Expanded Cook-Alongs
+- Added new Flavours tab: meat taste guides (beef, pork, lamb, chicken) and flavour builders (onions, garlic, spices & seasoning) as tap-through slideshows
+- Expanded all six Signature Recipe cook-alongs from 7 to 11–16 detailed steps
+- Increased photography coverage from ~20 to 84+ unique asset-library images
+- Service worker cache bumped to v0.8.0
 
 ## v0.7.0 — Premium UI/UX Polish
 - Standardised visual hierarchy, radii, shadows, typography and spacing
