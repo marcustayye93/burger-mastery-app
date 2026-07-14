@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0d">
+  <meta name="description" content="Burger Mastery — learn, build and improve better burgers.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Burger Mastery</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">BURGER MASTERY</p>
+        <h1 id="pageTitle">Home</h1>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle appearance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+      </button>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="Primary">
+      <button data-route="home" class="nav-item active" aria-current="page">
+        <svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span>
+      </button>
+      <button data-route="builder" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14M4 12h16M6 16h12M7 5h10M7 19h10"/></svg><span>Builder</span>
+      </button>
+      <button data-route="learn" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5Zm16 0A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5Z"/></svg><span>Learn</span>
+      </button>
+      <button data-route="lab" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-9V3M8 15h8"/></svg><span>Lab</span>
+      </button>
+      <button data-route="profile" class="nav-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>You</span>
+      </button>
+    </nav>
+  </div>
+
+  <template id="imageFallback">
+    <div class="image-fallback"><span>Photography loading</span></div>
+  </template>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

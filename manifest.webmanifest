@@ -1,0 +1,17 @@
+{
+  "name": "Burger Mastery",
+  "short_name": "Burger Mastery",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090a0b",
+  "theme_color": "#090a0b",
+  "description": "Learn, build and improve better burgers.",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
