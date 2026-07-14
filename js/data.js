@@ -1,33 +1,51 @@
-import { assets } from "./assets.js";
+import { assets, RAW } from "./assets.js";
 export const courses=[
-{id:"meat",title:"Choose your meat",subtitle:"Beef, pork, lamb and what each brings",progress:100,image:assets.meatCompare},
+{id:"meat",title:"Choose your meat",subtitle:"Beef, pork, lamb and chicken — taste, pairings and pitfalls",progress:100,image:assets.meatCompare},
 {id:"mixing",title:"Mix without ruining texture",subtitle:"Loose, tender and evenly combined",progress:60,image:assets.mixing},
 {id:"shaping",title:"Shape the patty",subtitle:"Weight, thickness, pressure and dimples",progress:30,image:assets.dimple},
-{id:"seasoning",title:"Season with intention",subtitle:"Outside seasoning versus mixed-through",progress:0,image:assets.texture},
+{id:"seasoning",title:"Season with intention",subtitle:"Salt, pepper, paprika, onion and garlic",progress:0,image:assets.seasoningEven},
 {id:"assembly",title:"Build a burger that holds",subtitle:"Toast, sauce, layering and alignment",progress:0,image:assets.layers}
 ];
 export const storySlides={
 meat:[
-{image:assets.meatCompare,kicker:"BURGER ESSENTIALS",title:"Choose the flavour base",body:"Beef gives the familiar burger profile. Pork softens the bite and adds sweetness. Lamb contributes a deeper, aromatic finish."},
-{image:assets.meatBeef,kicker:"CLASSIC BASE",title:"Start with beef",body:"For a classic burger, choose beef with visible fat. Around 15–20% fat gives beginners a forgiving balance of flavour, structure and moisture."},
-{image:assets.mixing,kicker:"TECHNIQUE",title:"Fold gently",body:"Keep the meat cold and combine it with open fingers. Stop as soon as the blend looks even. Compression now becomes density later."}],
+{image:assets.meatCompare,kicker:"BURGER ESSENTIALS",title:"Choose the flavour base",body:"Every burger decision starts here. Beef gives the familiar burger profile. Pork softens the bite and adds sweetness. Lamb contributes a deeper, aromatic finish. Chicken offers a clean, light canvas. Learn what each brings before you choose."},
+{image:assets.meatBeef,kicker:"BEEF · THE CLASSIC",title:"Beef: rich, savoury, forgiving",body:"Beef tastes deeply savoury and mineral-rich, and it rewards a hard sear. Choose mince with visible fat — around 15–20% — so the rendered fat bastes the patty as it cooks. It is the most forgiving meat for beginners."},
+{image:assets.heroBeefPairing,kicker:"BEEF · PAIRINGS",title:"What beef loves",body:"Beef's richness wants sharp and acidic company: American cheese or mature cheddar, pickles, mustard and raw onion on a soft potato bun. The pairings exist to cut the fat, which is why a plain beef patty with only cheese can taste flat."},
+{image:`${RAW}/meat/BM-MEAT-002-pork-hero.webp`,kicker:"PORK · THE SOFTENER",title:"Pork: sweet, tender, juicy",body:"Pork is milder and sweeter than beef, and its fat renders at a lower temperature, so pork patties eat remarkably juicy. On its own it can taste too gentle — which is exactly why it shines in a blend."},
+{image:assets.heroPorkPairing,kicker:"PORK · PAIRINGS",title:"What pork loves",body:"Pork pairs with sweetness and smooth dairy: caramelised onions, BBQ sauce or spicy mustard, and mild melting cheeses like provolone or Swiss. Pork must always be cooked through — check 71°C at the centre with a thermometer."},
+{image:`${RAW}/meat/BM-MEAT-003-lamb-hero.webp`,kicker:"LAMB · THE BOLD ONE",title:"Lamb: earthy and aromatic",body:"Lamb tastes earthy, grassy and slightly gamey, with the flavour concentrated in its fat. It is bold enough to divide a dinner table — which makes it the most exciting meat to master."},
+{image:assets.heroLambPairing,kicker:"LAMB · PAIRINGS",title:"What lamb loves",body:"Lamb needs cooling, fresh contrast: garlic-yoghurt sauce, feta or goat cheese, mint and raw red onion. Ketchup clashes with lamb; Mediterranean flavours embrace it. A 50/50 beef–lamb blend is the friendliest introduction."},
+{image:assets.meatChickenBreast,kicker:"CHICKEN · THE CANVAS",title:"Chicken: clean and adaptable",body:"Chicken is the mildest choice — very lean, light and almost neutral. That neutrality means the seasoning, crust and toppings do the flavour work. Prefer ground thigh over breast: its extra fat is what keeps the patty juicy."},
+{image:assets.heroChickenPairing,kicker:"CHICKEN · PAIRINGS",title:"What chicken loves",body:"Chicken needs fat and boldness added back: chipotle mayo, avocado, bacon and pepper jack cheese. Season assertively and always cook to 74°C in the centre — with chicken, the thermometer is not optional."},
+{image:assets.heroBeefPorkPairing,kicker:"BLENDS",title:"Blending meats",body:"Blends give you the best of two animals. 70% beef with 30% pork adds tenderness and sweetness to the classic profile. 50/50 beef and lamb grounds lamb's boldness in familiar umami. Blend gently and cook blends containing pork fully through."},
+{image:assets.mixing,kicker:"TECHNIQUE",title:"Fold gently",body:"Whatever meat you choose, keep it cold and combine it with open fingers. Stop as soon as the blend looks even. Compression now becomes density later."}],
 mixing:[
-{image:assets.mixing,kicker:"CORRECT",title:"Keep strands distinct",body:"The meat should still look like ground meat after mixing—not a smooth paste."},
-{image:assets.texture,kicker:"LOOK FOR THIS",title:"Visible fat, loose structure",body:"Separate strands and small fat deposits show the mixture has not been overworked."},
-{image:assets.portion,kicker:"NEXT STEP",title:"Portion before shaping",body:"Weighing each portion gives even cooking and makes nutrition estimates more dependable."}],
+{image:assets.mixing,kicker:"CORRECT",title:"Keep strands distinct",body:"The meat should still look like ground meat after mixing — not a smooth paste. Every fold you add now is chewiness you will taste later."},
+{image:assets.texture,kicker:"LOOK FOR THIS",title:"Visible fat, loose structure",body:"Separate strands and small fat deposits show the mixture has not been overworked. This loose structure is what melts into a tender bite."},
+{image:assets.onionGrated,kicker:"FLAVOUR IN THE MIX",title:"Adding aromatics inside",body:"If you season inside the patty, use ingredients that disappear: grated onion (max 20 g per 500 g, juice squeezed out) or garlic powder. Chunks of raw aromatics burn outside and stay harsh inside."},
+{image:assets.garlicInMeat,kicker:"FOLD, DON'T KNEAD",title:"Distribute without compressing",body:"Fold aromatics through with the same open-fingered touch you use for blending meats. The goal is even distribution in as few movements as possible — never knead."},
+{image:assets.portion,kicker:"NEXT STEP",title:"Portion before shaping",body:"Weighing each portion gives even cooking and makes nutrition estimates more dependable. A digital scale removes all guesswork."}],
 shaping:[
-{image:assets.portion,kicker:"PORTION",title:"Begin with the target weight",body:"A 150 g patty is a balanced starting point for a standard burger."},
-{image:assets.shaping,kicker:"PRESSURE",title:"Use only enough pressure to hold",body:"Shape lightly. Dense patties eat more like sausage."},
-{image:assets.thickness,kicker:"THICKNESS",title:"Thickness changes the experience",body:"Thin patties favour crust. Thick patties favour a juicy centre and need more careful heat control."},
-{image:assets.dimple,kicker:"FINISH",title:"Add a shallow centre dimple",body:"For thicker patties, a subtle indentation helps reduce doming."}],
+{image:assets.portion,kicker:"PORTION",title:"Begin with the target weight",body:"A 150 g patty is a balanced starting point for a standard burger. Weigh, don't eyeball — patties that match cook at the same rate."},
+{image:assets.shaping,kicker:"PRESSURE",title:"Use only enough pressure to hold",body:"Shape lightly. Dense patties eat more like sausage. The patty only needs to survive the trip to the pan — the sear will hold it together after that."},
+{image:assets.thickness,kicker:"THICKNESS",title:"Thickness changes the experience",body:"Thin patties favour crust. Thick patties favour a juicy centre and need more careful heat control. A standard patty is about ¾ inch (1.9 cm); a smash patty ends up around ¼ inch (6 mm)."},
+{image:assets.pattyChickenRaw,kicker:"SOFTER MEATS",title:"Shaping chicken and pork",body:"Chicken and high-pork blends are wetter and stickier than beef. Chill the mince well and shape with damp hands. The patty firms in the pan, not on the board — resist the urge to compact it."},
+{image:assets.dimple,kicker:"FINISH",title:"Add a shallow centre dimple",body:"For thicker patties, a subtle indentation helps reduce doming. As the edges contract during cooking, the dimple flattens out to an even surface."}],
 seasoning:[
-{image:assets.texture,kicker:"SEASONING",title:"Protect the texture",body:"For a loose classic burger, season the outside shortly before cooking rather than mixing salt through."},
-{image:assets.sauce,kicker:"BALANCE",title:"Seasonings are only one layer",body:"Cheese, pickles and sauces add salt too. Judge the finished burger."}],
+{image:assets.seasoningSalt,kicker:"SALT",title:"Weigh your salt",body:"Salt amplifies umami and suppresses bitterness — and the right amount is measurable. Use about 1% of the patty's weight: 1.5 g for a 150 g patty. A pinch is a guess; a scale is a skill."},
+{image:assets.texture,kicker:"PROTECT THE TEXTURE",title:"Salt the outside only",body:"For a loose classic burger, season the outside shortly before cooking rather than mixing salt through. Salt dissolves myosin proteins and turns mixed mince springy and sausage-like."},
+{image:assets.seasoningPepper,kicker:"PEPPER",title:"Crack it fresh and coarse",body:"Freshly cracked black pepper carries citrusy heat that pre-ground dust lost months ago. Coarse pieces toast in the pan and become pockets of aroma in the crust. Use roughly half the weight of your salt."},
+{image:assets.seasoningPaprika,kicker:"PAPRIKA",title:"Warmth and colour",body:"Paprika brings gentle sweetness and a deep red crust. Sweet paprika flatters chicken and pork; smoked paprika adds grill character indoors. About 1 g per patty is plenty — it supports, never leads."},
+{image:assets.seasoningEven,kicker:"TECHNIQUE",title:"Season from a height",body:"Season from 25–30 cm above the patty so the grains scatter evenly. Concentrated patches taste harsh; even coverage becomes an even crust."},
+{image:assets.seasoningOneSide,kicker:"TIMING",title:"Right before the heat",body:"Season the first side immediately before the patty meets the pan, and the second side just before the flip. Salt sitting on raw meat pulls moisture to the surface — and wet meat steams instead of searing."},
+{image:assets.seasoningCrust,kicker:"THE PAYOFF",title:"The seasoned crust",body:"Done correctly, the seasoning fuses with the Maillard browning into a crackling, savoury shell while the interior stays tender and pure. This crust is the single biggest flavour upgrade in burger cooking."},
+{image:assets.sauce,kicker:"BALANCE",title:"Seasonings are only one layer",body:"Cheese, pickles and sauces add salt too. Judge the finished burger, not the patty alone."}],
 assembly:[
-{image:assets.toast,kicker:"FOUNDATION",title:"Toast for structure",body:"A golden surface adds flavour and slows moisture soaking into the bun."},
-{image:assets.sauce,kicker:"SAUCE",title:"Use a thin, even layer",body:"Enough to flavour and lubricate—never so much that the burger slides apart."},
-{image:assets.layers,kicker:"LAYERS",title:"Keep the stack centred",body:"Even layers distribute flavour and improve stability."},
-{image:assets.cheese,kicker:"CHEESE",title:"Let cheese bind the stack",body:"A complete melt wraps the patty and helps neighbouring layers stay together."},
-{image:assets.finished,kicker:"COMPLETE",title:"A burger built to eat",body:"The final test is whether the first and last bite feel equally balanced."}]
+{image:assets.toast,kicker:"FOUNDATION",title:"Toast for structure",body:"A golden surface adds flavour and slows moisture soaking into the bun. An untoasted bun is a countdown to collapse."},
+{image:assets.sauce,kicker:"SAUCE",title:"Use a thin, even layer",body:"Enough to flavour and lubricate — never so much that the burger slides apart. Sauce belongs on both cut faces, edge to edge."},
+{image:assets.onionFullCaramel,kicker:"ONION CHOICE",title:"Match the onion to the build",body:"Raw rings cut through fatty builds; caramelised onions act like a sweet sauce on rich, cheesy ones; grated onion works from inside lean patties. One ingredient, several jobs — choose the state your burger needs."},
+{image:assets.layers,kicker:"LAYERS",title:"Keep the stack centred",body:"Even layers distribute flavour and improve stability. Heavier, wetter ingredients belong low in the stack where they anchor rather than slide."},
+{image:assets.cheese,kicker:"CHEESE",title:"Let cheese bind the stack",body:"A complete melt wraps the patty and helps neighbouring layers stay together. Add the slice near the end of cooking and cover briefly — trapped steam does the melting."},
+{image:assets.finished,kicker:"COMPLETE",title:"A burger built to eat",body:"The final test is whether the first and last bite feel equally balanced. If they do, every lesson in this journey just showed up in your hands."}]
 };
 export const lessonSequence=courses.flatMap(c=>(storySlides[c.id]||[]).map((s,i)=>({sectionId:c.id,sectionTitle:c.title,slideId:`${c.id}-${String(i+1).padStart(2,"0")}`,...s})));

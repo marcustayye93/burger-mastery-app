@@ -59,6 +59,11 @@ main{padding:18px 16px 30px}
 .story-content{position:absolute;z-index:2;left:22px;right:22px;bottom:34px}.story-content h2{font-size:36px}.story-content p{color:rgba(255,255,255,.83);font-size:17px;line-height:1.5}
 .story-close{position:absolute;right:14px;top:calc(22px + env(safe-area-inset-top));z-index:4;width:42px;height:42px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;font-size:24px}
 .story-tap{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:1fr 1fr}.story-tap button{opacity:0;border:0;background:transparent}
+.tap-hint{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom));z-index:4;display:flex;justify-content:center;pointer-events:none;opacity:1;transition:opacity .6s ease}
+.tap-hint span{padding:9px 16px;border-radius:99px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);color:rgba(255,255,255,.92);font-size:12px;font-weight:700;letter-spacing:.05em;animation:tapHintPulse 2s ease-in-out infinite}
+.tap-hint.fade{opacity:0}
+@keyframes tapHintPulse{0%,100%{transform:translateY(0);opacity:.8}50%{transform:translateY(-4px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.tap-hint span{animation:none}}
 .panel{padding:19px}.panel p{color:var(--muted);line-height:1.55}
 .empty{padding:40px 22px;text-align:center}.empty .orb{width:82px;height:82px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;margin:0 auto 18px;font-size:32px}
 .bottom-nav{position:fixed;z-index:30;left:50%;bottom:0;transform:translateX(-50%);width:min(760px,100%);height:calc(76px + var(--safe-bottom));padding:8px 8px var(--safe-bottom);display:grid;grid-template-columns:repeat(5,1fr);background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(24px);border-top:1px solid var(--line)}

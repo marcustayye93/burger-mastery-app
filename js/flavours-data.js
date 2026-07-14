@@ -1,4 +1,4 @@
-import { assets } from "./assets.js";
+import { assets, RAW } from "./assets.js";
 
 export const flavourTopics = [
   {
@@ -6,12 +6,15 @@ export const flavourTopics = [
     category: "Meat Taste Guides",
     title: "How Beef Tastes",
     flavour: "Savoury, rich, and umami-heavy",
-    hero: assets.meatBeef,
+    hero: assets.heroBeefPairing,
     slides: [
-      { image: assets.meatBeef, kicker: "THE FOUNDATION", title: "The Taste of Beef", body: "Beef is the gold standard for burgers because it delivers a deep, savoury umami punch. It has an inherently rich, mineral-heavy flavour that holds up to aggressive searing and bold toppings." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/ingredients/beef/BM-ING-BEEF-001-80-20-ground-chuck.webp", kicker: "THE FAT", title: "Where Flavour Lives", body: "Much of beef's signature taste comes from its fat. An 80/20 ratio of lean meat to fat provides enough rendered tallow to baste the meat as it cooks, creating a buttery, roasted flavour profile." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/ingredients/beef/BM-ING-BEEF-006-fat-marbling-macro.webp", kicker: "THE SEAR", title: "The Maillard Reaction", body: "When beef hits a hot pan, amino acids and sugars react to create hundreds of new flavour compounds. This browned crust tastes entirely different from the interior: nutty, roasted, and slightly bitter." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/cheese/BM-CHEESE-018-cheese-comparison-flatlay.webp", kicker: "PAIRING", title: "What Pairs Best", body: "Beef pairs beautifully with sharp, salty, and acidic ingredients. American cheese melts into its fat, while sharp cheddar cuts through the richness. Pickles, mustard, and raw onions provide necessary acidic contrast." }
+      { image: assets.meatBeef, kicker: "THE FOUNDATION", title: "The Taste of Beef", body: "Beef is the gold standard for burgers because it delivers a deep, savoury umami punch. It has an inherently rich, mineral-heavy flavour that holds up to aggressive searing and bold toppings. When people picture 'a burger', this is the flavour they are imagining." },
+      { image: `${RAW}/ingredients/beef/BM-ING-BEEF-001-80-20-ground-chuck.webp`, kicker: "THE FAT", title: "Where Flavour Lives", body: "Much of beef's signature taste comes from its fat. An 80/20 ratio of lean meat to fat provides enough rendered tallow to baste the meat as it cooks, creating a buttery, roasted flavour profile. Leaner blends taste cleaner but need more careful cooking." },
+      { image: `${RAW}/ingredients/beef/BM-ING-BEEF-006-fat-marbling-macro.webp`, kicker: "THE SEAR", title: "The Maillard Reaction", body: "When beef hits a hot pan, amino acids and sugars react to create hundreds of new flavour compounds. This browned crust tastes entirely different from the interior: nutty, roasted, and slightly bitter. Beef rewards a hard sear more than any other burger meat." },
+      { image: assets.heroBeefPairing, kicker: "THE PAIRING", title: "The Classic Beef Build", body: "Beef pairs beautifully with sharp, salty, and acidic ingredients. American cheese melts into its fat, pickles and mustard cut through the richness, and raw onion adds bite. Everything on this board exists to balance beef's intensity, not compete with it." },
+      { image: `${RAW}/cheese/BM-CHEESE-018-cheese-comparison-flatlay.webp`, kicker: "CHEESE", title: "Recommended Cheeses", body: "American cheese is the classic choice because it melts into a sauce that coats the fat. Sharp cheddar cuts through richness with acidity, and Swiss adds nutty depth. Avoid delicate cheeses that vanish under beef's heavy flavour." },
+      { image: `${RAW}/ingredients/buns/BM-BUN-001-brioche-bun.webp`, kicker: "BUNS & SAUCES", title: "Bun and Sauce Matches", body: "A soft potato or brioche bun cushions beef's dense bite, while classic burger sauce, ketchup, and mustard supply the sweet-acid counterpoints the meat craves. Save the crusty artisan rolls for sandwiches — they squeeze the juices straight out of a burger." },
+      { image: `${RAW}/meat/BM-MEAT-006-overmixed-meat-mistake.webp`, kicker: "COMMON MISTAKES", title: "How Beef Goes Wrong", body: "The two classic beef mistakes are overworking the mince, which turns the patty dense and bouncy, and choosing meat that is too lean, which cooks up dry. Buy 80/20, handle it cold and gently, and beef will forgive almost everything else." }
     ]
   },
   {
@@ -19,11 +22,13 @@ export const flavourTopics = [
     category: "Meat Taste Guides",
     title: "How Pork Tastes",
     flavour: "Sweet, fatty, and tender",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-002-pork-hero.webp",
+    hero: assets.heroPorkPairing,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-002-pork-hero.webp", kicker: "THE PROFILE", title: "The Taste of Pork", body: "Ground pork is lighter, sweeter, and significantly more tender than beef. Its fat renders at a lower temperature, creating a very juicy patty with a mild, slightly fruity savoury profile." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/heroes/ingredients/BM-HERO-ING-007-beef-vs-beef-pork-comparison.webp", kicker: "THE BLEND", title: "Pork in Blends", body: "Because pure pork can be too mild for a classic burger experience, it is often blended with beef. A 70% beef to 30% pork blend borrows pork's incredible tenderness and sweet fat while maintaining beef's savoury punch." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/cheese/BM-CHEESE-014-provolone.webp", kicker: "PAIRING", title: "What Pairs Best", body: "Pork loves sweetness, heat, and mild dairy. It pairs perfectly with caramelised onions, spicy mustard, BBQ sauce, and smooth-melting cheeses like provolone or Swiss rather than sharp cheddar." }
+      { image: `${RAW}/meat/BM-MEAT-002-pork-hero.webp`, kicker: "THE PROFILE", title: "The Taste of Pork", body: "Ground pork is lighter, sweeter, and significantly more tender than beef. Its fat renders at a lower temperature, creating a very juicy patty with a mild, slightly fruity savoury profile. It reads as 'gentle' where beef reads as 'bold'." },
+      { image: `${RAW}/heroes/ingredients/BM-HERO-ING-007-beef-vs-beef-pork-comparison.webp`, kicker: "THE BLEND", title: "Pork in Blends", body: "Because pure pork can be too mild for a classic burger experience, it is often blended with beef. A 70% beef to 30% pork blend borrows pork's incredible tenderness and sweet fat while maintaining beef's savoury punch — the best of both animals." },
+      { image: assets.heroPorkPairing, kicker: "THE PAIRING", title: "The Pork Build", body: "Pork loves sweetness, gentle heat, and mild dairy. Caramelised onions echo its natural sugars, spicy mustard and BBQ sauce lift its mildness, and a soft brioche bun matches its tender texture. Think 'sweet and smooth' rather than 'sharp and loud'." },
+      { image: `${RAW}/cheese/BM-CHEESE-014-provolone.webp`, kicker: "CHEESE", title: "Recommended Cheeses", body: "Choose smooth-melting, mild cheeses: provolone and Swiss are ideal because they complement pork's sweetness without steamrolling it. Sharp cheddar tends to clash — its acidity fights the meat instead of supporting it." },
+      { image: `${RAW}/cooking/BM-COOK-011-cold-pan-mistake.webp`, kicker: "COMMON MISTAKES", title: "How Pork Goes Wrong", body: "Pork fat renders fast, so a lukewarm pan makes the patty stew in its own juices instead of searing. Pork burgers must also be cooked through — use a thermometer and aim for 71°C in the centre rather than guessing by colour." }
     ]
   },
   {
@@ -31,11 +36,14 @@ export const flavourTopics = [
     category: "Meat Taste Guides",
     title: "How Lamb Tastes",
     flavour: "Earthy, grassy, and robust",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-003-lamb-hero.webp",
+    hero: assets.heroLambPairing,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-003-lamb-hero.webp", kicker: "THE PROFILE", title: "The Taste of Lamb", body: "Lamb has a distinctive, earthy, and slightly gamey flavour. The taste is heavily concentrated in its fat, which has a higher melting point and coats the palate with a rich, robust sensation." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/heroes/ingredients/BM-HERO-ING-008-beef-vs-beef-lamb-comparison.webp", kicker: "THE BLEND", title: "Taming the Earthiness", body: "A pure lamb burger can be overwhelming for some. Blending 50/50 with beef grounds the burger in familiar umami while allowing the lamb's aromatic qualities to shine through." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/condiments/BM-COND-008-greek-yoghurt-burger-sauce.webp", kicker: "PAIRING", title: "What Pairs Best", body: "Lamb requires bold, fresh, and cooling pairings to balance its heavy fat. Think raw red onion, feta or goat cheese, mint, and yoghurt-based sauces. Standard ketchup and mustard often clash with lamb." }
+      { image: `${RAW}/meat/BM-MEAT-003-lamb-hero.webp`, kicker: "THE PROFILE", title: "The Taste of Lamb", body: "Lamb has a distinctive, earthy, and slightly gamey flavour. The taste is heavily concentrated in its fat, which has a higher melting point and coats the palate with a rich, robust sensation. It is the most opinionated meat you can put in a bun." },
+      { image: `${RAW}/heroes/ingredients/BM-HERO-ING-008-beef-vs-beef-lamb-comparison.webp`, kicker: "THE BLEND", title: "Taming the Earthiness", body: "A pure lamb burger can be overwhelming for some. Blending 50/50 with beef grounds the burger in familiar umami while allowing the lamb's aromatic qualities to shine through. Beginners should start with the blend, then work up to full lamb." },
+      { image: assets.heroLambPairing, kicker: "THE PAIRING", title: "The Lamb Build", body: "Lamb requires bold, fresh, and cooling pairings to balance its heavy fat: raw red onion, crumbly feta, fresh mint, and yoghurt-based sauces. Everything on this board is Mediterranean for a reason — those cuisines solved lamb centuries ago." },
+      { image: `${RAW}/condiments/BM-COND-008-greek-yoghurt-burger-sauce.webp`, kicker: "SAUCES", title: "Cooling Sauces Win", body: "A garlic-yoghurt sauce with lemon is the definitive lamb pairing: its acidity and coolness slice through the dense fat. Standard ketchup and sweet burger sauces usually clash with lamb's earthiness — save them for beef." },
+      { image: `${RAW}/cheese/BM-CHEESE-013-swiss-cheese.webp`, kicker: "CHEESE & BUNS", title: "Cheese and Bun Matches", body: "Feta and goat cheese bring salty freshness; Swiss brings nutty restraint. A toasted sesame bun adds a roasted note that flatters lamb beautifully. Avoid heavy cheese sauces — lamb already saturates the palate with fat." },
+      { image: `${RAW}/cooking/BM-COOK-012-smoking-hot-pan-mistake.webp`, kicker: "COMMON MISTAKES", title: "How Lamb Goes Wrong", body: "Lamb fat smokes aggressively, so ventilate before you sear. The bigger mistake is under-seasoning: lamb's boldness swallows timid seasoning. Salt it confidently and give it a dark, serious crust — lamb can take it." }
     ]
   },
   {
@@ -43,50 +51,66 @@ export const flavourTopics = [
     category: "Meat Taste Guides",
     title: "How Chicken Tastes",
     flavour: "Clean, mild, and highly adaptable",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/heroes/ingredients/BM-HERO-ING-003-low-calorie-layout.webp",
+    hero: assets.heroChickenPairing,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/heroes/ingredients/BM-HERO-ING-003-low-calorie-layout.webp", kicker: "THE PROFILE", title: "The Taste of Chicken", body: "Ground chicken is a blank canvas. It is incredibly mild, very lean, and relies almost entirely on the seasonings, crust, and toppings you provide to deliver flavour." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-004-beef-pork-lamb-comparison.webp", kicker: "THE CHALLENGE", title: "Moisture Management", body: "Because chicken lacks the saturated fat of beef or pork, it dries out rapidly. It must be cooked fully for safety, meaning you cannot rely on a medium-rare centre for juiciness." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/condiments/BM-COND-007-chipotle-mayo.webp", kicker: "PAIRING", title: "What Pairs Best", body: "Chicken needs added fat and bold flavour. Mayonnaise-based sauces (like chipotle mayo), avocado, bacon, and highly melting cheeses like pepper jack transform a dry patty into a rich experience." }
+      { image: assets.meatChickenBreast, kicker: "THE PROFILE", title: "The Taste of Chicken", body: "Ground chicken is a blank canvas. It is incredibly mild, very lean, and relies almost entirely on the seasonings, crust, and toppings you provide to deliver flavour. That neutrality is not a weakness — it is an invitation." },
+      { image: assets.meatChickenGround, kicker: "THE GRIND", title: "Thigh Beats Breast", body: "When buying ground chicken, prefer thigh meat. It carries roughly twice the fat of breast, which translates directly into moisture and flavour. Pale, fine-textured breast-only grinds cook up dry unless you add fat back in." },
+      { image: assets.pattyChickenRaw, kicker: "THE PATTY", title: "A Softer Patty", body: "Chicken mince is wetter and stickier than beef, so the patty feels loose and delicate. Chill it well, shape it with damp hands, and handle it as little as possible — it firms up in the pan, not on the board." },
+      { image: assets.cookingChickenSeasoning, kicker: "SEASONING", title: "Season with Conviction", body: "Because chicken is so mild, it rewards assertive seasoning. Salt at about 1% of meat weight, then layer in pepper, paprika, and garlic powder. What would over-season beef is often exactly right for chicken." },
+      { image: assets.cookingChickenSkillet, kicker: "THE COOK", title: "Moisture Management", body: "Chicken lacks the saturated fat of beef or pork, so it dries out rapidly, and it must be cooked fully for safety — 74°C in the centre. You cannot rely on a pink centre for juiciness, so the fat, sauce, and toppings must do that work instead." },
+      { image: assets.xsecChicken, kicker: "DONENESS", title: "Reading the Interior", body: "A properly cooked chicken patty is opaque and pale throughout with clear juices — never pink. Use a thermometer rather than time or colour: a golden crust can form long before the centre is safe." },
+      { image: assets.heroChickenPairing, kicker: "THE PAIRING", title: "The Chicken Build", body: "Chicken needs added fat and bold flavour. Mayonnaise-based sauces like chipotle mayo, creamy avocado, crisp bacon, and easy-melting cheeses such as pepper jack transform a lean patty into a rich experience." },
+      { image: assets.heroChicken, kicker: "THE RESULT", title: "The Finished Chicken Burger", body: "Built correctly — thigh grind, confident seasoning, a proper crust, and fat added back through cheese and sauce — a chicken burger is juicy, aromatic, and every bit as satisfying as beef, at a fraction of the heaviness." }
     ]
   },
   {
     id: "builder-onions",
     category: "Flavour Builders",
-    title: "Onions: Raw vs Cooked",
-    flavour: "Pungent bite vs sweet depth",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/ingredients/vegetables/BM-VEG-005-white-onion.webp",
+    title: "Onions: Every State Explained",
+    flavour: "Pungent bite to jammy sweetness",
+    hero: assets.onionFullCaramel,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/ingredients/vegetables/BM-VEG-005-white-onion.webp", kicker: "THE PURPOSE", title: "Why Add Onions?", body: "Onions are the most critical aromatic in burger building. They provide either a sharp, acidic bite to cut through rich fat, or a deep, jammy sweetness to enhance the meat's savoury notes." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/ingredients/vegetables/BM-VEG-004-red-onion.webp", kicker: "RAW ONIONS", title: "When to use Raw", body: "Use raw white or red onions when your burger is heavy and fatty. The sharp, sulfuric bite cleanses the palate. Add them directly under the patty so the meat's heat slightly softens their crunch without cooking them." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/assembly/BM-ASM-019-correct-onion-placement.webp", kicker: "COOKED ONIONS", title: "When to use Cooked", body: "Caramelised or grilled onions add profound sweetness and moisture. Use them when you want a richer, more luxurious burger, especially with Swiss or provolone cheese. They act almost like a sauce." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/assembly/BM-ASM-021-complete-vegetable-stack.webp", kicker: "THE RATIO", title: "How Much to Add", body: "For raw onions, 15-20 grams (two thin rings or a tablespoon of diced) is enough to provide bite without overpowering the beef. For caramelised onions, you can use up to 40 grams, as their flavour is mellow." }
+      { image: `${RAW}/ingredients/vegetables/BM-VEG-005-white-onion.webp`, kicker: "THE PURPOSE", title: "Why Add Onions?", body: "Onions are the most important aromatic in burger building. The same vegetable can deliver a sharp, acidic bite that cuts through rich fat, or a deep, jammy sweetness that amplifies the meat's savoury notes. The difference is entirely in how you treat it." },
+      { image: `${RAW}/ingredients/vegetables/BM-VEG-004-red-onion.webp`, kicker: "STATE 1 · RAW", title: "Raw Rings: The Palate Cleanser", body: "Raw white or red onion delivers a sharp, sulphurous crunch. Use it when the burger is heavy and fatty — the bite cleanses the palate between mouthfuls. Two thin rings, about 15 g, placed under the patty so the heat softens them slightly." },
+      { image: assets.onionDice, kicker: "STATE 2 · DICED", title: "Diced: Distributed Bite", body: "Dicing spreads the onion's punch evenly across every bite instead of concentrating it in one ring. A tablespoon — about 15–20 g of 3 mm dice — is the smash burger standard. Small enough to soften on the griddle, big enough to still crunch." },
+      { image: assets.onionSlices, kicker: "STATE 3 · SLICED", title: "Slices: Ready to Cook", body: "Even 5 mm slices are the starting point for every cooked onion. Slice with the grain and they hold their shape through long cooking; slice across it and they melt down faster. One medium onion (150 g) cooks down to serve two burgers." },
+      { image: assets.onionSweating, kicker: "STATE 4 · SWEATED", title: "Sweating: Soft, Not Brown", body: "Sweating means cooking slices gently in a little oil over low heat until translucent and soft — around 5–8 minutes with no browning. The harsh sulphur compounds cook off, leaving a mellow sweetness. Use sweated onions when you want softness without caramel intensity." },
+      { image: assets.onionMidCaramel, kicker: "STATE 5 · CARAMELISING", title: "The Golden Middle", body: "Keep going past sweating and the onion's sugars begin to brown. This golden stage — 15–20 minutes in — is where impatience ruins most cooks. Do not raise the heat to rush it: high heat burns the edges before the centres sweeten. Stir occasionally and let time work." },
+      { image: assets.onionFullCaramel, kicker: "STATE 6 · CARAMELISED", title: "Fully Caramelised: Onion Jam", body: "After 30–40 minutes on low heat, the onions collapse into a glossy, mahogany jam that tastes profoundly sweet. This is a sauce, not a topping — up to 40 g per burger works because the sharpness is completely gone. Magnificent with Swiss or provolone." },
+      { image: assets.onionGrated, kicker: "STATE 7 · GRATED IN", title: "Grated Into the Meat", body: "Grating raw onion on a fine grater turns it into pulp that disappears into the mince, seasoning the patty from within and adding moisture. Use no more than 20 g per 500 g of meat and squeeze out excess juice first — too much liquid loosens the patty." },
+      { image: `${RAW}/assembly/BM-ASM-019-correct-onion-placement.webp`, kicker: "THE DECISION", title: "Which State, Which Burger?", body: "Fatty, rich burger? Raw or diced for cutting bite. Sweet, luxurious build? Fully caramelised. Lean patty that needs internal moisture? Grated in. The onion is one ingredient with seven personalities — choose the one your burger is missing." }
     ]
   },
   {
     id: "builder-garlic",
     category: "Flavour Builders",
-    title: "Garlic: Fresh vs Powder",
+    title: "Garlic: Fresh, Powder & Roasted",
     flavour: "Aromatic, sharp, and roasted",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-005-correct-gentle-mixing.webp",
+    hero: assets.garlicCloves,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-005-correct-gentle-mixing.webp", kicker: "THE PURPOSE", title: "Why Add Garlic?", body: "Garlic amplifies the savoury umami notes of meat. It provides an aromatic backbone that makes beef taste 'beefier' and adds complexity to mild meats like pork or chicken." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-007-perfect-texture-macro.webp", kicker: "GARLIC POWDER", title: "The Best Choice for Beef", body: "For classic burgers, garlic powder is superior to fresh. It distributes evenly, won't burn on a screaming hot cast iron pan, and provides a sweet, roasted garlic flavour without the sharp bite of raw cloves." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/condiments/BM-COND-007-chipotle-mayo.webp", kicker: "FRESH GARLIC", title: "When to use Fresh", body: "If you want the sharp, pungent bite of fresh garlic, do not mix it into the meat where it will burn. Instead, mince it finely and fold it into your mayonnaise or burger sauce." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/patty/BM-PATTY-008-ready-for-cooking.webp", kicker: "THE RATIO", title: "How Much to Add", body: "Use a light hand. Half a teaspoon of garlic powder per 500 grams of meat is plenty. It should elevate the beef in the background, not turn the patty into a garlic sausage." }
+      { image: assets.garlicCloves, kicker: "THE PURPOSE", title: "Why Add Garlic?", body: "Garlic amplifies the savoury umami notes of meat. It provides an aromatic backbone that makes beef taste 'beefier' and gives mild meats like pork and chicken a personality they lack on their own. The form you choose changes everything." },
+      { image: assets.garlicMinced, kicker: "FORM 1 · FRESH MINCED", title: "Fresh: Sharp and Pungent", body: "Freshly minced garlic is hot, sharp, and aggressive. Never mix it directly into the patty — the exposed pieces scorch and turn bitter in a hot pan. Instead, fold 1–2 minced cloves into your mayonnaise or burger sauce, where it stays bright and raw." },
+      { image: assets.garlicPowder, kicker: "FORM 2 · POWDER", title: "Powder: The Burger Workhorse", body: "For seasoning the patty itself, garlic powder is superior to fresh. It distributes evenly, never burns on screaming-hot cast iron, and tastes sweet and roasted rather than sharp. Use about 2 g (half a teaspoon) per 500 g of meat — enough to deepen, never dominate." },
+      { image: assets.garlicRoasted, kicker: "FORM 3 · ROASTED", title: "Roasted: Sweet and Mellow", body: "A whole head roasted at 200°C for 40 minutes transforms garlic completely: the cloves turn soft, golden, and spreadably sweet, with zero harshness. Mash 3–4 roasted cloves into sauce or spread them directly on the toasted bun for a luxurious, nutty base note." },
+      { image: assets.garlicInMeat, kicker: "IN THE MIX", title: "Garlic Inside the Patty", body: "If you want garlic inside the meat, use powder or finely mashed roasted garlic — both distribute evenly and survive the sear. Fold gently with open fingers just until combined. Remember why: raw chunks burn on the outside and stay harsh on the inside." },
+      { image: `${RAW}/condiments/BM-COND-007-chipotle-mayo.webp`, kicker: "HOW MUCH & WHEN", title: "Quantities That Work", body: "In the meat: 2 g powder per 500 g, added with your gentle mix. In the sauce: 1–2 fresh cloves or 3–4 roasted, added any time before serving. Garlic should elevate the beef in the background — if you can name the garlic before the meat, you used too much." }
     ]
   },
   {
     id: "builder-spices",
     category: "Flavour Builders",
-    title: "Spices & Seasoning",
-    flavour: "Salt, pepper, and timing",
-    hero: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-007-perfect-texture-macro.webp",
+    title: "Salt, Pepper & Paprika",
+    flavour: "The science of seasoning",
+    hero: assets.seasoningBlend,
     slides: [
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-007-perfect-texture-macro.webp", kicker: "THE PURPOSE", title: "Why Spices Matter", body: "Spices do not just add flavour; salt physically alters meat proteins. Proper seasoning is the difference between a restaurant-quality burger and a bland, dense meatloaf." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/meat/BM-MEAT-006-overmixed-meat-mistake.webp", kicker: "THE RULE", title: "Never Salt the Mix", body: "Never mix salt into ground beef before shaping. Salt dissolves myosin proteins, turning the meat into a sticky, sausage-like paste. The patty will become dense and rubbery when cooked." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/cooking/BM-COOK-007-finished-crust.webp", kicker: "THE TIMING", title: "When to Season", body: "Season only the outside of the patty, and only immediately before it hits the hot pan. This creates a concentrated, salty, peppery crust while leaving the interior loose and tender." },
-      { image: "https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/images/cooking/BM-COOK-001-first-contact.webp", kicker: "THE RATIO", title: "How Much to Add", body: "Use more kosher salt than you think you need. A heavy, even shower of salt and freshly ground black pepper on both sides creates the necessary crust. About 1% of the meat's weight in salt is ideal." }
+      { image: assets.seasoningSalt, kicker: "SALT · WHAT IT DOES", title: "Salt Is Not a Flavour", body: "Salt is an amplifier: it suppresses bitterness and magnifies the meat's natural umami. The right amount is measurable, not mystical — weigh it. Aim for about 1% of the patty's weight: 1.5 g of salt for a 150 g patty." },
+      { image: `${RAW}/meat/BM-MEAT-006-overmixed-meat-mistake.webp`, kicker: "SALT · WHEN", title: "Never Salt the Mix", body: "Never mix salt through ground beef before shaping. Salt dissolves myosin proteins, cross-linking the strands into a sticky, sausage-like paste that cooks up dense and rubbery. This is the single most common seasoning mistake in burger cooking." },
+      { image: assets.seasoningPepper, kicker: "PEPPER · WHAT IT DOES", title: "Pepper Brings Heat and Aroma", body: "Freshly cracked black pepper contributes piperine heat and a citrusy, woody aroma that pre-ground dust has long since lost. Crack it coarse — the jagged pieces toast in the pan and become tiny pockets of flavour in the crust. Roughly half the weight of your salt is a sound ratio." },
+      { image: assets.seasoningPaprika, kicker: "PAPRIKA · WHAT IT DOES", title: "Paprika: Colour and Warmth", body: "Paprika adds a sweet, gently smoky warmth and a deep red colour to the crust. Sweet paprika flatters pork and chicken especially well; smoked paprika gives any patty a grill-fire character indoors. Use about 1 g per 150 g patty — it supports, it never leads." },
+      { image: assets.seasoningBlend, kicker: "THE BLEND", title: "Building a House Blend", body: "A reliable house blend: 4 parts salt, 2 parts cracked pepper, 1 part paprika, 1 part garlic powder by weight. Mix it once, keep it in a jar by the stove, and every burger you cook gets the same confident, repeatable seasoning." },
+      { image: assets.seasoningEven, kicker: "TECHNIQUE", title: "Season From a Height", body: "Season from 25–30 cm above the patty. The extra distance scatters the grains into an even, professional coverage instead of concentrated patches. Every square centimetre of surface should carry seasoning — that surface is where the crust forms." },
+      { image: assets.seasoningOneSide, kicker: "TIMING", title: "One Side, Right Before the Pan", body: "Season the first side immediately before it hits the pan, then season the bare top side just before you flip. Salt left sitting on a patty draws moisture to the surface within minutes, and a wet surface steams instead of searing." },
+      { image: assets.seasoningCrust, kicker: "THE PAYOFF", title: "The Seasoned Crust", body: "This is what correct seasoning buys you: a deep mahogany crust where salt, pepper, and paprika have fused with the Maillard browning into a crackling, savoury shell. The interior stays tender and pure — all the seasoning drama happens at the surface." }
     ]
   }
 ];

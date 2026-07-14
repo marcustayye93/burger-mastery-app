@@ -18,5 +18,47 @@ export const assets = {
   sauce: `${RAW}/assembly/BM-ASM-015-even-sauce-coverage-macro.webp`,
   layers: `${RAW}/assembly/BM-ASM-023-clean-layering-macro.webp`,
   cheese: `${RAW}/assembly/BM-ASM-031-melted-cheese-drape-macro.webp`,
-  finished: `${RAW}/assembly/BM-ASM-040-completed-burger-ready.webp`
+  finished: `${RAW}/assembly/BM-ASM-040-completed-burger-ready.webp`,
+
+  // v0.9.0 — Chicken photography
+  meatChickenBreast: `${RAW}/meat/BM-MEAT-CHICKEN-001.webp`,
+  meatChickenGround: `${RAW}/meat/BM-MEAT-CHICKEN-002.webp`,
+  meatChickenFlatlay: `${RAW}/meat/BM-MEAT-CHICKEN-008.webp`,
+  pattyChickenRaw: `${RAW}/patty/BM-MEAT-CHICKEN-003.webp`,
+  cookingChickenSkillet: `${RAW}/cooking/BM-MEAT-CHICKEN-004.webp`,
+  cookingChickenSeasoning: `${RAW}/cooking/BM-MEAT-CHICKEN-007.webp`,
+  heroChicken: `${RAW}/heroes/BM-MEAT-CHICKEN-005.webp`,
+  xsecChicken: `${RAW}/cross-sections/BM-MEAT-CHICKEN-006.webp`,
+
+  // v0.9.0 — Onion states
+  onionDice: `${RAW}/flavours/BM-ONION-001.webp`,
+  onionSlices: `${RAW}/flavours/BM-ONION-002.webp`,
+  onionSweating: `${RAW}/flavours/BM-ONION-003.webp`,
+  onionMidCaramel: `${RAW}/flavours/BM-ONION-004.webp`,
+  onionFullCaramel: `${RAW}/flavours/BM-ONION-005.webp`,
+  onionGrated: `${RAW}/flavours/BM-ONION-006.webp`,
+
+  // v0.9.0 — Garlic forms
+  garlicCloves: `${RAW}/flavours/BM-GARLIC-001.webp`,
+  garlicMinced: `${RAW}/flavours/BM-GARLIC-002.webp`,
+  garlicPowder: `${RAW}/flavours/BM-GARLIC-003.webp`,
+  garlicRoasted: `${RAW}/flavours/BM-GARLIC-004.webp`,
+  garlicInMeat: `${RAW}/flavours/BM-GARLIC-005.webp`,
+
+  // v0.9.0 — Seasoning
+  seasoningSalt: `${RAW}/flavours/BM-SEASONING-001.webp`,
+  seasoningPepper: `${RAW}/flavours/BM-SEASONING-002.webp`,
+  seasoningPaprika: `${RAW}/flavours/BM-SEASONING-003.webp`,
+  seasoningBlend: `${RAW}/flavours/BM-SEASONING-004.webp`,
+  seasoningEven: `${RAW}/flavours/BM-SEASONING-005.webp`,
+  seasoningOneSide: `${RAW}/flavours/BM-SEASONING-006.webp`,
+  seasoningCrust: `${RAW}/flavours/BM-SEASONING-007.webp`,
+
+  // v0.9.0 — Pairing heroes
+  heroBeefPairing: `${RAW}/heroes/BM-HERO-BEEF-PAIRING-001.webp`,
+  heroPorkPairing: `${RAW}/heroes/BM-HERO-PORK-PAIRING-001.webp`,
+  heroLambPairing: `${RAW}/heroes/BM-HERO-LAMB-PAIRING-001.webp`,
+  heroChickenPairing: `${RAW}/heroes/BM-HERO-CHICKEN-PAIRING-001.webp`,
+  heroBeefPorkPairing: `${RAW}/heroes/BM-HERO-BEEFPORK-PAIRING-001.webp`,
+  heroBeefLambPairing: `${RAW}/heroes/BM-HERO-BEEFLAMB-PAIRING-001.webp`
 };
