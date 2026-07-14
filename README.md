@@ -1,12 +1,13 @@
-# Burger Mastery v0.5.0
+# Burger Mastery v0.6.0
 
-Sprint 5 adds six Signature Recipes and a reusable 9:16 cook-along recipe engine.
+Sprint 6 connects Learn, Recipes, Builder and Lab into one guided journey.
 
 ## Included
-- Six recipe cards across Classics, High Protein, Lower Calorie and Flavour Forward
-- First slide with ingredients, flavour, texture and estimated macros
-- Tap-right/tap-left and horizontal swipe navigation
-- Continuous step flow from preparation to assembly
-- Recipe completion saved to Burger Lab
-- Completed recipe automatically loaded into Burger Builder for adaptation
-- Sprints 1–4 preserved
+- Unified mastery progress
+- Four live Builder challenges
+- Builder validation
+- Signature Recipe adaptations
+- Activity dashboard
+- Favourite and personal-best builds
+
+Existing Sprint 1–5 features remain in place.
