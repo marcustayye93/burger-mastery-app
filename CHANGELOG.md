@@ -1,10 +1,10 @@
 # Changelog
 
-## v0.4.0 — Sprint 4
-- Added live explanations for ingredient and dimension changes
-- Added raw-input and estimated cooked nutrition views
-- Added modeled cooked patty yield and fat loss
-- Added current-versus-saved build comparison
-- Added ingredient detail sheets for meat, cheese, bun and sauce
-- Improved Builder feedback and small-screen presentation
-- Preserved continuous Burger Essentials flow and Burger Lab saving
+## v0.5.0 — Sprint 5
+- Added Signature Recipe collection
+- Added reusable 9:16 cook-along story engine
+- Added overview slides with ingredients, flavour, texture and macros
+- Added six complete recipe flows
+- Added completed recipes to Burger Lab
+- Added recipe-to-Builder handoff
+- Preserved Sprints 1–4 functionality
