@@ -1,258 +1,51 @@
+import {assets} from "./assets.js";
+import {courses,lessonSequence} from "./data.js";
+import {builderCatalogue,defaultBuild} from "./builder-data.js";
 
-import { assets } from "./assets.js";
-import { courses, storySlides, lessonSequence } from "./data.js";
+const app=document.querySelector("#app"), title=document.querySelector("#pageTitle");
+const nav=[...document.querySelectorAll(".nav-item")];
+const stored=JSON.parse(localStorage.getItem("bm-state")||"{}");
+const state={route:stored.route||"home",theme:stored.theme||"dark",completed:stored.completed||["meat"],storyIndex:Number.isInteger(stored.storyIndex)?stored.storyIndex:0,maxStoryIndex:Number.isInteger(stored.maxStoryIndex)?stored.maxStoryIndex:0,builder:{...defaultBuild,...(stored.builder||{})},savedBuilds:Array.isArray(stored.savedBuilds)?stored.savedBuilds:[]};
+document.documentElement.dataset.theme=state.theme;
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+const save=()=>localStorage.setItem("bm-state",JSON.stringify(state));
+const img=(src,alt="",eager=false)=>`<img src="${src}" alt="${esc(alt)}" loading="${eager?"eager":"lazy"}" decoding="async" ${eager?'fetchpriority="high"':""} onerror="this.replaceWith(document.querySelector('#imageFallback').content.cloneNode(true))">`;
+const byId=(a,id)=>a.find(x=>x.id===id)||a[0], clamp=(n,a,b)=>Math.max(a,Math.min(b,n)), rnd=(n,d=0)=>Math.round(n*10**d)/10**d;
 
-const app = document.querySelector("#app");
-const title = document.querySelector("#pageTitle");
-const nav = [...document.querySelectorAll(".nav-item")];
-const state = JSON.parse(localStorage.getItem("bm-state") || '{"route":"home","theme":"dark","completed":["meat"]}');
-if (typeof state.storyIndex !== "number") state.storyIndex = 0;
-if (typeof state.maxStoryIndex !== "number") state.maxStoryIndex = state.storyIndex;
-document.documentElement.dataset.theme = state.theme || "dark";
-
-function save(){ localStorage.setItem("bm-state", JSON.stringify(state)); }
-function img(src, alt="", cls="", eager=false){
-  return `<img class="${cls}" src="${src}" alt="${alt}" loading="${eager?"eager":"lazy"}" decoding="async" fetchpriority="${eager?"high":"auto"}" onerror="this.replaceWith(document.querySelector('#imageFallback').content.cloneNode(true))">`;
+function calc(){
+ const b=state.builder,m=byId(builderCatalogue.meats,b.meat),c=byId(builderCatalogue.cheeses,b.cheese),bun=byId(builderCatalogue.buns,b.bun),s=byId(builderCatalogue.sauces,b.sauce),t=builderCatalogue.toppings[b.toppings]||builderCatalogue.toppings.standard,f=b.weight/100;
+ const calories=m.kcal100*f+c.kcal+bun.kcal+s.kcal+t.kcal,protein=m.protein100*f+c.protein+bun.protein+s.protein+t.protein,fat=m.fat100*f+c.fat+bun.fat+s.fat+t.fat,carbs=m.carbs100*f+c.carbs+bun.carbs+s.carbs+t.carbs;
+ const td=Number(b.thickness)-16,scores={juiciness:clamp(Math.round(m.scores.juiciness+clamp(td*.75,-8,10)+s.moisture*.6),0,100),tenderness:clamp(Math.round(m.scores.tenderness-Math.max(td,0)*.25),0,100),beefiness:m.scores.beefiness,richness:clamp(Math.round(m.scores.richness+c.richness+s.moisture*.25),0,100),crust:clamp(Math.round(m.scores.crust+clamp(-td*1.2,-15,16)),0,100),structure:clamp(Math.round(m.scores.structure+bun.structure+c.structure-s.moisture*.45),0,100)};
+ return {m,c,bun,s,calories:rnd(calories),protein:rnd(protein,1),fat:rnd(fat,1),carbs:rnd(carbs,1),density:rnd(protein/calories*100,1),scores,overall:Math.round(Object.values(scores).reduce((a,b)=>a+b,0)/6)};
 }
-function route(name){
-  state.route=name; save();
-  nav.forEach(b=>{const active=b.dataset.route===name;b.classList.toggle("active",active);b.toggleAttribute("aria-current",active)});
-  title.textContent={home:"Home",builder:"Builder",learn:"Burger Essentials",lab:"Burger Lab",profile:"You"}[name];
-  render();
-  window.scrollTo({top:0,behavior:"instant"});
-  app.focus({preventScroll:true});
+function recs(r){
+ const out=[]; if(r.density<8.5&&state.builder.meat!=="beef90")out.push(["Higher protein","Switch to 90/10 beef and protect moisture with gentle handling."]);
+ if(r.calories>650&&state.builder.bun!=="thin")out.push(["Lower calories","A thin wholemeal bun reduces calories without changing the patty."]);
+ if(r.scores.juiciness<78&&state.builder.sauce!=="yoghurt")out.push(["More moisture","Greek-yoghurt sauce adds moisture and acidity for relatively few calories."]);
+ if(state.builder.thickness>20)out.push(["Cooking","This thick patty needs gentler heat after searing and a thermometer."]);
+ return out.length?out.slice(0,2):[["Balanced build","This is a strong balance of protein, moisture and structure. Test one change at a time."]];
 }
-function home(){
- return `<div class="home-layout">
-  <section class="hero card">
-    ${img(assets.heroEditorial,"Premium cheeseburger","",true)}
-    <div class="hero-copy">
-      <span class="pill">CONTINUE LEARNING</span>
-      <h2>Build better burgers with intention.</h2>
-      <p>Continue Burger Essentials with patty shaping and texture.</p>
-      <button class="btn btn-secondary" data-go="learn">Continue</button>
-    </div>
-  </section>
-  <div class="side-stack">
-    <section class="section">
-      <div class="section-head"><div><h2>Your progress</h2><p>Understanding, not points</p></div></div>
-      <div class="grid-2">
-        <article class="card metric"><strong>18%</strong><span>overall mastery</span></article>
-        <article class="card metric"><strong>3</strong><span>lessons viewed</span></article>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-head"><div><h2>Featured burger</h2><p>High protein, still moist</p></div></div>
-      <article class="card media-card">
-        ${img(assets.heroHighProtein,"High protein burger")}
-        <div class="media-copy"><h3>High-Protein Classic</h3><p>Approx. 43 g protein · 498 kcal</p><button class="link-btn" data-go="builder">Open builder</button></div>
-      </article>
-    </section>
-    <section class="section">
-      <div class="section-head"><div><h2>Today’s principle</h2><p>Texture begins before cooking</p></div></div>
-      <article class="card media-card">
-        ${img(assets.mixing,"Ground meat being mixed gently")}
-        <div class="media-copy"><h3>Stop mixing sooner</h3><p>Once the blend looks even, further handling mostly increases density.</p><button class="link-btn" data-story="mixing">See visually</button></div>
-      </article>
-    </section>
-  </div>
- </div>`;
-}
-function learn(){
- return `<section class="section">
-  <div class="section-head"><div><h2>Build from the inside out</h2><p>Practical lessons following the real cooking flow</p></div></div>
-  <div class="course-list">
-   ${courses.map((c,i)=>`<article class="card course ${c.progress===100?"done":""}" data-story="${c.id}">
-     ${img(c.image,c.title)}
-     <div class="course-body"><strong>${c.title}</strong><p>${c.subtitle}</p><div class="progress"><i style="width:${c.progress}%"></i></div></div>
-     <span class="course-num">${c.progress===100?"✓":i+1}</span>
-   </article>`).join("")}
-  </div>
- </section>`;
-}
-function builder(){
- return `<section class="hero card" style="min-height:390px">${img(assets.heroSmash,"Smash burger")}
-  <div class="hero-copy"><span class="pill">SPRINT 2 PREVIEW</span><h2>Burger Builder</h2><p>The production shell is ready. Live macros and ingredient controls arrive in Sprint 2.</p></div>
- </section>
- <section class="section"><div class="grid-2">
-  <article class="card metric"><strong>498</strong><span>estimated kcal</span></article>
-  <article class="card metric"><strong>43 g</strong><span>estimated protein</span></article>
- </div></section>`;
-}
-function lab(){
- return `<section class="card empty"><div class="orb">🧪</div><h2>Your experiments will live here.</h2><p>Save Burger Genomes, compare results and track what you change. Lab data entry is scheduled for Sprint 4.</p></section>`;
-}
-function profile(){
- return `<section class="section">
-  <article class="card panel"><p class="eyebrow">CURRENT GOAL</p><h2>High protein, fully satisfying</h2><p>Recommendations will favour leaner patties, moisture-preserving technique and high-impact condiments.</p></article>
- </section>
- <section class="section"><div class="grid-2">
-  <article class="card metric"><strong>18%</strong><span>mastery</span></article>
-  <article class="card metric"><strong>1</strong><span>chapter complete</span></article>
- </div></section>`;
-}
-function render(){
- app.innerHTML = ({home:home(),learn:learn(),builder:builder(),lab:lab(),profile:profile()})[state.route] || home();
-}
+function route(name){state.route=name;save();nav.forEach(b=>{let a=b.dataset.route===name;b.classList.toggle("active",a);b.toggleAttribute("aria-current",a)});title.textContent={home:"Home",builder:"Builder",learn:"Burger Essentials",lab:"Burger Lab",profile:"You"}[name];render();scrollTo({top:0,behavior:"instant"});}
+function summary(){let r=calc();return `<article class="card media-card">${img(assets.heroHighProtein,"Current burger")}<div class="media-copy"><h3>${esc(state.builder.name)}</h3><p>${r.protein} g protein · ${r.calories} kcal</p><button class="link-btn" data-go="builder">Edit build</button></div></article>`}
+function home(){let mastery=Math.round((state.maxStoryIndex+1)/lessonSequence.length*100);return `<div class="home-layout"><section class="hero card">${img(assets.heroEditorial,"Premium cheeseburger",true)}<div class="hero-copy"><span class="pill">CONTINUE LEARNING</span><h2>Build better burgers with intention.</h2><p>Continue Burger Essentials where you stopped.</p><button class="btn btn-secondary" data-resume>Continue</button></div></section><div class="side-stack"><section class="section"><div class="section-head"><div><h2>Your progress</h2><p>Understanding, not points</p></div></div><div class="grid-2"><article class="card metric"><strong>${mastery}%</strong><span>journey viewed</span></article><article class="card metric"><strong>${state.savedBuilds.length}</strong><span>burgers saved</span></article></div></section><section class="section"><div class="section-head"><div><h2>Your current build</h2><p>Live nutrition estimate</p></div></div>${summary()}</section></div></div>`}
+function learn(){return `<section class="section"><div class="section-head"><div><h2>Build from the inside out</h2><p>Tap any chapter or resume the journey</p></div></div><button class="btn btn-primary full-btn" data-resume>Resume · ${state.storyIndex+1} / ${lessonSequence.length}</button><div class="course-list builder-gap">${courses.map((c,i)=>`<article class="card course ${state.completed.includes(c.id)?"done":""}" data-story="${c.id}">${img(c.image,c.title)}<div class="course-body"><strong>${c.title}</strong><p>${c.subtitle}</p><div class="progress"><i style="width:${state.completed.includes(c.id)?100:c.progress}%"></i></div></div><span class="course-num">${state.completed.includes(c.id)?"✓":i+1}</span></article>`).join("")}</div></section>`}
+const opts=(label,key,list)=>`<label class="builder-field"><span>${label}</span><select data-builder="${key}">${list.map(x=>`<option value="${x.id}" ${state.builder[key]===x.id?"selected":""}>${esc(x.label)}</option>`).join("")}</select></label>`;
+const score=(label,v)=>`<div class="score-row"><span>${label}</span><div class="score-track"><i style="width:${v}%"></i></div><strong>${v}</strong></div>`;
+function builder(){let r=calc(),rr=recs(r);return `<section class="builder-preview card">${img(assets.heroHighProtein,"Burger preview",true)}<div class="builder-preview-overlay"><span class="pill">LIVE BUILD</span><h2>${esc(state.builder.name)}</h2><p>${r.m.label} · ${state.builder.weight} g · ${r.c.label}</p></div></section><section class="section builder-shell"><article class="card builder-panel"><div class="builder-title-row"><div><p class="eyebrow">BURGER BUILDER</p><h2>Design the patty first</h2></div><button class="icon-btn" data-reset aria-label="Reset">↺</button></div><label class="builder-field"><span>Build name</span><input data-builder="name" value="${esc(state.builder.name)}" maxlength="36"></label>${opts("Meat blend","meat",builderCatalogue.meats)}<label class="builder-field range-field"><span><b>Patty weight</b><output data-output="weight">${state.builder.weight} g</output></span><input type="range" min="90" max="240" step="10" value="${state.builder.weight}" data-builder="weight"></label><label class="builder-field range-field"><span><b>Thickness</b><output data-output="thickness">${state.builder.thickness} mm</output></span><input type="range" min="6" max="30" value="${state.builder.thickness}" data-builder="thickness"></label>${opts("Cheese","cheese",builderCatalogue.cheeses)}${opts("Bun","bun",builderCatalogue.buns)}${opts("Sauce","sauce",builderCatalogue.sauces)}</article><article class="card nutrition-card"><div class="builder-title-row"><div><p class="eyebrow">ESTIMATED NUTRITION</p><h2><span data-metric="calories">${r.calories}</span> kcal</h2></div><div class="score-badge"><strong data-metric="overall">${r.overall}</strong><span>score</span></div></div><div class="macro-grid"><div><strong data-metric="protein">${r.protein} g</strong><span>protein</span></div><div><strong data-metric="fat">${r.fat} g</strong><span>fat</span></div><div><strong data-metric="carbs">${r.carbs} g</strong><span>carbs</span></div><div><strong data-metric="density">${r.density} g</strong><span>protein / 100 kcal</span></div></div><p class="estimate-note">Estimates vary by brand, raw composition, cooking loss and portion accuracy.</p></article><article class="card score-card"><p class="eyebrow">EATING EXPERIENCE</p>${score("Juiciness",r.scores.juiciness)}${score("Tenderness",r.scores.tenderness)}${score("Beef flavour",r.scores.beefiness)}${score("Richness",r.scores.richness)}${score("Crust potential",r.scores.crust)}${score("Structure",r.scores.structure)}</article><article class="card coach-card"><p class="eyebrow">BURGER COACH</p><div data-recs>${rr.map(x=>`<div class="coach-tip"><strong>${x[0]}</strong><p>${x[1]}</p></div>`).join("")}</div><div class="optimizer-row"><button class="btn btn-secondary" data-opt="protein">Higher protein</button><button class="btn btn-secondary" data-opt="calories">Lower calories</button><button class="btn btn-secondary" data-opt="moisture">More moisture</button></div></article><button class="btn btn-primary full-btn" data-save>Save to Burger Lab</button></section>${saved()}`}
+function saved(){return state.savedBuilds.length?`<section class="section"><div class="section-head"><div><h2>Saved builds</h2><p>Tap to restore</p></div></div><div class="saved-builds">${state.savedBuilds.slice().reverse().map(b=>`<button class="card saved-build" data-load="${b.id}"><span><strong>${esc(b.name)}</strong><small>${b.result.protein} g protein · ${b.result.calories} kcal</small></span><b>Open</b></button>`).join("")}</div></section>`:""}
+function lab(){return state.savedBuilds.length?`<section class="section"><div class="section-head"><div><h2>Saved Burger Genomes</h2><p>${state.savedBuilds.length} experiments</p></div></div><div class="saved-builds">${state.savedBuilds.slice().reverse().map(b=>`<article class="card lab-build"><div><p class="eyebrow">${new Date(b.savedAt).toLocaleDateString()}</p><h3>${esc(b.name)}</h3><p>${esc(b.result.meat)} · ${b.build.weight} g · ${esc(b.result.cheese)}</p></div><div class="lab-macros"><strong>${b.result.protein} g</strong><span>protein</span><strong>${b.result.calories}</strong><span>kcal</span></div><button class="link-btn" data-load="${b.id}">Edit build</button></article>`).join("")}</div></section>`:`<section class="card empty"><div class="orb">🧪</div><h2>Your experiments will live here.</h2><p>Build a burger, save it and return here to compare your decisions.</p><button class="btn btn-primary" data-go="builder">Build your first burger</button></section>`}
+function profile(){let r=calc();return `<section class="section"><article class="card panel"><p class="eyebrow">CURRENT BUILD</p><h2>${esc(state.builder.name)}</h2><p>${r.m.note}</p></article></section><section class="section"><div class="grid-2"><article class="card metric"><strong>${state.savedBuilds.length}</strong><span>saved builds</span></article><article class="card metric"><strong>${r.density}</strong><span>protein / 100 kcal</span></article></div></section>`}
+function render(){app.innerHTML=({home:home(),learn:learn(),builder:builder(),lab:lab(),profile:profile()})[state.route]||home()}
+function update(){let r=calc(),rr=recs(r),set=(k,v)=>{let e=$(`[data-metric="${k}"]`);if(e)e.textContent=v};set("calories",r.calories);set("protein",`${r.protein} g`);set("fat",`${r.fat} g`);set("carbs",`${r.carbs} g`);set("density",`${r.density} g`);set("overall",r.overall);Object.values(r.scores).forEach((v,i)=>{let row=$$(".score-row")[i];if(row){$("i",row).style.width=`${v}%`;$("strong",row).textContent=v}});let rec=$("[data-recs]");if(rec)rec.innerHTML=rr.map(x=>`<div class="coach-tip"><strong>${x[0]}</strong><p>${x[1]}</p></div>`).join("");let w=$('[data-output="weight"]'),t=$('[data-output="thickness"]');if(w)w.textContent=`${state.builder.weight} g`;if(t)t.textContent=`${state.builder.thickness} mm`;let h=$(".builder-preview-overlay h2"),p=$(".builder-preview-overlay p");if(h)h.textContent=state.builder.name;if(p)p.textContent=`${r.m.label} · ${state.builder.weight} g · ${r.c.label}`}
+function optimize(t){if(t==="protein")Object.assign(state.builder,{meat:"beef90",cheese:"lightcheddar",bun:"thin",sauce:"yoghurt"});if(t==="calories")Object.assign(state.builder,{meat:"beef90",weight:Math.min(state.builder.weight,140),cheese:"none",bun:"lettuce",sauce:"mustard"});if(t==="moisture")Object.assign(state.builder,{meat:state.builder.meat==="beef90"?"beef85":state.builder.meat,sauce:"yoghurt",thickness:Math.max(state.builder.thickness,16)});save();render()}
+function saveBuild(){let r=calc(),item={id:`build-${Date.now()}`,name:state.builder.name||"Untitled Burger",savedAt:new Date().toISOString(),build:{...state.builder},result:{calories:r.calories,protein:r.protein,fat:r.fat,carbs:r.carbs,overall:r.overall,meat:r.m.label,cheese:r.c.label}};state.savedBuilds.push(item);save();render()}
+function loadBuild(id){let b=state.savedBuilds.find(x=>x.id===id);if(b){state.builder={...b.build};save();route("builder")}}
 
-/* ================= Continuous story viewer (Sprint 2) ================= */
-
-const preloaded = new Set();
-function preload(i){
-  const s = lessonSequence[i];
-  if (!s || preloaded.has(s.image)) return;
-  const im = new Image();
-  im.decoding = "async";
-  im.src = s.image;
-  preloaded.add(s.image);
-}
-function preloadAround(i){ preload(i); preload(i+1); preload(i+2); preload(i-1); }
-
-function firstIndexOfSection(sectionId){
-  const i = lessonSequence.findIndex(s => s.sectionId === sectionId);
-  return i < 0 ? 0 : i;
-}
-function markSectionsCompletedUpTo(index){
-  // A section is complete once its final slide has been passed.
-  const seen = {};
-  lessonSequence.forEach((s, i) => { seen[s.sectionId] = i; });
-  Object.entries(seen).forEach(([id, last]) => {
-    if (index > last && !state.completed.includes(id)) state.completed.push(id);
-  });
-}
-
-function openStory(startSectionId){
-  const total = lessonSequence.length;
-  if (!total) return;
-
-  // Restore the user's position. Opening a specific section jumps to that
-  // section's first slide unless they were already inside it.
-  let index = Math.min(state.storyIndex || 0, total - 1);
-  if (startSectionId){
-    const first = firstIndexOfSection(startSectionId);
-    if (lessonSequence[index].sectionId !== startSectionId) index = first;
-  }
-
-  let lastNav = 0;                 // debounce rapid taps
-  let bannerTimer = null;
-  const story = document.createElement("section");
-  story.className = "story";
-  story.setAttribute("role", "dialog");
-  story.setAttribute("aria-label", "Burger Essentials lessons");
-
-  const close = () => {
-    state.storyIndex = index;
-    state.maxStoryIndex = Math.max(state.maxStoryIndex || 0, index);
-    save();
-    story.remove();
-    render();
-  };
-
-  const showBanner = (text) => {
-    const el = story.querySelector(".story-banner");
-    if (!el) return;
-    el.textContent = text;
-    el.classList.add("show");
-    clearTimeout(bannerTimer);
-    bannerTimer = setTimeout(() => el.classList.remove("show"), 1400);
-  };
-
-  const draw = (sectionChanged=false) => {
-    const s = lessonSequence[index];
-    const journeyPct = Math.round(((index + 1) / total) * 100);
-    story.innerHTML = `
-      <div class="story-progress" aria-hidden="true">${lessonSequence.map((_,i)=>`<i class="${i<=index?"active":""}"></i>`).join("")}</div>
-      <div class="story-meta"><span>${s.sectionTitle}</span><span>${index+1} / ${total} · ${journeyPct}%</span></div>
-      <button class="story-close" aria-label="Close lessons">×</button>
-      <div class="story-slide">
-        ${img(s.image, s.title, "", true)}
-        <div class="story-banner" aria-hidden="true"></div>
-        <div class="story-content"><p class="eyebrow" style="color:#fff">${s.kicker}</p><h2>${s.title}</h2><p>${s.body}</p></div>
-        <div class="story-tap"><button aria-label="Previous slide"></button><button aria-label="Next slide"></button></div>
-      </div>`;
-    story.querySelector(".story-close").onclick = close;
-    const [prevBtn, nextBtn] = story.querySelectorAll(".story-tap button");
-    prevBtn.onclick = () => go(-1);
-    nextBtn.onclick = () => go(1);
-    if (sectionChanged) showBanner(s.sectionTitle);
-    preloadAround(index);
-    state.storyIndex = index;
-    state.maxStoryIndex = Math.max(state.maxStoryIndex || 0, index);
-    markSectionsCompletedUpTo(index);
-    save();
-  };
-
-  const go = (dir) => {
-    const now = Date.now();
-    if (now - lastNav < 250) return;   // prevent accidental double navigation
-    lastNav = now;
-    if (dir > 0){
-      if (index === total - 1){
-        markSectionsCompletedUpTo(total);   // journey complete
-        state.storyIndex = 0;               // next visit starts fresh
-        save();
-        story.remove();
-        render();
-        return;
-      }
-      const from = lessonSequence[index].sectionId;
-      index++;
-      draw(lessonSequence[index].sectionId !== from);
-    } else {
-      if (index === 0) return;
-      const from = lessonSequence[index].sectionId;
-      index--;
-      draw(lessonSequence[index].sectionId !== from);
-    }
-  };
-
-  // Horizontal swipe navigation + reliable downward-swipe exit.
-  let sx=0, sy=0, st=0, tracking=false;
-  story.addEventListener("touchstart", e => {
-    if (e.touches.length !== 1) { tracking=false; return; }
-    tracking = true;
-    sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
-  }, {passive:true});
-  story.addEventListener("touchend", e => {
-    if (!tracking) return;
-    tracking = false;
-    const dx = e.changedTouches[0].clientX - sx;
-    const dy = e.changedTouches[0].clientY - sy;
-    const dt = Date.now() - st;
-    const ax = Math.abs(dx), ay = Math.abs(dy);
-    if (dt > 800) return;
-    if (ax > 48 && ax > ay * 1.4){            // horizontal swipe
-      go(dx < 0 ? 1 : -1);
-    } else if (dy > 90 && ay > ax * 1.6){     // clear downward swipe exits
-      close();
-    }
-  }, {passive:true});
-
-  // Keyboard support for testing and accessibility.
-  const onKey = (e) => {
-    if (e.key === "ArrowRight") go(1);
-    else if (e.key === "ArrowLeft") go(-1);
-    else if (e.key === "Escape") close();
-  };
-  document.addEventListener("keydown", onKey);
-  const origRemove = story.remove.bind(story);
-  story.remove = () => { document.removeEventListener("keydown", onKey); clearTimeout(bannerTimer); origRemove(); };
-
-  document.body.appendChild(story);
-  draw();
-}
-
-document.addEventListener("click",e=>{
- const go=e.target.closest("[data-go]"); if(go) route(go.dataset.go);
- const story=e.target.closest("[data-story]"); if(story) openStory(story.dataset.story);
- const n=e.target.closest(".nav-item"); if(n) route(n.dataset.route);
-});
-document.querySelector("#themeToggle").onclick=()=>{
- state.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";
- document.documentElement.dataset.theme=state.theme;save();
-};
-if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
-route(state.route || "home");
-// Warm the cache for the first lessons so the story opens instantly.
-if ("requestIdleCallback" in window) requestIdleCallback(() => preloadAround(state.storyIndex || 0));
-else setTimeout(() => preloadAround(state.storyIndex || 0), 1200);
+const preloaded=new Set();function preload(i){let s=lessonSequence[i];if(!s||preloaded.has(s.image))return;let im=new Image();im.src=s.image;preloaded.add(s.image)}function preloadAround(i){[i-1,i,i+1,i+2].forEach(preload)}
+function openStory(section,resume=false){let total=lessonSequence.length,index=resume?Math.min(state.storyIndex,total-1):Math.max(0,lessonSequence.findIndex(x=>x.sectionId===section)),last=0,sx=0,sy=0,st=0,tracking=false,bannerTimer;let story=document.createElement("section");story.className="story";let close=()=>{state.storyIndex=index;state.maxStoryIndex=Math.max(state.maxStoryIndex,index);save();story.remove();render()};let draw=(changed=false)=>{let s=lessonSequence[index],pct=Math.round((index+1)/total*100);story.innerHTML=`<div class="story-progress">${lessonSequence.map((_,i)=>`<i class="${i<=index?"active":""}"></i>`).join("")}</div><div class="story-meta">${esc(s.sectionTitle)} · ${index+1} / ${total} · ${pct}%</div><div class="story-banner ${changed?"show":""}">${esc(s.sectionTitle)}</div><button class="story-close">×</button><div class="story-slide">${img(s.image,s.title,true)}<div class="story-content"><p class="eyebrow" style="color:#fff">${esc(s.kicker)}</p><h2>${esc(s.title)}</h2><p>${esc(s.body)}</p></div><div class="story-tap"><button></button><button></button></div></div>`;$(".story-close",story).onclick=close;let [a,b]=$$(".story-tap button",story);a.onclick=()=>go(-1);b.onclick=()=>go(1);if(changed){clearTimeout(bannerTimer);bannerTimer=setTimeout(()=>$(".story-banner",story)?.classList.remove("show"),1400)}preloadAround(index);state.storyIndex=index;state.maxStoryIndex=Math.max(state.maxStoryIndex,index);save()};let go=d=>{let n=Date.now();if(n-last<250)return;last=n;if(d>0){if(index===total-1){state.storyIndex=0;state.completed=courses.map(x=>x.id);save();story.remove();render();return}let from=lessonSequence[index].sectionId;index++;draw(lessonSequence[index].sectionId!==from)}else if(index>0){let from=lessonSequence[index].sectionId;index--;draw(lessonSequence[index].sectionId!==from)}};story.addEventListener("touchstart",e=>{if(e.touches.length!==1)return;tracking=true;sx=e.touches[0].clientX;sy=e.touches[0].clientY;st=Date.now()},{passive:true});story.addEventListener("touchend",e=>{if(!tracking)return;tracking=false;let dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy,dt=Date.now()-st;if(dt<800&&Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.4)go(dx<0?1:-1);else if(dt<800&&dy>90&&Math.abs(dy)>Math.abs(dx)*1.6)close()},{passive:true});document.body.appendChild(story);draw()}
+document.addEventListener("input",e=>{let c=e.target.closest("[data-builder]");if(!c)return;state.builder[c.dataset.builder]=c.type==="range"?Number(c.value):c.value;save();requestAnimationFrame(update)});
+document.addEventListener("click",e=>{let g=e.target.closest("[data-go]");if(g)route(g.dataset.go);let n=e.target.closest(".nav-item");if(n)route(n.dataset.route);let s=e.target.closest("[data-story]");if(s)openStory(s.dataset.story);if(e.target.closest("[data-resume]"))openStory(null,true);let o=e.target.closest("[data-opt]");if(o)optimize(o.dataset.opt);if(e.target.closest("[data-reset]")){state.builder={...defaultBuild};save();render()}if(e.target.closest("[data-save]"))saveBuild();let l=e.target.closest("[data-load]");if(l)loadBuild(l.dataset.load)});
+document.querySelector("#themeToggle").onclick=()=>{state.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=state.theme;save()};
+if("serviceWorker" in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
+route(state.route);setTimeout(()=>preloadAround(state.storyIndex),900);
