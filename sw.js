@@ -1,4 +1,4 @@
-const VERSION = "v1.1.0";
+const VERSION = "v1.1.1";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
 const IMG_CACHE = `burger-mastery-img-${VERSION}`;
 const IMG_LIMIT = 120;

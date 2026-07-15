@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.1 — Feedback fixes: 2-second tap hint, Builder reordered
+Direct response to user feedback from device screenshots.
+
+- **Tap hint now blinks for 2 seconds only.** The "Tap right to continue · tap left to go back" pill appears once on the first story a user opens, pulses for 2 seconds, then fades out on its own. It no longer lingers over the slide text or waits for three taps to dismiss.
+- **Builder tab reordered around the live build.** "My Burger" (live-build hero, patty designer, aromatics, nutrition, insight, coach, challenges, compare) now sits at the top of the Builder; "Adapt a Signature Recipe" follows; the "Signature recipes" catalogue moves to the bottom. The customer who comes to mix gets the mixing controls first.
+- Service worker cache bumped to v1.1.1.
+
 ## v1.1.0 — Stage 1: Reactive Teaching in the Builder
 The Builder now teaches flavour cause-and-effect. First release of the "reactive teaching" roadmap agreed after the chef/UX persona review.
 
