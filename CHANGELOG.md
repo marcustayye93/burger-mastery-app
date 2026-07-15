@@ -1,5 +1,44 @@
 # Changelog
 
+## v1.0.0-rc2 — Release-Candidate Remediation Sprint
+Every change in this release maps to an approved issue in the RC2 remediation register. No new features, recipes or curriculum categories were added.
+
+### Critical
+- **RC2-C01** — Bottom navigation grid corrected from five to six columns; all six tabs now render in one stable row at 320–768 px with no clipping or wrap
+
+### Major
+- **RC2-M01** — Responsive image delivery: every app-referenced photograph now ships 480 w and 960 w derived variants (in `images/derived/` in the asset repository) served via `srcset`/`sizes`; cards request card-scale sources while heroes and story slides retain full-resolution candidates for high-density displays; lazy loading, async decoding and priority hints unchanged
+- **RC2-M02** — Service worker rewritten: versioned shell and image caches, stale-while-revalidate strategy for immutable image assets with an explicit 120-entry LRU cap, network-first shell with offline fallback, and automatic removal of old cache versions on activation
+- **RC2-M03** — Screen Wake Lock is requested while any story viewer (recipe, Learn, Flavours) is open, released on close or page hide, and safely re-acquired on visibility return; unsupported browsers are unaffected
+- **RC2-M04** — System back now closes the topmost transient layer in order (ingredient sheet → story viewer) via a history-integrated layer stack before leaving the app
+- **RC2-M05** — Per-recipe position persistence: closing a cook-along stores the current step; the recipe overview then offers “Resume step N” and “Start over”; completion clears the stored position; recipe cards show in-progress state
+- **RC2-M06** — Learn completion integrity: chapter completion is now derived from genuinely viewed slides per chapter; finishing the final slide no longer bulk-completes skipped chapters; chapter progress bars reflect actual viewed share; existing legitimate progress is migrated
+- **RC2-M07** — Saved builds can now be renamed and deleted (with confirmation); favourite status, comparison selection and metrics survive renames; deleting a favourite or comparison build reassigns those references safely
+- **RC2-M08** — Challenge cards distinguish historical `ACHIEVED` status from live qualification, with an explicit “current build qualifies / does not qualify yet” line; the misleading permanent `COMPLETED` label is removed
+- **RC2-M09** — Light-theme muted text darkened to meet WCAG AA (≥ 4.5:1) against actual surfaces; dark theme unchanged
+- **RC2-M10** — All primary controls (link buttons, mini buttons, info dots, icon buttons, saved-build actions) now provide at least 44×44 px hit areas via padding or invisible hit regions
+- **RC2-M11** — Valid PNG install icons added (192×192, 512×512, 180×180 apple-touch, maskable 512 with safe-zone padding) and wired into the manifest and page head; SVG retained as a supplementary source
+- **RC2-M12** — Corrected the two verified wrong photographs: the Classic Cheeseburger potato-bun step now uses the toasted potato-bun photograph, and the Beef & Lamb yoghurt-sauce step now uses `BM-COND-008-greek-yoghurt-burger-sauce.webp`
+- **RC2-M13** — Beef & Pork total time corrected to 45 minutes to honestly include the 30–40 minute traditional caramelised-onion step; the quick-onion shortcut is labelled as a separate faster variation
+- **RC2-M14** — Lower Calorie grated onion aligned to the curriculum rule (≈ 5 g well-squeezed per 140 g patty); Learn and Flavours guidance now state compatible per-patty quantities
+- **RC2-M15** — Added a 2-minute rest step to Beef & Pork after reaching 71°C, included in total timing
+- **RC2-M16** — Home now presents the complete six-recipe collection with copy distinguishing cooking a recipe from adapting it in the Builder; blend recipes are no longer discoverable only through Builder
+
+### Minor
+- **RC2-m01** — `½ inch (1.2 cm)` corrected to `½ inch (1.3 cm)`; Builder thickness output now shows millimetres with curriculum-equivalent inches and centimetres
+- **RC2-m02** — Doneness terminology unified: 54°C medium-rare, 57–60°C medium range, 71°C well done / safe target for poultry and pork-containing mince
+- **RC2-m03** — One concise seven-variable timing disclaimer placed consistently in each recipe; individual steps keep practical ranges and cues
+- **RC2-m04** — Back-to-back duplicate Learn images resolved: slide 12 now uses the loose premium grind photograph and slide 17 the ready-for-cooking patty photograph
+- **RC2-m05** — First-time story hint expanded to cover tap right/left and swipe-down or × to close, while remaining brief and self-dismissing
+- **RC2-m06** — Essential 9 px metadata raised for readability, including labels over photography
+- **RC2-m07** — `maximize` corrected to `maximise`; slide-title convention applied consistently
+- **RC2-m08** — Beef & Pork hero replaced with the steakhouse hero so it no longer duplicates the Home hero; the Home current-build card now uses the top-down hero instead of repeating the high-protein hero
+- **RC2-m09** — Adapt-a-Signature module now supports all six recipes
+- **RC2-m10** — Browser theme-colour meta now syncs with the active theme, preventing dark chrome in light mode
+
+### Deferred to v1.1 (per specification)
+- Ingredient/seasoning encyclopedia, new Learn cooking chapter, full asset-library utilisation, analytics, bundler migration and all other items listed in section 4 of the RC2 specification
+
 ## v0.9.0 — Curriculum Expansion & v0.9.0 Photography Library
 - Integrated all 32 new v0.9.0 asset-library photographs: the real chicken series, onion state series, garlic state series, seasoning technique series and six meat-pairing heroes
 - Replaced every chicken stand-in image with dedicated chicken photography

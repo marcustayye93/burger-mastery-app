@@ -60,5 +60,13 @@ export const assets = {
   heroLambPairing: `${RAW}/heroes/BM-HERO-LAMB-PAIRING-001.webp`,
   heroChickenPairing: `${RAW}/heroes/BM-HERO-CHICKEN-PAIRING-001.webp`,
   heroBeefPorkPairing: `${RAW}/heroes/BM-HERO-BEEFPORK-PAIRING-001.webp`,
-  heroBeefLambPairing: `${RAW}/heroes/BM-HERO-BEEFLAMB-PAIRING-001.webp`
+  heroBeefLambPairing: `${RAW}/heroes/BM-HERO-BEEFLAMB-PAIRING-001.webp`,
+
+  // v1.0.0-rc2 — remediation swaps (existing repository assets only)
+  grindLoose: `${RAW}/ingredients/beef/BM-ING-BEEF-007-loose-premium-grind.webp`,
+  pattyReady: `${RAW}/patty/BM-PATTY-008-ready-for-cooking.webp`,
+  heroSteakhouse: `${RAW}/heroes/BM-HERO-ASM-003-steakhouse-burger-hero.webp`,
+  heroTopdown: `${RAW}/heroes/BM-HERO-005-topdown-hero.webp`,
+  bunPotatoToasted: `${RAW}/assembly/BM-ASM-002-toasted-potato-bottom-bun.webp`,
+  yoghurtSauce: `${RAW}/condiments/BM-COND-008-greek-yoghurt-burger-sauce.webp`
 };

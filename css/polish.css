@@ -9,7 +9,7 @@
   --surface-2:#ece8df;
   --surface-raised:#ffffff;
   --text:#171615;
-  --muted:#716d66;
+  --muted:#5d594f;
   --line:rgba(23,22,21,.085);
   --line-strong:rgba(23,22,21,.14);
   --accent:#8f2f24;
@@ -208,7 +208,8 @@ h3{font-weight:720}
 .media-copy h3{font-size:19px;margin-bottom:7px}
 .media-copy p{font-size:13px;line-height:1.45;margin-bottom:11px}
 .link-btn{
-  min-height:40px;
+  min-height:44px;
+  padding:0 4px;
   display:inline-flex;
   align-items:center;
   font-size:13px;
