@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.0.0 — Final Polish Sprint
+A perceived-quality release. No functional behaviour, recipe, curriculum or Builder calculation changed; every modification is visual or motion polish within the approved FP register.
+
+### FP-01 — First-time story interaction
+- Every story (Recipes, Learn, Flavours) now plays a subtle onboarding animation on its opening slide only: a semi-transparent finger illustration in the lower-right of the content performs three gentle tap pulses with an expanding touch ring over ~2 seconds, then fades away smoothly. It never reappears while the story remains open and plays again on the first slide of the next story opened. The existing text hint is retained, and the animation is suppressed entirely under the reduced-motion preference.
+
+### FP-02 — Premium micro-interaction pass
+- Story viewer: slide text fades in with a slight upward motion on every slide; images keep their existing decode fade; progress segments ease between states
+- Progress bars (journey, score tracks, challenge progress) fill with an eased scale-in on paint and animate width changes smoothly
+- Mastery: the overall score badge enters with a gentle ring-scale animation and headline percentages fade in
+- Challenges: qualification and achieved states transition via eased border, background and label colour changes
+- Sheets: the ingredient sheet now closes with a refined 220 ms slide-down and backdrop fade instead of disappearing instantly, including when dismissed with the system back button
+- Navigation, cards and buttons retain their established press-compression, elevation and active-tab easing within the 150–250 ms target band
+- All new motion is wrapped in reduced-motion media queries and respects the user preference
+
+### FP-03 — Branded launch screen
+- A minimalist branded launch screen (“Burger Mastery — Master the craft.”) displays while the application initialises, themed to the user’s stored appearance and respecting safe areas; it dismisses as soon as the first render paints, with a hard 1-second cap and a smooth 400 ms fade into Home — startup is never artificially delayed
+
+### Housekeeping
+- Service worker cache version bumped to v1.0.0 so returning users receive the release immediately; all RC2 functionality (responsive images, Wake Lock, story resume, offline support, layered back behaviour, accessibility) is preserved unchanged
+
 ## v1.0.0-rc2 — Release-Candidate Remediation Sprint
 Every change in this release maps to an approved issue in the RC2 remediation register. No new features, recipes or curriculum categories were added.
 

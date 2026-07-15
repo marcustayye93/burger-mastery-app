@@ -560,3 +560,123 @@ img[data-bm-loaded="true"]{opacity:1;transition:opacity .35s var(--ease-out)}
     transition-duration:.001ms!important;
   }
 }
+
+/* ============ Final Polish Sprint (v1.0.0) ============ */
+
+/* FP-01 — first-slide tap onboarding: subtle finger with 3 tap pulses, ~2s, fades away */
+.tap-intro{
+  position:absolute;z-index:9;
+  right:11%;bottom:32%;
+  pointer-events:none;
+  color:#fff;
+  opacity:.8;
+  transition:opacity .4s var(--ease-out);
+}
+.tap-intro.gone{opacity:0}
+.tap-intro-finger{
+  width:52px;height:52px;
+  display:block;
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.5));
+  transform-origin:40% 22%;
+  animation:bm-intro-tap 2s var(--ease-out) both;
+}
+.tap-intro-ring{
+  position:absolute;
+  top:-4px;left:12px;
+  width:26px;height:26px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.9);
+  opacity:0;
+  animation:bm-intro-ring 2s ease-out both;
+}
+@keyframes bm-intro-tap{
+  0%,100%{transform:scale(1) translateY(0)}
+  12%,44%,76%{transform:scale(.88) translateY(3px)}
+  24%,56%,88%{transform:scale(1) translateY(0)}
+}
+@keyframes bm-intro-ring{
+  0%,32%,64%{transform:scale(.35);opacity:0}
+  12%,44%,76%{transform:scale(.6);opacity:.9}
+  28%,60%,92%{transform:scale(1.55);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .tap-intro{display:none}
+}
+
+/* FP-02 — story text: gentle fade with slight upward motion on each slide */
+@media(prefers-reduced-motion:no-preference){
+  .story-content,.recipe-overview{
+    animation:bm-text-up .32s var(--ease-out) both;
+    animation-delay:.05s;
+  }
+}
+@keyframes bm-text-up{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* FP-02 — progress bars: eased fill on paint */
+@media(prefers-reduced-motion:no-preference){
+  .progress>i,.score-track i,.challenge-progress i{
+    transition:width .4s var(--ease-out);
+    animation:bm-bar-in .5s var(--ease-out) both;
+    transform-origin:left center;
+  }
+}
+@keyframes bm-bar-in{
+  from{transform:scaleX(.4);opacity:.4}
+  to{transform:scaleX(1);opacity:1}
+}
+
+/* FP-02 — mastery ring and headline percentage entrance */
+@media(prefers-reduced-motion:no-preference){
+  .score-badge{animation:bm-ring-in .45s var(--ease-out) both}
+  .dashboard-hero h2,.progress-label strong{animation:bm-fade-in .4s var(--ease-out) both}
+}
+@keyframes bm-ring-in{
+  from{transform:scale(.86);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* FP-02 — challenge qualification-state transitions */
+@media(prefers-reduced-motion:no-preference){
+  .challenge-card{transition:border-color .25s ease,background .25s ease}
+  .challenge-card .eyebrow{transition:color .25s ease}
+}
+
+/* FP-02 — refined sheet close (app.js adds .closing before removal) */
+.modal-backdrop.closing{animation:bm-fade-out .22s ease both}
+.modal-backdrop.closing .detail-sheet{animation:bm-sheet-down .22s var(--ease-out) both}
+@keyframes bm-fade-out{from{opacity:1}to{opacity:0}}
+@keyframes bm-sheet-down{from{transform:translateY(0)}to{transform:translateY(26px)}}
+
+/* FP-03 — branded launch screen */
+#splash{
+  position:fixed;inset:0;z-index:99;
+  display:grid;place-items:center;
+  background:var(--bg);
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  opacity:1;
+  transition:opacity .4s var(--ease-out);
+}
+#splash.leaving{opacity:0;pointer-events:none}
+#splash .splash-inner{text-align:center}
+#splash .splash-title{
+  margin:0;
+  font-size:31px;
+  font-weight:800;
+  letter-spacing:-.045em;
+  color:var(--text);
+}
+#splash .splash-sub{
+  margin:9px 0 0;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+@media(prefers-reduced-motion:no-preference){
+  #splash .splash-title{animation:bm-text-up .5s var(--ease-out) both}
+  #splash .splash-sub{animation:bm-text-up .5s var(--ease-out) .1s both}
+}
