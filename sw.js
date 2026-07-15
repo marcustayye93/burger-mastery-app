@@ -1,8 +1,8 @@
-const VERSION = "v1.1.2";
+const VERSION = "v1.2.0";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
 const IMG_CACHE = `burger-mastery-img-${VERSION}`;
 const IMG_LIMIT = 120;
-const SHELL = ["./", "./index.html", "./css/app.css", "./css/polish.css", "./js/app.js", "./js/polish.js", "./js/assets.js", "./js/data.js", "./js/builder-data.js", "./js/recipes-data.js", "./js/flavours-data.js", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon.png"];
+const SHELL = ["./", "./index.html", "./css/app.css", "./css/polish.css", "./js/app.js", "./js/polish.js", "./js/cook-build.js", "./js/assets.js", "./js/data.js", "./js/builder-data.js", "./js/recipes-data.js", "./js/flavours-data.js", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(SHELL_CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

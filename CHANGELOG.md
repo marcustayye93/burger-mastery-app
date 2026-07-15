@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.2.0 — Cook This Build
+The Builder's selections now compile into a personalised, step-by-step cook-along — the same premium story format as the six Signature Recipes, generated live from the user's own build. No new photography: every slide reuses the existing 56-asset library and recipe step imagery.
+
+### The generator (`js/cook-build.js`)
+- **One tap from spec to story.** A new primary "Cook this build" button sits at the end of the Builder's My Burger column. It compiles the current build (meat, weight, thickness, aromatics, seasoning, cheese, bun, sauce, toppings) into a 12–18 step cook-along and opens it in the full story viewer — progress bar, resume, wake lock, back-button layering and swipe gestures all included
+- **Derived sear protocol.** Pan times, flip timing, target temperature and rest duration are computed from the actual build: smash (<10 mm, 60–90 s/side, ripping-hot pan and press technique), fast (10–15 mm), standard (16–20 mm with thumb dimple) and thick (>20 mm, heat drop after the flip, mandatory thermometer, 5-minute rest). Patties of 180 g and over get proportionally longer sides
+- **Meat-aware safety and technique.** Beef-pork builds are steered to a full 71 °C cook with no pink-centre option; beef builds get the 57–60 °C medium window with the fresh-grind 54 °C caveat; beef-lamb builds get lamb-fat serving guidance. Blend-specific handling slides warn against overworking pork and explain lamb's character
+- **Aromatics change the cook, not just the copy.** Grated onion adds squeeze/chill steps (with a firm-squeeze warning at 10 g and +10 s before the first flip); fresh, powder and roasted garlic each get their own prep slide with the correct photograph; roasted garlic trims ~30 s per side because its sugars brown faster; smoked paprika seasoning carries a scorch warning at the pan
+- **Conditional assembly.** Cheese-melt, bun-toast and sauce slides appear only when selected; the lettuce wrap replaces toasting with a dry-and-fold wrap step; Greek-yoghurt sauce is explicitly held until the patty leaves the heat; the stacking order slide adapts to minimal vs standard toppings
+- **Honest numbers.** The overview slide shows the build's own cooked macros from the Builder engine, a derived total time and a derived difficulty rating — the same figures the user just saw in the nutrition card
+
+### Story viewer
+- `openRecipe` refactored into `openRecipeStory(recipe, opts)`, letting generated stories share the exact viewer used by the signature recipes with zero duplication
+- **Custom completion that respects your stats.** Finishing a generated cook-along shows "You cooked your own build." with **Save to Burger Lab** and **Close** — it does not touch the recipe-completion list, mastery percentages or challenge history, and it never overwrites the Builder state the way signature-recipe completion intentionally does
+- Resume works for the generated story; regenerating after changing the build resets its saved position so the story always matches the current spec
+
+### Housekeeping
+- `js/cook-build.js` added to the service-worker shell precache; cache version bumped to v1.2.0 so the cook-along works fully offline once installed
+- No changes to the six signature recipes, Learn, Flavours, or any Builder calculation
+
 ## v1.1.2 — New app icon: Ember Glyph
 Icon redesign selected by the user from five UI-cogent candidates derived from the app's own visual language. No functional changes.
 
