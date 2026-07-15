@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.4.0 — Installability
+Burger Mastery is now explicitly downloadable from inside the app itself — no app store required. A "Get the app" card on the Home and You pages adapts to the visitor's device and drives a real installation.
+
+- **One-tap install on Android and desktop.** The card's Install button triggers the browser's native install prompt directly (captured `beforeinstallprompt`). If the prompt isn't available — already dismissed, or an unsupported browser — a clear manual instruction sheet appears instead
+- **iOS install guide.** iPhones and iPads can't be prompted programmatically, so the card detects iOS and opens a four-step illustrated guide to Safari's Add to Home Screen flow, including the note that browser and installed app share the same data
+- **Share and QR distribution.** A Share button uses the native share sheet (clipboard fallback), and a QR code sheet renders an offline, pre-generated SVG code pointing at the app — scannable from any phone camera for in-person sharing
+- **Installed-state awareness.** When running standalone (already installed), the card switches to a "share it onward" message instead of asking you to install again
+- Service worker bumped to v1.4.0; the two new modules are precached so the install guide and QR work offline
+
 ## v1.3.1 — Fast Photography
 Photos were taking too long to load. The responsive 480px/960px variants have existed in the asset pipeline since RC2, but the heaviest surfaces in the app were still fetching the 1440px originals (250–400 KB each). This release makes every surface fetch the right file — no photo was re-encoded and nothing looks different; it just arrives 3–9x faster.
 
