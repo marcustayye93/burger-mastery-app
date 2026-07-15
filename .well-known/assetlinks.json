@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.github.marcustayye93.burgermastery",
+    "sha256_cert_fingerprints": [
+      "35:2C:F0:BC:D0:A4:A2:62:FD:68:EA:AF:4B:96:6B:32:24:23:4D:3E:8A:AD:4D:84:FF:80:A6:9A:20:66:9E:19"
+    ]
+  }
+}]
