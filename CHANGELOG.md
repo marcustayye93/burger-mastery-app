@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.1 — Fast Photography
+Photos were taking too long to load. The responsive 480px/960px variants have existed in the asset pipeline since RC2, but the heaviest surfaces in the app were still fetching the 1440px originals (250–400 KB each). This release makes every surface fetch the right file — no photo was re-encoded and nothing looks different; it just arrives 3–9x faster.
+
+- **Story slides no longer download 1440px originals.** Full-screen slide images now cap their candidate set at the 960px variant (~130 KB, visually identical at phone and laptop sizes). High-DPI phones previously jumped straight to the heaviest file; small phones now receive the ~43 KB 480px variant
+- **Slide preloading fixed.** The next-two-slides preloader was silently downloading full-resolution originals the browser never displayed — wasted bandwidth competing with the visible photo. It now preloads exactly the variant the renderer will use, sized to the device
+- **Faster first photo.** The page now preconnects to the image CDN during HTML parse, removing ~350 ms of DNS/TLS setup from the first image of a cold visit
+- Applies everywhere: recipe stories, Cook This Build stories, Learn lessons, Flavours and all cards. Service worker bumped to v1.3.1
+
 ## v1.3.0 — Cook-State Awareness
 The recipe story viewer now works with greasy hands. Stories were linear rails — fine for reading, awkward mid-cook. This release adds live timers and direct step navigation to every cook-along, signature and generated alike. No recipe content changed; Learn and Flavours stories are untouched.
 
