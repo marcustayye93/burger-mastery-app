@@ -136,3 +136,16 @@ main{padding:18px 16px 30px}
 .install-note{margin-top:14px;font-size:.9em;opacity:.75}
 .install-qr{display:flex;justify-content:center;padding:8px 0}
 .qr-svg{width:min(240px,70vw);height:auto;border-radius:12px}
+
+/* ===== v1.6.0: clickable cards, challenge sheet, sides ===== */
+.tappable{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.tappable:hover{transform:translateY(-2px)}
+.tappable:active{transform:scale(.985)}
+.tap-more{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--accent,#c4552d);opacity:.9}
+.challenge-sheet .steps-sheet{max-height:78vh}
+.challenge-sheet-sub{padding:4px 2px 10px;opacity:.75;font-size:.9rem;line-height:1.45}
+.challenge-qual{display:flex;flex-direction:column;gap:6px;padding:14px;margin-bottom:10px}
+.challenge-qual h3{margin:0;font-size:1.02rem}
+.challenge-qual p{margin:0;font-size:.85rem;opacity:.8;line-height:1.4}
+.challenge-qual .link-btn{align-self:flex-start;margin-top:4px}
+.challenge-qual.empty{text-align:left}

@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.6.0 — Clarity & Condiments
+A release shaped directly by user feedback: clearer Home page language, tappable cards that were expected to be tappable, and a brand-new Condiments & Sides recipe collection.
+
+### Home page clarity
+- **Directive hero copy.** "One clear next step." replaced with stage-aware instructions that say exactly what to do next — "Continue your lesson.", "Cook your first burger.", "Design your own burger." or "Take on a challenge." — each with a matching action button
+- **The mastery card is now tappable.** Tapping "Overall mastery" opens the full breakdown on the You page, with a visible "View full breakdown" hint
+- **"Current build" renamed "Your burger in the Builder"** with a clearer subtitle, so it is obvious this card shows the burger being designed in the Builder tab
+- **The "Get the app" card moved to the bottom of Home**, below the content that matters day-to-day
+
+### Clickable guided challenges
+- **Tap any challenge card** to open a sheet showing exactly which burgers achieved it: the current Builder burger and every saved build are re-evaluated live against the challenge rules, each listed with its macros and scores and an Open button
+- Works retroactively — builds saved before this release are evaluated too
+- Clear empty state explains how to qualify when no build has met the challenge yet
+
+### Condiments & Sides — a new collection
+- **Six new cook-along recipes** in the same story format: Caramelised Onions, Classic Burger Sauce, Chili con Carne, Baked Garlic, Quick Pickles, and Garlic-Yoghurt Sauce
+- Each teaches the technique, not just the steps — why onions need 40 minutes, why spices bloom in fat, why grated garlic beats chopped, why burgers need acid
+- New dark-editorial photography for all six, generated to match the app's visual language, with fast-loading responsive variants
+- Completing a side is tracked separately ("sides & condiments" metric on the You page) and never affects recipe stats
+- Service worker bumped to v1.6.0
+
 ## v1.5.0 — Meat Blends & Lasting Photos
 Two improvements in one release: the guided lesson now teaches meat blending visually, and photos no longer feel slow after app updates.
 
