@@ -149,3 +149,25 @@ main{padding:18px 16px 30px}
 .challenge-qual p{margin:0;font-size:.85rem;opacity:.8;line-height:1.4}
 .challenge-qual .link-btn{align-self:flex-start;margin-top:4px}
 .challenge-qual.empty{text-align:left}
+
+/* v2.0.0 — Meat Mastery discipline chooser & header chip */
+.discipline-chip{display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:0;cursor:pointer;text-align:left}
+.discipline-chip::after{content:"›";font-size:12px;letter-spacing:0;transform:translateY(-1px);opacity:.7}
+.discipline-chip:active{opacity:.7}
+.chooser-overlay{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(9,10,11,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity .28s ease}
+.chooser-overlay.open{opacity:1}
+.chooser-inner{width:100%;max-width:560px;max-height:calc(100dvh - 44px);overflow-y:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px 22px 22px;text-align:center;transform:translateY(14px) scale(.98);transition:transform .28s ease}
+.chooser-overlay.open .chooser-inner{transform:none}
+.chooser-inner h2{margin:2px 0 6px;font-size:24px;letter-spacing:-.02em}
+.chooser-sub{margin:0 0 18px;color:var(--muted);font-size:14px}
+.chooser-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chooser-card{position:relative;display:block;padding:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-2);cursor:pointer;aspect-ratio:3/4;transition:transform .18s ease,box-shadow .18s ease}
+.chooser-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.chooser-card:active{transform:scale(.98)}
+.chooser-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.chooser-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.78) 100%)}
+.chooser-label{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;flex-direction:column;gap:2px;padding:14px;color:#fff;text-align:left}
+.chooser-label strong{font-size:19px;letter-spacing:-.01em}
+.chooser-label small{font-size:12px;opacity:.85}
+.chooser-close{margin-top:16px;color:var(--muted)}
+@media (max-width:420px){.chooser-inner{padding:22px 16px 18px}.chooser-inner h2{font-size:21px}}

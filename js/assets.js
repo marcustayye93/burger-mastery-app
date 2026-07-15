@@ -68,5 +68,9 @@ export const assets = {
   heroSteakhouse: `${RAW}/heroes/BM-HERO-ASM-003-steakhouse-burger-hero.webp`,
   heroTopdown: `${RAW}/heroes/BM-HERO-005-topdown-hero.webp`,
   bunPotatoToasted: `${RAW}/assembly/BM-ASM-002-toasted-potato-bottom-bun.webp`,
-  yoghurtSauce: `${RAW}/condiments/BM-COND-008-greek-yoghurt-burger-sauce.webp`
+  yoghurtSauce: `${RAW}/condiments/BM-COND-008-greek-yoghurt-burger-sauce.webp`,
+
+  // v2.0.0 — Meat Mastery discipline imagery
+  heroSteak: `${RAW}/heroes/MM-HERO-STK-001-editorial-beauty-shot.webp`,
+  heroChooserBurger: `${RAW}/heroes/MM-CHOOSER-BURGER-001.webp`
 };

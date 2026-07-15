@@ -1,4 +1,4 @@
-/* Burger Mastery — v1.4.0 Installability
+/* Meat Mastery — Installability (introduced v1.4.0, rebranded v2.0.0)
    In-app install button (Android/desktop via beforeinstallprompt),
    iOS install guide sheet, and share/QR distribution. */
 
@@ -44,7 +44,7 @@ export function installCard() {
     return `<article class="card panel install-card" data-install-card>
       <p class="eyebrow">APP INSTALLED</p>
       <h3>You're running the app</h3>
-      <p>Burger Mastery is installed on this device. Know someone who'd like it? Share it below.</p>
+      <p>Meat Mastery is installed on this device. Know someone who'd like it? Share it below.</p>
       <div class="install-actions">
         <button class="btn btn-secondary" data-share-app>Share the app</button>
         <button class="link-btn" data-show-qr>Show QR code</button>
@@ -55,7 +55,7 @@ export function installCard() {
     return `<article class="card panel install-card" data-install-card>
       <p class="eyebrow">GET THE APP</p>
       <h3>Install on your iPhone</h3>
-      <p>Add Burger Mastery to your Home Screen — it runs full-screen, works offline and keeps all your progress.</p>
+      <p>Add Meat Mastery to your Home Screen — it runs full-screen, works offline and keeps all your progress.</p>
       <div class="install-actions">
         <button class="btn btn-primary" data-ios-guide>Show me how</button>
         <button class="link-btn" data-share-app>Share the app</button>
@@ -64,7 +64,7 @@ export function installCard() {
   }
   return `<article class="card panel install-card" data-install-card>
     <p class="eyebrow">GET THE APP</p>
-    <h3>Install Burger Mastery</h3>
+    <h3>Install Meat Mastery</h3>
     <p>Full-screen, offline-ready, with an icon on your home screen — no app store needed.</p>
     <div class="install-actions">
       <button class="btn btn-primary" data-install-app>${deferredPrompt ? "Install app" : "Install app"}</button>
@@ -100,7 +100,7 @@ function iosGuide() {
       <li><span class="install-step-n">1</span><div><strong>Open in Safari</strong><p>Installation only works from Safari. If you're in another app, open <em>${APP_URL.replace("https://","")}</em> in Safari first.</p></div></li>
       <li><span class="install-step-n">2</span><div><strong>Tap the Share button</strong><p>The square with an arrow pointing up, at the bottom of the screen.</p></div></li>
       <li><span class="install-step-n">3</span><div><strong>Choose "Add to Home Screen"</strong><p>Scroll down the share sheet if you don't see it immediately.</p></div></li>
-      <li><span class="install-step-n">4</span><div><strong>Tap "Add"</strong><p>Burger Mastery appears on your Home Screen and opens full-screen like any app.</p></div></li>
+      <li><span class="install-step-n">4</span><div><strong>Tap "Add"</strong><p>Meat Mastery appears on your Home Screen and opens full-screen like any app.</p></div></li>
     </ol>
     <p class="install-note">Your progress, saved builds and offline photos all carry over — the installed app and the browser share the same data on this device.</p>`);
 }
@@ -113,8 +113,8 @@ function qrSheet() {
 
 async function shareApp() {
   const data = {
-    title: "Burger Mastery",
-    text: "Learn, build and cook better burgers — free app, works offline.",
+    title: "Meat Mastery",
+    text: "Master burgers and steaks — free app, works offline.",
     url: APP_URL
   };
   if (navigator.share) {

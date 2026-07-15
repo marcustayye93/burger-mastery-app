@@ -1,11 +1,11 @@
 {
-  "name": "Burger Mastery",
-  "short_name": "Burger Mastery",
+  "name": "Meat Mastery",
+  "short_name": "Meat Mastery",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#090a0b",
   "theme_color": "#090a0b",
-  "description": "Learn, build and improve better burgers.",
+  "description": "Master burgers and steaks — learn, design and cook better meat.",
   "icons": [
     {
       "src": "./icons/icon-192.png",
