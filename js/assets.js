@@ -72,5 +72,21 @@ export const assets = {
 
   // v2.0.0 — Meat Mastery discipline imagery
   heroSteak: `${RAW}/heroes/MM-HERO-STK-001-editorial-beauty-shot.webp`,
-  heroChooserBurger: `${RAW}/heroes/MM-CHOOSER-BURGER-001.webp`
+  heroChooserBurger: `${RAW}/heroes/MM-CHOOSER-BURGER-001.webp`,
+
+  // v2.0.0 — steak step photography (natural hand-shot set)
+  stkBrine: `${RAW}/steak/MM-STK-PREP-001-dry-brine-rack.webp`,
+  stkMise: `${RAW}/steak/MM-STK-PREP-002-mise-en-place.webp`,
+  stkPanHeat: `${RAW}/steak/MM-STK-COOK-001-pan-heating.webp`,
+  stkPanSear: `${RAW}/steak/MM-STK-COOK-002-pan-sear-flip.webp`,
+  stkBaste: `${RAW}/steak/MM-STK-COOK-003-butter-baste.webp`,
+  stkGrill: `${RAW}/steak/MM-STK-COOK-004-grill-two-zone.webp`,
+  stkOven: `${RAW}/steak/MM-STK-COOK-005-oven-finish.webp`,
+  stkAirfry: `${RAW}/steak/MM-STK-COOK-006-airfryer.webp`,
+  stkReverseRack: `${RAW}/steak/MM-STK-COOK-007-reverse-low-oven.webp`,
+  stkSousvide: `${RAW}/steak/MM-STK-COOK-008-sous-vide-bath.webp`,
+  stkProbe: `${RAW}/steak/MM-STK-COOK-009-probe-pull.webp`,
+  stkRest: `${RAW}/steak/MM-STK-FIN-001-resting-board.webp`,
+  stkButter: `${RAW}/steak/MM-STK-FIN-002-compound-butter.webp`,
+  stkSlice: `${RAW}/steak/MM-STK-FIN-003-sliced-rosy.webp`
 };
