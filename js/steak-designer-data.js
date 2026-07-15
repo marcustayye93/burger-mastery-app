@@ -5,6 +5,8 @@
 // target with thickness-scaled rest; oven-finish +3–5°C carryover; air fry pull
 // 1–2°C shy; reverse sear pull ~10°C below (incl. final sear) and serve
 // immediately; sous vide bath at target with zero carryover.
+// v2.0.4: every thickness shown in cm also carries its inch equivalent.
+export const cmToIn=cm=>{const i=cm/2.54;return (Math.round(i*10)/10).toFixed(1).replace(/\.0$/,"");};
 export const steakCatalogue = {
   cuts: [
     {id:"ribeye",label:"Ribeye",marbling:5,tenderness:4,beefiness:5,priceTier:"Premium",
@@ -44,9 +46,9 @@ export const steakCatalogue = {
       slicing:"Slice with the grain into steaks first, then against the grain to serve (churrasco style)."}
   ],
   thicknesses: [
-    {id:"thin",label:"2.5 cm · fast sear",cm:2.5,restMin:5,note:"Cooks in minutes — continuous flipping keeps the gradient even."},
-    {id:"standard",label:"4 cm · standard",cm:4,restMin:8,note:"The sweet spot: thick enough for a gradient, thin enough for the pan alone."},
-    {id:"thick",label:"5+ cm · showpiece",cm:5.5,restMin:10,note:"Pan alone can't cook this evenly — reverse sear or sous vide territory."}
+    {id:"thin",label:"2.5 cm / 1 in · fast sear",cm:2.5,restMin:5,note:"Cooks in minutes — continuous flipping keeps the gradient even."},
+    {id:"standard",label:"4 cm / 1.6 in · standard",cm:4,restMin:8,note:"The sweet spot: thick enough for a gradient, thin enough for the pan alone."},
+    {id:"thick",label:"5+ cm / 2 in+ · showpiece",cm:5.5,restMin:10,note:"Pan alone can't cook this evenly — reverse sear or sous vide territory."}
   ],
   grades: [
     {id:"standard",label:"Standard",note:"Honest supermarket beef — technique matters more than grade here.",heatNote:""},
@@ -98,7 +100,7 @@ export function steakMetrics(p=defaultProtocol){
   const target=dn.temp;
   // Method-dependent pull temperature (chef-reviewed carryover rules).
   let pull,pullNote,restMin,restNote;
-  if(me.id==="pan"||me.id==="grill"){pull=target-5;pullNote=`Pull at ${pull}°C — a hot-${me.id==="pan"?"pan":"grill"} cook carries +4–6°C through the rest.`;restMin=th.restMin;restNote=`${restMin} minutes under loose foil — scaled to ${th.cm} cm thickness.`;}
+  if(me.id==="pan"||me.id==="grill"){pull=target-5;pullNote=`Pull at ${pull}°C — a hot-${me.id==="pan"?"pan":"grill"} cook carries +4–6°C through the rest.`;restMin=th.restMin;restNote=`${restMin} minutes under loose foil — scaled to ${th.cm} cm (${cmToIn(th.cm)} in) thickness.`;}
   else if(me.id==="oven"){pull=target-4;pullNote=`Pull at ${pull}°C — the gentle oven finish carries +3–5°C.`;restMin=th.restMin;restNote=`${restMin} minutes — the pan sear at the start still banked surface heat.`;}
   else if(me.id==="airfry"){pull=target-2;pullNote=`Pull at ${pull}°C — circulating air leaves almost no carryover, so stay close to target.`;restMin=Math.max(3,th.restMin-3);restNote=`${restMin} minutes — a short rest is enough with so little carryover.`;}
   else if(me.id==="reverse"){pull=target-10;pullNote=`Pull from the oven at ${pull}°C — the ripping final sear supplies the last ~10°C.`;restMin=0;restNote="No post-sear rest — the resting effectively happened before the sear. Slice and serve immediately.";}
@@ -116,8 +118,8 @@ export function steakMetrics(p=defaultProtocol){
   // Honest warnings.
   const warnings=[];
   if(dn.warning)warnings.push([dn.label,dn.warning]);
-  if(cm>=5&&me.id!=="reverse"&&me.id!=="sousvide")warnings.push(["Thickness vs method",`A ${cm} cm cut can't cook evenly with ${me.label.toLowerCase()} alone — the edge overcooks long before the centre arrives. Switch to reverse sear or sous vide.`]);
-  if(cm<=2.5&&me.id==="reverse")warnings.push(["Overkill alert","A 2.5 cm steak overshoots in a low oven within minutes — reverse sear needs 4 cm+. Use a straight pan sear with continuous flips instead."]);
+  if(cm>=5&&me.id!=="reverse"&&me.id!=="sousvide")warnings.push(["Thickness vs method",`A ${cm} cm (${cmToIn(cm)} in) cut can't cook evenly with ${me.label.toLowerCase()} alone — the edge overcooks long before the centre arrives. Switch to reverse sear or sous vide.`]);
+  if(cm<=2.5&&me.id==="reverse")warnings.push(["Overkill alert","A 2.5 cm (1 in) steak overshoots in a low oven within minutes — reverse sear needs 4 cm (1.6 in) or more. Use a straight pan sear with continuous flips instead."]);
   if(cut.id==="filet"&&me.id==="grill")warnings.push(["Cut vs method","Filet is too lean for open flame — it dries at the edges before the crust arrives. Butter-basted pan sear is the classic route."]);
   if(cut.id==="flank"&&(me.id==="reverse"||me.id==="sousvide"))warnings.push(["Cut vs method","Flank is too thin for slow methods — it flies past target. Ripping-hot pan or grill, minutes not hours."]);
   if(gr.id==="wagyu"&&dn.id==="rare")warnings.push(["Wagyu at rare","At 49°C wagyu's signature fat stays waxy and unrendered — its magic starts at medium-rare and peaks at medium."]);
