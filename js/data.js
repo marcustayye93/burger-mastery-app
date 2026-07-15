@@ -1,12 +1,9 @@
 import { assets, RAW } from "./assets.js";
-export const courses=[
-{id:"meat",title:"Choose your meat",subtitle:"Beef, pork, lamb and chicken — taste, pairings and pitfalls",progress:100,image:assets.meatCompare},
-{id:"mixing",title:"Mix without ruining texture",subtitle:"Loose, tender and evenly combined",progress:60,image:assets.mixing},
-{id:"shaping",title:"Shape the patty",subtitle:"Weight, thickness, pressure and dimples",progress:30,image:assets.dimple},
-{id:"seasoning",title:"Season with intention",subtitle:"Salt, pepper, paprika, onion and garlic",progress:0,image:assets.seasoningEven},
-{id:"assembly",title:"Build a burger that holds",subtitle:"Toast, sauce, layering and alignment",progress:0,image:assets.layers}
-];
-export const storySlides={
+import { burgerCourses, burgerLessons } from "./burger-lessons-data.js";
+// v2.5.0: courses now come from burger-lessons-data.js (6 chapters / 32 lessons / 160 slides).
+export const courses=burgerCourses;
+// Legacy v1.x slide bank retained for reference/migration only (no longer rendered).
+const storySlides={
 meat:[
 {image:assets.meatCompare,kicker:"BURGER ESSENTIALS",title:"Choose the flavour base",body:"Every burger decision starts here. Beef gives the familiar burger profile. Pork softens the bite and adds sweetness. Lamb contributes a deeper, aromatic finish. Chicken offers a clean, light canvas. Learn what each brings before you choose."},
 {image:assets.meatBeef,kicker:"BEEF · THE CLASSIC",title:"Beef: rich, savoury, forgiving",body:"Beef tastes deeply savoury and mineral-rich, and it rewards a hard sear. Choose mince with visible fat — around 15–20% — so the rendered fat bastes the patty as it cooks. It is the most forgiving meat for beginners."},
@@ -50,4 +47,18 @@ assembly:[
 {image:assets.cheese,kicker:"CHEESE",title:"Let cheese bind the stack",body:"A complete melt wraps the patty and helps neighbouring layers stay together. Add the slice near the end of cooking and cover briefly — trapped steam does the melting."},
 {image:assets.finished,kicker:"COMPLETE",title:"A burger built to eat",body:"The final test is whether the first and last bite feel equally balanced. If they do, every lesson in this journey just showed up in your hands."}]
 };
-export const lessonSequence=courses.flatMap(c=>(storySlides[c.id]||[]).map((s,i)=>({sectionId:c.id,sectionTitle:c.title,slideId:`${c.id}-${String(i+1).padStart(2,"0")}`,...s})));
+// v2.5.0: The old storySlides and courses arrays are deprecated.
+// The live Learn tab now uses the deep 6-chapter/32-lesson structure from burger-lessons-data.js
+export const lessonSequence = burgerCourses.flatMap(c => 
+  (burgerLessons[c.id] || []).flatMap(lesson => 
+    lesson.slides.map((s, i) => ({
+      sectionId: c.id,
+      sectionTitle: c.title,
+      lessonId: lesson.id,
+      lessonTitle: lesson.title,
+      slideId: `${lesson.id}-${String(i+1).padStart(2,"0")}`,
+      ...s
+    }))
+  )
+);
+export { burgerLessons };
