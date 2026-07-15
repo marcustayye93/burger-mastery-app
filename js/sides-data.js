@@ -89,6 +89,23 @@ steps:[
 {image:S+"BM-SIDE-006-garlic-yoghurt.webp",kicker:"THE GARLIC",title:"Grate, never chop",body:"Grate the garlic clove on a microplane into a paste. Chopped garlic sits in pockets and ambushes single bites; grated garlic dissolves through the whole sauce evenly. One clove is enough — raw garlic grows stronger as the sauce sits."},
 {image:S+"BM-SIDE-006-garlic-yoghurt.webp",kicker:"MIX",title:"Fold, season, brighten",body:"Fold the garlic, olive oil, chives and lemon zest into the yoghurt. Add a small squeeze of lemon juice and salt, then taste. It should be thick enough to hold a spoon upright — if your yoghurt is thin, strain it in a sieve for 10 minutes first."},
 {image:S+"BM-SIDE-006-garlic-yoghurt.webp",kicker:"THE REST",title:"Twenty cold minutes",body:"Rest the sauce in the fridge for 20 minutes if you can. The garlic mellows from sharp to warm and the chives perfume the whole bowl. Serve it cold, straight onto a hot patty — the temperature contrast is the point."}
+]},
+{
+id:"side-beef-ribs-soup",title:"Beef Ribs Soup",collection:"Condiments & Sides",
+hero:S+"MM-SIDE-007-beef-ribs-soup.webp",
+flavour:"Deep, clean, long-simmered beef",texture:"Fall-apart ribs in a clear broth",time:"3 h 30 min",difficulty:"Easy — mostly waiting",
+macros:{calories:320,protein:28,fat:18,carbs:9},
+ingredients:["1.2 kg bone-in beef short ribs","1 large onion, halved","2 carrots, thick coins","2 celery sticks","4 garlic cloves, smashed","2 bay leaves","1 tsp black peppercorns","2.5 litres cold water","Salt to season at the end","Chopped parsley to serve"],
+doneTitle:"The pot that feeds the week.",
+doneBody:"The soup deepens overnight and keeps 4 days refrigerated — lift the set fat cap off the cold pot before reheating. The same broth base also makes a serious noodle soup or a braising liquid for your next cook.",
+steps:[
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"THE IDEA",title:"Bones are the recipe",body:"Beef ribs carry everything a great soup needs: marbled meat for richness, connective tissue that melts into body, and bones that season the broth from within. Your only jobs are a hard sear, a low flame and patience — the pot does the cooking."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"THE SEAR",title:"Brown the ribs hard",body:"Pat the ribs dry and sear them in a little oil in the soup pot over high heat until every face is deeply browned — 10 to 12 minutes, in batches if needed. This crust is the soup's flavour foundation; pale ribs make pale broth."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"AROMATICS",title:"Vegetables into the fond",body:"Push the ribs aside and drop in the onion, carrot, celery and garlic. Let them catch colour in the beef fat for 3 to 4 minutes, scraping the browned film off the pot floor as they release moisture — that film is concentrated sear, not residue."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"THE SIMMER",title:"Cold water, low flame, 3 hours",body:"Cover everything with 2.5 litres of cold water, add the bay leaves and peppercorns, and bring it barely to a simmer. The surface should shiver, never boil — a rolling boil emulsifies fat into the broth and turns it cloudy and greasy. Lid ajar, 3 hours."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"THE SKIM",title:"Skim like you mean it",body:"In the first half hour, grey foam rises — lift it off with a ladle, and revisit every 45 minutes to skim excess surface fat. Ten seconds of skimming per pass is the entire difference between a clean, glossy broth and a muddy one."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"THE TEST",title:"Season only at the end",body:"At 3 hours the meat should surrender to a spoon and slide from the bone. Only now add salt — the broth has been reducing the whole time, and salting early guarantees an over-seasoned finish. Season in stages, tasting between each."},
+{image:S+"MM-SIDE-007-beef-ribs-soup.webp",kicker:"SERVE",title:"Ribs in the bowl, broth over the top",body:"Serve each bowl with a whole rib, the softened vegetables and a ladle of hot broth, finished with parsley. The meat should pull into long fibres with the spoon alone. Alongside a steak dinner it plays starter; with bread it is the whole meal."}
 ]}
 ];
 export const sideById=id=>sides.find(s=>s.id===id);
