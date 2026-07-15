@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.2 — New app icon: Ember Glyph
+Icon redesign selected by the user from five UI-cogent candidates derived from the app's own visual language. No functional changes.
+
+- **Ember Glyph icon package.** The app icon is now a flat ember-orange burger glyph glowing softly on the app's charcoal surface — the same accent colour as the active nav tab and progress bars. Replaced `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (glyph inset within the 80% safe zone on solid charcoal) and `apple-touch-icon.png` (180×180)
+- **Matching SVG favicon.** `icon.svg` redrawn as the Ember Glyph mark (bun dome with sesame cutouts, wavy lettuce line, patty bar, bun base, soft glow) and linked via `rel="icon"` in `index.html`, which previously had no favicon link
+- Service worker cache bumped to v1.1.2 so installed clients receive the new icons
+
 ## v1.1.1 — Feedback fixes: 2-second tap hint, Builder reordered
 Direct response to user feedback from device screenshots.
 
