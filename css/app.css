@@ -240,3 +240,18 @@ main{padding:18px 16px 30px}
 .course.chapter-photo-card img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
 html[data-theme="light"] .chapter-copy strong,html[data-theme="light"] .chapter-copy small{color:#fff}
 html[data-theme="light"] .chapter-copy small{color:rgba(255,255,255,.85)}
+
+/* ===== v2.2.2 accessibility hardening ===== */
+/* Touch targets: extend hit areas of sub-44px controls without changing their visual size. */
+.mini-btn{position:relative}
+.mini-btn::after,.add-to-build-chip::after{content:"";position:absolute;inset:-8px;border-radius:inherit}
+/* Reduced motion: neutralise all remaining transitions/animations (sheets, chooser, ramps, spotlights, story banners) for users who ask for it. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+/* Contrast: darker gradient floors where text sits over photography. */
+.recipe-card:after{background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.88))}
+.chapter-shade{background:linear-gradient(to top,rgba(8,7,6,.95) 0%,rgba(8,7,6,.68) 46%,rgba(8,7,6,.2) 100%)}
+.chooser-half::after{background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.62) 100%)}
+.chooser-half--steak::after{background:linear-gradient(0deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.62) 100%)}
+.recipe-card-copy em{color:rgba(255,255,255,.85)}
