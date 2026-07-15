@@ -1,7 +1,9 @@
-const VERSION = "v1.4.0";
+const VERSION = "v1.5.0";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
-const IMG_CACHE = `burger-mastery-img-${VERSION}`;
-const IMG_LIMIT = 120;
+// v1.5.0: image cache is version-independent — photos survive app updates instead of being
+// re-downloaded after every release (this was why images felt slow again after each update).
+const IMG_CACHE = "burger-mastery-img-v1";
+const IMG_LIMIT = 200;
 const SHELL = ["./", "./index.html", "./css/app.css", "./css/polish.css", "./js/app.js", "./js/polish.js", "./js/cook-build.js", "./js/install.js", "./js/install-qr.js", "./js/assets.js", "./js/data.js", "./js/builder-data.js", "./js/recipes-data.js", "./js/flavours-data.js", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {

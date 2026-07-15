@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.0 — Meat Blends & Lasting Photos
+Two improvements in one release: the guided lesson now teaches meat blending visually, and photos no longer feel slow after app updates.
+
+### Meat Blends in Burger Essentials
+- **New photo rendering of blends.** A dark-editorial overhead composition showing pure beef and pure pork above the 70/30 beef–pork and 50/50 beef–lamb blends they create — folded strands visible, teaching the "marriage, not paste" texture rule at a glance
+- **A juiciness & boldness table.** A designed comparison chart rating beef, pork, lamb, chicken thigh and the three classic blends on juiciness and boldness of flavour (five-dot scales), each with a short tasting descriptor and the 71–74°C safety rule for pork and chicken blends
+- Both slides slot into the "Choose your meat" lesson right after Blending meats, so the theory lands immediately before the fold-gently technique. Lesson grows from 11 to 13 slides; Learn progress adapts automatically
+
+### Photos that stay fast
+- **The image cache now survives app updates.** Previously every release wiped the photo cache, so the first visit after an update re-downloaded everything — this is why images felt slow again each time. The image cache is now version-independent and holds up to 200 photos
+- **The Home hero starts downloading immediately.** A high-priority preload begins fetching the hero photo (sized for your device) while the HTML is still parsing, instead of waiting for the app code to boot — the largest visual on the first screen now arrives noticeably sooner on cold visits
+- Service worker bumped to v1.5.0
+
 ## v1.4.0 — Installability
 Burger Mastery is now explicitly downloadable from inside the app itself — no app store required. A "Get the app" card on the Home and You pages adapts to the visitor's device and drives a real installation.
 
