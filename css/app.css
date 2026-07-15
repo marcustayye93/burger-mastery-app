@@ -84,3 +84,12 @@ main{padding:18px 16px 30px}
 
 /* Sprint 6 — Guided Journey */
 .challenge-grid{display:grid;gap:10px}.challenge-card{padding:16px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.challenge-card p{color:var(--muted);font-size:13px;line-height:1.45;margin-bottom:10px}.challenge-card.done{border-color:color-mix(in srgb,var(--success) 45%,var(--line))}.challenge-progress{grid-column:1/-1;height:7px;border-radius:99px;background:var(--surface-2);overflow:hidden}.challenge-progress i{display:block;height:100%;background:var(--accent)}.adaptation-panel{margin-top:22px}.adapt-grid{display:grid;gap:10px}.adapt-card{padding:15px}.adapt-card>div{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.validation-card{padding:19px}.validation-item{padding:10px 0;border-bottom:1px solid var(--line)}.validation-item:last-child{border-bottom:0}.validation-item p{margin:5px 0 0;color:var(--muted);font-size:13px}.dashboard-hero{padding:22px}.dashboard-hero p{color:var(--muted);line-height:1.5;margin-top:12px}.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.saved-actions{display:flex;align-items:center;gap:8px}.mini-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--accent);font-size:18px}@media(min-width:640px){.challenge-grid,.adapt-grid{grid-template-columns:1fr 1fr}.dashboard-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* Stage 1 — Reactive teaching: aromatics sub-sections in the Builder panel */
+.aromatics-head{margin:20px 0 2px;padding-top:16px;border-top:1px solid var(--line)}
+.aromatics-head .eyebrow{margin:0 0 3px}
+.aromatics-sub{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
+/* Stage 1 — three-tier flavour-first "Why it changed" card */
+.insight-tiers{display:grid;gap:11px;margin-top:11px}
+.insight-tiers p{margin:0;font-size:13.5px;line-height:1.5;color:var(--text)}
+.insight-tiers b{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}

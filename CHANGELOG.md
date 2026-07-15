@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.1.0 — Stage 1: Reactive Teaching in the Builder
+The Builder now teaches flavour cause-and-effect. First release of the "reactive teaching" roadmap agreed after the chef/UX persona review.
+
+### Aromatics & mix-ins (new Builder section)
+- Three in-patty controls added between the patty sliders and the cheese/bun/sauce fields: **Onion in the mix** (none / grated 5 g / grated 10 g), **Garlic** (none / fresh 3 g / powder 0.5 g / roasted 8 g) and **Seasoning profile** (salt & pepper / smoked paprika / dried herbs)
+- Every aromatic option carries full Ingredient Intelligence (flavour, texture, best use, common mistake, cooking approach, health trade-off) reachable via its info dot, plus dedicated insight and technique lines used by the live feedback
+- Aromatics contribute to cooked nutrition and to all six eating-experience scores (e.g. grated onion lifts juiciness and tenderness while slightly muting beef purity and crust)
+- Selections persist in the build state, in saved builds, and restore on load; builds saved before v1.1.0 load unchanged with aromatics defaulting to none/classic
+
+### Flavour-first "Why it changed"
+- The insight card now answers every control change in three ordered tiers: **Flavour** (what it does to taste, drawn from the ingredient's culinary copy), **Technique** (what changes at the pan), **Nutrition** (kcal delta and updated macros)
+- Weight and thickness changes generate computed technique guidance: smash (<10 mm), fast (10–15 mm), standard (16–20 mm) and thick-patty (>20 mm) cook protocols with times, rest and thermometer guidance consistent with the curriculum
+- The card's idle state now teaches its own model ("Change any ingredient…") instead of a generic placeholder
+
+### Housekeeping
+- Service worker cache version bumped to v1.1.0
+- No recipe, curriculum or story-viewer changes in this release
+
 ## v1.0.0 — Final Polish Sprint
 A perceived-quality release. No functional behaviour, recipe, curriculum or Builder calculation changed; every modification is visual or motion polish within the approved FP register.
 
