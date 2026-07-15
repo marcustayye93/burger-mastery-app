@@ -93,3 +93,28 @@ main{padding:18px 16px 30px}
 .insight-tiers{display:grid;gap:11px;margin-top:11px}
 .insight-tiers p{margin:0;font-size:13.5px;line-height:1.5;color:var(--text)}
 .insight-tiers b{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+
+/* v1.3.0 — Cook-State Awareness: step timers + jump-to-step */
+.timer-chip{display:inline-flex;align-items:center;gap:7px;margin-top:12px;min-height:44px;padding:0 16px;border-radius:99px;border:1px solid rgba(255,255,255,.34);background:rgba(0,0,0,.42);backdrop-filter:blur(12px);color:#fff;font-size:13.5px;font-weight:600;position:relative;z-index:4}
+.timer-chip em{font-style:normal;font-weight:400;font-size:11px;color:rgba(255,255,255,.66)}
+.timer-pill{position:absolute;z-index:8;top:calc(52px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;max-width:calc(100% - 24px);padding:9px 12px 9px 15px;border-radius:99px;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);color:#fff}
+.timer-pill .timer-time{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em;white-space:nowrap}
+.timer-pill .timer-name{font-size:11px;color:rgba(255,255,255,.72);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.timer-pill button{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff;font-size:13px;display:grid;place-items:center}
+.timer-pill.done{background:var(--accent);border-color:var(--accent);animation:timerDone 1s ease-in-out infinite alternate}
+.timer-pill.done .timer-name{color:rgba(255,255,255,.85)}
+@keyframes timerDone{from{box-shadow:0 0 0 0 rgba(211,107,88,.55)}to{box-shadow:0 0 0 12px rgba(211,107,88,0)}}
+@media (prefers-reduced-motion:reduce){.timer-pill.done{animation:none}}
+.steps-btn{position:absolute;z-index:7;top:calc(22px + env(safe-area-inset-top));right:66px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;font-size:17px;display:grid;place-items:center}
+.steps-panel{position:absolute;inset:0;z-index:9;background:rgba(0,0,0,.5);display:grid;align-items:end}
+.steps-sheet{max-height:76dvh;display:grid;grid-template-rows:auto 1fr;background:var(--surface);color:var(--text);border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+.steps-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 10px}
+.steps-head b{font-size:15px}
+.steps-x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font-size:17px}
+.steps-list{overflow-y:auto;padding:0 12px 16px;display:grid;gap:3px}
+.steps-group{margin:13px 6px 5px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.steps-row{display:flex;align-items:center;gap:11px;width:100%;min-height:46px;padding:6px 10px;border-radius:12px;border:0;background:none;color:var(--text);text-align:left;font-size:14px;line-height:1.25}
+.steps-row span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-size:11px;color:var(--muted)}
+.steps-row.current{background:var(--surface-2);font-weight:700}
+.steps-row.current span{background:var(--accent);color:#fff}
+.steps-row.past{color:var(--muted)}

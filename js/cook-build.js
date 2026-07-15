@@ -292,6 +292,7 @@ function finalSlide(build, r, timing) {
   return {
     image: assets.heroTopdown, kicker: "SERVICE",
     title: `${build.name || "Your build"}, done`,
+    noTimer: true,
     body: `${r.cooked.calories} kcal, ${r.cooked.protein} g protein on the plate — your spec, your burger, cooked in about ${timing.total} minutes. If it hit, save this build to your Lab. If it can be better, head back to the Builder and change exactly one thing.`
   };
 }

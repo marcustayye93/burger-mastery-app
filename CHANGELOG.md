@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.3.0 — Cook-State Awareness
+The recipe story viewer now works with greasy hands. Stories were linear rails — fine for reading, awkward mid-cook. This release adds live timers and direct step navigation to every cook-along, signature and generated alike. No recipe content changed; Learn and Flavours stories are untouched.
+
+### Step timers
+- **One-tap timers on timed steps.** Any step whose copy specifies a duration ("sear 75 seconds", "rest 3 minutes", "60–90 seconds") now shows a timer chip under the step text. Ranges arm the upper bound; durations are parsed from the copy itself, so the timers automatically match whatever protocol the Cook This Build generator derived for your patty
+- **A single kitchen timer, always visible.** Starting a timer shows a floating countdown pill at the top of the story with pause/resume and cancel. It keeps running while you tap between slides — start the sear timer, flip ahead to read the flip step, and the countdown stays on screen
+- **An alarm you can't miss.** At zero the pill turns ember-orange and pulses, the phone vibrates, and a short beep plays (generated live — no audio asset, works offline). The pulse is suppressed under reduced-motion
+- Timers cancel cleanly when the story closes, and starting a new timer replaces the old one — one cook, one clock
+
+### Jump-to-step
+- **A step list button (☰) next to the close button** opens a bottom sheet listing every slide grouped by phase (MISE EN PLACE, THE SEAR, ASSEMBLY…). The current step is highlighted, completed steps are dimmed, and the sheet auto-scrolls to where you are
+- Tap any row to jump straight there — no more tapping through nine slides to reach the flip. Works identically in generated Cook This Build stories
+
+### Housekeeping
+- Service worker cache bumped to v1.3.0
+- No changes to recipes, Learn, Flavours, Builder calculations, or completion/stats behaviour
+
 ## v1.2.0 — Cook This Build
 The Builder's selections now compile into a personalised, step-by-step cook-along — the same premium story format as the six Signature Recipes, generated live from the user's own build. No new photography: every slide reuses the existing 56-asset library and recipe step imagery.
 
