@@ -12,7 +12,7 @@ Note: sandbox browser needed cache:reload fetches to pick up changed local files
 - Current deployed version v2.3.0. sw.js: VERSION const at top + PRECACHE list — must add js/steak-sides-data.js and js/burger-lessons-data.js and bump VERSION per release.
 - app.js imports (line 2): {courses,lessonSequence} from data.js; line 8: {sides,sideById} from sides-data.js.
 - Steak Learn pattern to mirror for burger: app.js imports {steakCourses,steakLessons,steakLessonSequence,steakLessonCount} from steak-lessons-data.js; state.viewedSteakLessons[] (slide indices), state.steakStoryIndex; steakLearn() renderer w/ chapter cards + progress bars + Resume · n/160 button; openSteakStory(chapterId|null,resume) viewer; click wiring: [data-steak-story], [data-steak-resume]. Burger equivalents already exist as: openStory(sectionId|null,resume) using lessonSequence, markViewed(i), state.viewedLessons?? (check learn() function), [data-story], [data-resume]. state.completed via recomputeCompleted().
-- Burger learn(): renders courses with chapterPct based on viewed slide ids — since lessonSequence slideIds changed format (lessonId-NN), old viewed arrays invalid → migration needed: bump schemaVersion to 5, reset state.viewedSlides/storyIndex for burger (keep steak).
+- Burger learn(): renders courses with chapterPct based on viewed slide ids — since lessonSequence slideIds changed format (lessonId-NN), old viewed arrays invalid → migration needed: bump schemaVersion to 5, 
 - state stored in localStorage key "bm-state", schemaVersion currently 4, migration runner in app.js.
 - Steak sides integration: app.js has openSide(sd.dataset.side) using sideById from sides-data.js; sides list rendered in Flavours (burger). For steak sides: add import {steakSides} from steak-sides-data.js; render a "Condiments & Sides" section in steak flavours view (steakFlavours region) with data-side handlers; extend sideById lookup or add steakSideById; open via openRecipeStory(side,{side:true}).
 - Verify scripts: scripts/verify-burger-lessons.mjs (checks 6/32/160 + sides 5) — PASSES after lesson additions (rerun to confirm). scripts/verify-steak-lessons.mjs from v2.3.0.
@@ -21,3 +21,12 @@ Note: sandbox browser needed cache:reload fetches to pick up changed local files
 - img() helper in app.js maps raw github asset URLs to derived w480/w960 variants automatically (image cache versioned) — new data modules reuse assets.js keys so no new images needed.
 - Commit style: "v2.X.0: description". After push, verify live via curl sw.js version + browser check.
 - Engine canon: doneness 49/54/60/66/71°C; carryover pan/grill -5, oven -4, airfry -2, reverse -10 (no rest), sousvide 0; rests 5/8/10min by 2.5/4/5.5cm. Burger safety: pork blends 71°C, chicken 74°C.
+
+## v2.6.0 Cook Journal — shipped
+- state.cookJournal (cap 200), SCHEMA_VERSION=6 + migration
+- Journal strip on completion cards: custom steak/burger cooks + steak signature recipes
+- Suggestion engine journalAdvice(): over → pull 2°C earlier, under → hold 2°C longer, nailed → repeat
+- Designer advisory card (journal-advice) when combo has history
+- Journal sections in both Labs, delete via [data-journal-del]
+- CSS appended to css/app.css; SW bumped to v2.6.0
+- Verified end-to-end in browser: strip, confirm copy, advisory flip (over→under), lab lists, delete, zero errors

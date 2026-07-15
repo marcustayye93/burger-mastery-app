@@ -255,3 +255,23 @@ html[data-theme="light"] .chapter-copy small{color:rgba(255,255,255,.85)}
 .chooser-half::after{background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.62) 100%)}
 .chooser-half--steak::after{background:linear-gradient(0deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.62) 100%)}
 .recipe-card-copy em{color:rgba(255,255,255,.85)}
+
+/* v2.6.0 Cook Journal */
+.journal-strip{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:10px}
+.journal-btns{display:flex;gap:8px}
+.journal-btns .btn{flex:1;padding:10px 6px;font-size:.85rem;min-height:44px}
+.journal-note{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:.85rem}
+.journal-note::placeholder{color:rgba(255,255,255,.55)}
+.journal-confirm{color:rgba(255,255,255,.92);font-size:.9rem;margin:0}
+.journal-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.journal-row>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.journal-row small{color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+.outcome-chip{flex-shrink:0;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:750;letter-spacing:.04em;text-transform:uppercase}
+.outcome-chip.nailed{background:color-mix(in srgb,var(--success) 14%,transparent);color:var(--success);border:1px solid color-mix(in srgb,var(--success) 42%,transparent)}
+.outcome-chip.over{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.outcome-chip.under{background:color-mix(in srgb,#5b8fd6 13%,transparent);color:#5b8fd6;border:1px solid color-mix(in srgb,#5b8fd6 40%,transparent)}
+.journal-advice{padding:16px 19px;border-left:3px solid var(--accent-2)}
+.journal-advice.over{border-left-color:var(--accent)}
+.journal-advice.under{border-left-color:#5b8fd6}
+.journal-advice.nailed{border-left-color:var(--success)}
+.journal-advice p:last-child{margin:4px 0 0;line-height:1.5}
