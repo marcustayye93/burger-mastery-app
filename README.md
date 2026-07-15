@@ -1,4 +1,4 @@
-# Meat Mastery v2.1.0
+# Meat Mastery v2.2.0
 
 A premium, offline-ready PWA for mastering meat cookery across two disciplines: **Burger** and **Steak**. Formerly Burger Mastery (v0.x–v1.x); rebranded to Meat Mastery in v2.0.0.
 
@@ -28,7 +28,7 @@ On first launch, a full-screen diagonal chooser asks "What are we mastering toda
 
 | Version | Release |
 |---------|---------|
-| v2.1.0 | Inch equivalents on all steak thicknesses; Steak Essentials curriculum preview |
+| v2.2.0 | Inch equivalents on all steak thicknesses; Steak Essentials curriculum preview |
 | v2.0.3 | Steak section image performance fix (~4× lighter card payloads) |
 | v2.0.2 | Diagonal split discipline chooser redesign with lightweight panels |
 | v2.0.1 | Steak core: Designer, protocol engine, cook-alongs, photography, Signature Steaks |

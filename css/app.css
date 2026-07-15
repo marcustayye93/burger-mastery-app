@@ -213,3 +213,15 @@ main{padding:18px 16px 30px}
 .spotlight-card strong{font-size:1.05rem;line-height:1.25}
 .spotlight-card small{font-size:.78rem;opacity:.7;line-height:1.4}
 .spotlight-card em{font-style:normal;font-size:.72rem;opacity:.55;margin-top:2px}
+
+/* ===== v2.2.0: add-to-build chips, share cards, dashboard ===== */
+.recipe-card-wrap{position:relative}
+.add-to-build-chip{position:absolute;top:10px;right:10px;z-index:2;background:rgba(232,115,74,.92);color:#fff;border:none;border-radius:999px;padding:7px 12px;font-size:.72rem;font-weight:700;letter-spacing:.02em;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.add-to-build-chip:active{transform:scale(.96)}
+.streak-grid{grid-template-columns:repeat(3,1fr)}
+.metric.streak-live strong{color:var(--ember,#e8734a)}
+.hist-row .saved-open{display:block;width:100%;text-align:left;background:none;border:none;color:inherit;padding:0;cursor:pointer}
+.hist-row .saved-open strong{display:block;font-size:.95rem}
+.hist-row .saved-open small{display:block;color:var(--mute,#9a8d80);margin-top:3px;font-size:.78rem}
+.hist-row .saved-open em{display:block;font-style:normal;margin-top:6px;font-size:.76rem;color:var(--ember,#e8734a)}
+.hist-row .saved-open em.hist-fav{color:#d9b96a}
