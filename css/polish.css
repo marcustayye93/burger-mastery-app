@@ -481,8 +481,11 @@ h3{font-weight:720}
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
   animation:bm-shimmer 1.35s infinite;
 }
-img[data-bm-loaded="false"]{opacity:0}
+/* v2.6.4 fail-open reveal: the hidden state self-reveals after .9s even if the
+   load event never fires (iOS Safari lazy-load race) — never a sticky opacity:0. */
+img[data-bm-loaded="false"]{animation:bm-img-reveal .35s .9s var(--ease-out) both}
 img[data-bm-loaded="true"]{opacity:1;transition:opacity .35s var(--ease-out)}
+@keyframes bm-img-reveal{from{opacity:0}to{opacity:1}}
 .bm-press{
   transform:scale(.975)!important;
   transition-duration:.08s!important;

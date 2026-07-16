@@ -19,8 +19,18 @@
     img.dataset.bmObserved = "true";
     img.dataset.bmLoaded = img.complete && img.naturalWidth ? "true" : "false";
     if (img.dataset.bmLoaded === "false") {
-      img.addEventListener("load", () => img.dataset.bmLoaded = "true", {once:true});
-      img.addEventListener("error", () => img.dataset.bmLoaded = "true", {once:true});
+      const reveal = () => { img.dataset.bmLoaded = "true"; };
+      img.addEventListener("load", reveal, {once:true});
+      img.addEventListener("error", reveal, {once:true});
+      /* v2.6.4 watchdog — iOS Safari can complete a lazy image without firing a
+         catchable load event after src swaps (retry) or SW responses. Poll briefly,
+         then fail open so a card is never left invisible. */
+      let ticks = 0;
+      const timer = setInterval(() => {
+        ticks += 1;
+        if (img.dataset.bmLoaded === "true" || !img.isConnected) { clearInterval(timer); return; }
+        if ((img.complete && img.naturalWidth) || ticks >= 8) { clearInterval(timer); reveal(); }
+      }, 500);
     }
   };
 

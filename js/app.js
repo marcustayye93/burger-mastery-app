@@ -67,7 +67,10 @@ const preloadSrc=src=>variant(src,(window.innerWidth||390)*(window.devicePixelRa
 // v2.6.3: resilient image loading. The old onerror destructively replaced the <img> with the fallback
 // on the FIRST failure — one flaky mobile-network hiccup blanked a card forever (user-reported on 5G).
 // Now: retry twice with a cache-busting query (bypasses any poisoned HTTP/SW cache), then fall back.
-window.__imgRetry=function(el){const n=Number(el.dataset.retry||0);if(n<2){el.dataset.retry=n+1;const base=(el.dataset.src||el.src).split("#")[0].split("?")[0];el.dataset.src=base;el.removeAttribute("srcset");setTimeout(()=>{el.src=base+"?r="+Date.now();},400*(n+1));return;}const t=document.querySelector("#imageFallback");if(t)el.replaceWith(t.content.cloneNode(true));};
+// v2.6.4: raw.githubusercontent.com can be rate-limited or blocked on some mobile carriers.
+// Retry ladder: 1) same URL cache-busted → 2) jsDelivr CDN mirror → 3) mirror cache-busted → fallback.
+const MIRROR=["https://raw.githubusercontent.com/marcustayye93/burger-mastery-assets/main/","https://cdn.jsdelivr.net/gh/marcustayye93/burger-mastery-assets@main/"];
+window.__imgRetry=function(el){const n=Number(el.dataset.retry||0);const base=(el.dataset.src||el.src).split("#")[0].split("?")[0];if(n<3){el.dataset.retry=n+1;el.removeAttribute("srcset");let next=base;if(n>=1&&base.startsWith(MIRROR[0]))next=MIRROR[1]+base.slice(MIRROR[0].length);el.dataset.src=next;const bust=(n===0||n===2)?"?r="+Date.now():"";setTimeout(()=>{el.src=next+bust;},350*(n+1));return;}const t=document.querySelector("#imageFallback");if(t)el.replaceWith(t.content.cloneNode(true));};
 const ONERR='onerror="window.__imgRetry(this)"';
 const img=(src,alt="",eager=false,sizes="full")=>{const cap=sizes==="full";if(sizes==="card"){const v=variant(src,480)||src;return `<img src="${v}" alt="${esc(alt)}" loading="${eager?"eager":"lazy"}" decoding="async" ${eager?'fetchpriority="high"':""} ${ONERR}>`;}const primary=cap?(variant(src,960)||src):src;return `<img src="${primary}" ${srcsetFor(src,cap)} sizes="${SIZES[sizes]||SIZES.full}" alt="${esc(alt)}" loading="${eager?"eager":"lazy"}" decoding="async" ${eager?'fetchpriority="high"':""} ${ONERR}>`;};
 // Stage 1: in-patty aromatics (onion, garlic, seasoning) participate in nutrition and eating-experience scores.
