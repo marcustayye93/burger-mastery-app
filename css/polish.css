@@ -683,3 +683,38 @@ img[data-bm-loaded="true"]{opacity:1;transition:opacity .35s var(--ease-out)}
   #splash .splash-title{animation:bm-text-up .5s var(--ease-out) both}
   #splash .splash-sub{animation:bm-text-up .5s var(--ease-out) .1s both}
 }
+
+/* v2.9.0 — brand mark on splash with bouncing buns */
+#splash .splash-logo{
+  width:118px;height:118px;
+  display:block;margin:0 auto 14px;
+  overflow:visible;
+}
+#splash .splash-logo .bm-bun-top,
+#splash .splash-logo .bm-patty,
+#splash .splash-logo .bm-bun-bottom{transform-origin:256px 300px;transform-box:view-box}
+@media(prefers-reduced-motion:no-preference){
+  #splash .splash-logo .bm-bun-top{animation:bm-bun-top-bounce 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+  #splash .splash-logo .bm-bun-bottom{animation:bm-bun-bottom-bounce 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+  #splash .splash-logo .bm-patty{animation:bm-patty-squash 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+}
+@keyframes bm-bun-top-bounce{
+  0%,100%{transform:translateY(0)}
+  30%{transform:translateY(-34px)}
+  55%{transform:translateY(6px)}
+  72%{transform:translateY(-8px)}
+  86%{transform:translateY(0)}
+}
+@keyframes bm-bun-bottom-bounce{
+  0%,100%{transform:translateY(0)}
+  30%{transform:translateY(18px)}
+  55%{transform:translateY(-4px)}
+  72%{transform:translateY(4px)}
+  86%{transform:translateY(0)}
+}
+@keyframes bm-patty-squash{
+  0%,100%{transform:scaleY(1)}
+  30%{transform:scaleY(1.06)}
+  55%{transform:scaleY(.96)}
+  75%{transform:scaleY(1)}
+}

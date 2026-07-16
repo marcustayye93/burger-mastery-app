@@ -17,9 +17,26 @@
 </head>
 <body>
   <script>try{const t=JSON.parse(localStorage.getItem("bm-state")||"{}").theme;document.documentElement.dataset.theme=t||"dark";}catch{document.documentElement.dataset.theme="dark";}</script>
-  <div id="splash" aria-hidden="true"><div class="splash-inner"><p class="splash-title">Meat Mastery</p><p class="splash-sub">Master the craft.</p></div></div>
+  <div id="splash" aria-hidden="true"><div class="splash-inner">
+    <svg class="splash-logo" viewBox="0 0 512 512" aria-hidden="true">
+      <g class="bm-bun-top">
+        <path d="M92 216c0-70 74-118 164-118s164 48 164 118c0 9-7 16-16 16H108c-9 0-16-7-16-16Z" fill="#f8e4c3"/>
+        <g fill="#1a1613"><ellipse cx="212" cy="150" rx="11" ry="6.5" transform="rotate(-18 212 150)"/><ellipse cx="257" cy="139" rx="11" ry="6.5" transform="rotate(3 257 139)"/><ellipse cx="301" cy="152" rx="11" ry="6.5" transform="rotate(19 301 152)"/></g>
+      </g>
+      <g class="bm-patty">
+        <path d="M112 248 H400 V366 H330 L304 282 L256 350 L208 282 L182 366 H112 Z" fill="#3d1a12"/>
+        <path d="M112 258 H400 V374 H330 L304 290 L256 358 L208 290 L182 374 H112 Z" fill="#da5259"/>
+        <path d="M112 374 H182 L208 290 L256 358 L304 290 L330 374 H400" fill="none" stroke="#fd7a3a" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+      <g class="bm-bun-bottom">
+        <path d="M108 396h296c9 0 16 7 16 16 0 32-28 52-62 52H154c-34 0-62-20-62-52 0-9 7-16 16-16Z" fill="#f8e4c3"/>
+      </g>
+    </svg>
+    <p class="splash-title">Meat Mastery</p><p class="splash-sub">Master the craft.</p>
+  </div></div>
   <div class="app-shell">
     <header class="topbar">
+      <img class="topbar-logo" src="./icons/logo-mark.svg" alt="Meat Mastery" width="32" height="32" decoding="async">
       <div>
         <button class="eyebrow discipline-chip" id="disciplineChip" type="button" aria-label="Switch discipline"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16V4m0 0L3 8m4-4 4 4m6 4v12m0 0 4-4m-4 4-4-4"/></svg><span id="disciplineChipLabel">MEAT MASTERY</span></button>
         <h1 id="pageTitle">Home</h1>
