@@ -45,7 +45,7 @@ export const steakLessons={
 {image:A.stkProbe,kicker:"FLANK",title:"Best doneness",body:"Rare to medium-rare only (49–54°C after rest). The coarse fibres turn ropey and unpleasant past that point."},
 {image:A.stkPanHeat,kicker:"FLANK",title:"Best methods",body:"Ripping-hot pan or grill. This cut is measured in minutes, not hours. It overshoots temperature very quickly."},
 {image:A.stkSousvide,kicker:"FLANK",title:"What to avoid",body:"Reverse sear or sous vide on anything thinner than ~4 cm (1.6 in). The cut is too thin for slow methods — it flies past target before you can react."},
-{image:A.stkSlice,kicker:"FLANK",title:"Slicing (non-negotiable)",body:"Slice thin at a 45° angle against the visible grain. This single step transforms the eating experience of flank more than any other technique."}]},
+{image:A.stkSlice,video:"technique-grain",kicker:"FLANK",title:"Slicing (non-negotiable)",body:"Slice thin at a 45° angle against the visible grain. This single step transforms the eating experience of flank more than any other technique."}]},
 {id:"kyc-sirloin",title:"Sirloin — The Everyday All-Rounder",minutes:4,slides:[
 {image:A.stkMise,kicker:"KNOW YOUR CUTS",title:"Sirloin",body:"Balanced beef flavour, moderate tenderness and a forgiving price. The reliable weeknight steak that still tastes like proper steak."},
 {image:A.stkProbe,kicker:"SIRLOIN",title:"Best doneness",body:"Flexible from rare to medium (49–60°C after rest). The most forgiving cut on the board in terms of doneness window."},
@@ -201,7 +201,7 @@ export const steakLessons={
 {image:A.stkRest,kicker:"RESTING",title:"Foil or no foil",body:"Loose foil is fine for pan-seared steaks. For reverse sear, many prefer no foil so the crust stays crisp. The difference is small."},
 {image:A.stkButter,kicker:"RESTING",title:"Practical habit",body:"Rest the steak while you finish any sides or sauce. It becomes automatic and prevents the common mistake of cutting into it too early."}]},
 {id:"rs-slicing-technique",title:"Slicing Against the Grain",minutes:5,slides:[
-{image:A.stkSlice,kicker:"RESTING & SERVING",title:"Why grain direction matters",body:"Muscle fibres run in one direction. Cutting parallel to them leaves long, chewy strands. Cutting across them shortens the fibres and makes every bite more tender."},
+{image:A.stkSlice,video:"technique-grain",kicker:"RESTING & SERVING",title:"Why grain direction matters",body:"Muscle fibres run in one direction. Cutting parallel to them leaves long, chewy strands. Cutting across them shortens the fibres and makes every bite more tender."},
 {image:A.stkMise,kicker:"SLICING",title:"How to identify the grain",body:"Look for the lines running through the meat (especially visible on flank, rump, and striploin). On most steaks they run roughly lengthwise."},
 {image:A.stkSlice,kicker:"SLICING",title:"Angle and thickness",body:"A slight 45° angle increases surface area and looks better on the plate. Thickness should be roughly finger-width for most cuts, thinner for flank and rump."},
 {image:A.stkButter,kicker:"SLICING",title:"Picanha exception",body:"First slice with the grain into thick steaks (churrasco style), then slice those pieces against the grain to serve. This is the traditional Brazilian method."},

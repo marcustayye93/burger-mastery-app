@@ -1,4 +1,4 @@
-const VERSION = "v2.7.0";
+const VERSION = "v2.8.0";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
 // v1.5.0: image cache is version-independent — photos survive app updates instead of being
 // re-downloaded after every release (this was why images felt slow again after each update).
@@ -32,6 +32,10 @@ function isImage(req) {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
+
+  // v2.8.0: video clips stream directly from the CDN. Range requests and opaque
+  // media responses must never be cached or rewritten to the shell fallback.
+  if (req.destination === "video" || /\.mp4(\?|$)/i.test(new URL(req.url).pathname)) return;
 
   if (isImage(req)) {
     // Stale-while-revalidate for images: instant cached response, silent refresh, capped store.

@@ -55,7 +55,7 @@ main{padding:18px 16px 30px}
 .story{position:fixed;inset:0;z-index:50;background:#060606;color:white;display:flex;flex-direction:column}
 .story[hidden]{display:none}
 .story-progress{display:flex;gap:4px;padding:calc(12px + env(safe-area-inset-top)) 12px 8px}.story-progress i{height:3px;flex:1;border-radius:4px;background:rgba(255,255,255,.25)}.story-progress i.active{background:#fff}
-.story-slide{position:relative;flex:1;overflow:hidden}.story-slide img{width:100%;height:100%;object-fit:cover}.story-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72))}
+.story-slide{position:relative;flex:1;overflow:hidden}.story-slide img{width:100%;height:100%;object-fit:cover}.story-slide video.slide-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}.story-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72))}
 .story-content{position:absolute;z-index:2;left:22px;right:22px;bottom:34px}.story-content h2{font-size:36px}.story-content p{color:rgba(255,255,255,.83);font-size:17px;line-height:1.5}
 .story-close{position:absolute;right:14px;top:calc(22px + env(safe-area-inset-top));z-index:4;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;font-size:24px}
 .story,.story *{touch-action:manipulation}
@@ -165,7 +165,7 @@ main{padding:18px 16px 30px}
 .chooser-half{position:absolute;left:0;right:0;margin:0;padding:0;border:0;display:block;width:100%;cursor:pointer;overflow:hidden;transition:filter .2s ease}
 .chooser-half--burger{top:0;height:54%;clip-path:polygon(0 0,100% 0,100% 92.5%,0 78%);background:#3a2417}
 .chooser-half--steak{bottom:0;height:54%;clip-path:polygon(0 22%,100% 7.5%,100% 100%,0 100%);background:#4a1f1c}
-.chooser-half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.chooser-half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.chooser-half video.slide-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .chooser-half:active img{transform:scale(1.04)}
 .chooser-half::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%)}
 .chooser-half--steak::after{background:linear-gradient(0deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%)}
