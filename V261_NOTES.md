@@ -17,8 +17,5 @@
 - sw.js VERSION bumped to v2.6.1.
 - verify-burger-lessons.mjs / verify-steak-lessons.mjs still pass (6/32/160, images OK).
 
-## Remaining
-- Browser-verify burger Learn tab resume label + open a story to confirm slides render with new images (spot check).
-- Check console errors, then commit + deploy to main and gh-pages, verify live sw.js v2.6.1.
-- Deployed site: https://marcustayye93.github.io/burger-mastery-app/
-- Local server: python3 http.server on port 8901; browser caches modules — use fetch no-store refresh trick then reload.
+## Shipped
+Local verification passed: burger Learn shows "Resume · Lesson 3 / 32" at storyIndex 11 (correct math), story viewer renders reassigned images with no back-to-back repeats, state reset clean, zero console errors. Deployed to main + gh-pages (commits dfb41eb + sw bump). Live site verified: sw.js v2.6.1 served, steak Learn shows "Resume · Lesson 8 / 32" (the browser profile's real progress), app.js contains both new resume labels, sides-data.js serves the reassigned images. Note: the sw.js version string uses spaces — `const VERSION = "vX.Y.Z"` — remember for future sed bumps.
