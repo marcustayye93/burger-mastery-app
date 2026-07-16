@@ -151,9 +151,10 @@ main{padding:18px 16px 30px}
 .challenge-qual.empty{text-align:left}
 
 /* v2.0.0 — Meat Mastery discipline chooser & header chip */
-.discipline-chip{display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:0;cursor:pointer;text-align:left}
-.discipline-chip::after{content:"›";font-size:12px;letter-spacing:0;transform:translateY(-1px);opacity:.7}
-.discipline-chip:active{opacity:.7}
+/* v2.6.3: the switcher looked like a plain text eyebrow — now an unmistakable bordered pill with a swap icon. */
+.discipline-chip{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:7px 12px;border-radius:999px;cursor:pointer;text-align:left;margin-bottom:7px;font-weight:750;letter-spacing:.13em;box-shadow:0 2px 10px color-mix(in srgb,var(--accent) 20%,transparent)}
+.discipline-chip svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.discipline-chip:active{transform:scale(.96);opacity:.85}
 /* v2.0.2 — full-screen diagonal split chooser: burger top half, steak bottom half,
    slanted divider. Panels use dedicated lightweight crops (w360/w720, <55 KB) over
    instant colour placeholders so the screen is never blank while images load. */

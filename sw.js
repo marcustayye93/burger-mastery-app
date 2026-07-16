@@ -1,4 +1,4 @@
-const VERSION = "v2.6.2";
+const VERSION = "v2.6.3";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
 // v1.5.0: image cache is version-independent — photos survive app updates instead of being
 // re-downloaded after every release (this was why images felt slow again after each update).
@@ -44,7 +44,10 @@ self.addEventListener("fetch", e => {
             trimCache(IMG_CACHE, IMG_LIMIT);
           }
           return res;
-        }).catch(() => cached);
+        }).catch(() => cached || Response.error());
+        // v2.6.3: never resolve respondWith with undefined — a failed fetch with an empty cache used to
+        // produce an unrecoverable blank image on flaky mobile networks. Response.error() keeps the
+        // <img> onerror path deterministic so the in-page retry logic can recover.
         return cached || network;
       })
     );
