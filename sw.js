@@ -1,4 +1,4 @@
-const VERSION = "v2.6.4";
+const VERSION = "v2.7.0";
 const SHELL_CACHE = `burger-mastery-shell-${VERSION}`;
 // v1.5.0: image cache is version-independent — photos survive app updates instead of being
 // re-downloaded after every release (this was why images felt slow again after each update).

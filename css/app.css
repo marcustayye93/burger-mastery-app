@@ -58,7 +58,8 @@ main{padding:18px 16px 30px}
 .story-slide{position:relative;flex:1;overflow:hidden}.story-slide img{width:100%;height:100%;object-fit:cover}.story-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72))}
 .story-content{position:absolute;z-index:2;left:22px;right:22px;bottom:34px}.story-content h2{font-size:36px}.story-content p{color:rgba(255,255,255,.83);font-size:17px;line-height:1.5}
 .story-close{position:absolute;right:14px;top:calc(22px + env(safe-area-inset-top));z-index:4;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;font-size:24px}
-.story-tap{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:1fr 1fr}.story-tap button{opacity:0;border:0;background:transparent}
+.story,.story *{touch-action:manipulation}
+.story-tap{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:1fr 1fr;touch-action:manipulation}.story-tap button{opacity:0;border:0;background:transparent;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .tap-hint{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom));z-index:4;display:flex;justify-content:center;pointer-events:none;opacity:1;transition:opacity .6s ease}
 .tap-hint span{padding:9px 16px;border-radius:99px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);color:rgba(255,255,255,.92);font-size:12px;font-weight:700;letter-spacing:.05em;animation:tapHintPulse 2s ease-in-out infinite}
 .tap-hint.fade{opacity:0}
@@ -276,3 +277,18 @@ html[data-theme="light"] .chapter-copy small{color:rgba(255,255,255,.85)}
 .journal-advice.under{border-left-color:#5b8fd6}
 .journal-advice.nailed{border-left-color:var(--success)}
 .journal-advice p:last-child{margin:4px 0 0;line-height:1.5}
+
+/* v2.7.0: lesson picker sheet — jump straight to any lesson in a chapter */
+.lesson-picker{max-height:82vh;overflow-y:auto}
+.lesson-picker .picker-sub{color:var(--muted);margin:2px 0 14px;font-size:.92rem}
+.lesson-picker .full-btn{width:100%;margin-bottom:14px}
+.picker-list{display:flex;flex-direction:column;gap:8px}
+.picker-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;color:var(--text);font:inherit;transition:transform .12s ease,border-color .12s ease}
+.picker-row:active{transform:scale(.98)}
+.picker-row.done{border-color:color-mix(in srgb,var(--success) 45%,transparent)}
+.picker-num{flex:0 0 30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--surface);border:1px solid var(--line);font-weight:700;font-size:.85rem}
+.picker-row.done .picker-num{background:var(--success);color:#fff;border-color:var(--success)}
+.picker-copy{flex:1;display:flex;flex-direction:column;gap:2px}
+.picker-copy strong{font-size:.98rem;line-height:1.25}
+.picker-copy small{color:var(--muted);font-size:.8rem}
+.picker-go{color:var(--muted);font-size:1.3rem;line-height:1}
