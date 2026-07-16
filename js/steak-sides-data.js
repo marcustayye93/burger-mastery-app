@@ -11,7 +11,7 @@ export const steakSides=[
   macros:{calories:120,protein:0,fat:14,carbs:1},
   ingredients:["4 tbsp good olive oil","1 tbsp fresh rosemary, chopped","1 tbsp fresh thyme, chopped","1 clove garlic, smashed","1 tsp flaky sea salt","1/2 tsp black pepper"],
   doneTitle:"The resting juice does the rest.",
-  doneBody:"As the steak rests on top of this mixture, its hot juices melt the herbs and oil into a self-making sauce. Slice and drag the meat through it.",
+  doneBody:"As the steak rests on top of this mixture, its hot juices melt the herbs and oil into a self-making sauce. Brilliant with lean cuts like fillet and flank at rare to medium-rare, where the bright oil adds the richness the meat lacks.",
   steps:[
     {image:A.stkMise,kicker:"THE IDEA",title:"A sauce made by the steak",body:"A board sauce uses the heat and juices of the resting steak to bloom fresh herbs. It is the lowest-effort, highest-impact sauce in steak cookery."},
     {image:A.stkBrine,kicker:"PREP",title:"Chop and pool",body:"Chop the rosemary and thyme finely. Smash the garlic clove — do not mince it, you just want its bruised oils. Pool the olive oil in the centre of your resting board and mix the herbs, salt and pepper into it."},
@@ -26,7 +26,7 @@ export const steakSides=[
   macros:{calories:100,protein:0,fat:11,carbs:1},
   ingredients:["100 g unsalted butter, softened","1 head of garlic, roasted","1 tbsp fresh parsley, minced","1 tsp flaky sea salt","1/2 tsp black pepper"],
   doneTitle:"Roll, chill, slice.",
-  doneBody:"Keeps in the fridge for two weeks, or the freezer for months. Slice off a coin for every hot steak you serve.",
+  doneBody:"Keeps in the fridge for two weeks, or the freezer for months. Slice a coin for lean cuts like fillet, sirloin and rump — the melting butter supplies the fat that marbling would. Serve at medium-rare so it melts on contact.",
   steps:[
     {image:A.stkMise,kicker:"THE IDEA",title:"Built-in basting",body:"A coin of compound butter melting over a resting steak mimics the richness of a pan baste without the risk of burning the milk solids during the cook."},
     {image:A.garlicRoasted,kicker:"PREP",title:"Squeeze the garlic",body:"Squeeze the soft, sweet roasted garlic cloves out of their skins. Mash them into a paste with the side of your knife."},
@@ -56,7 +56,7 @@ export const steakSides=[
   macros:{calories:180,protein:2,fat:18,carbs:4},
   ingredients:["2 tbsp whole black peppercorns","1 shallot, finely diced","30 ml cognac or brandy","150 ml beef stock","100 ml double cream","1 tbsp butter","Salt to taste"],
   doneTitle:"The classic pan sauce.",
-  doneBody:"Built directly in the pan you cooked the steak in, using the fond (browned bits) as the flavour base.",
+  doneBody:"Built directly in the pan you cooked the steak in, using the fond (browned bits) as the flavour base. Made for pan-seared fillet and sirloin — lean cuts at medium-rare to medium that welcome a rich, coating cream.",
   steps:[
     {image:A.seasoningPepper,kicker:"PREP",title:"Crush the pepper",body:"Place the peppercorns in a bag and crush them heavily with a rolling pin or heavy pan. You want coarse shards, not fine powder. The texture is the point."},
     {image:A.stkPanSear,kicker:"THE PAN",title:"Use the steak pan",body:"While the steak rests, pour off all but 1 tablespoon of fat from the pan. Over medium heat, add the butter, shallot and crushed peppercorns. Sweat for 2 minutes until soft."},
@@ -71,7 +71,7 @@ export const steakSides=[
   macros:{calories:320,protein:6,fat:22,carbs:28},
   ingredients:["1 kg starchy potatoes (Russet/Maris Piper)","300 ml double cream","300 ml whole milk","2 cloves garlic, smashed","1 sprig fresh thyme","Pinch of nutmeg","Salt and pepper","Butter for the dish"],
   doneTitle:"The ultimate steakhouse side.",
-  doneBody:"Make this ahead. It holds heat beautifully while you focus entirely on searing the steak.",
+  doneBody:"Make this ahead. It holds heat beautifully while you focus on the sear. Pairs with any cut, but shines beside fat-rich steaks — ribeye or picanha at medium-rare — where cream meets beef fat head-on.",
   steps:[
     {image:A.stkOven,kicker:"THE IDEA",title:"Cream, starch, time",body:"Dauphinoise potatoes are simply thin potato slices baked in garlic-infused cream until the starch thickens the liquid into a savoury custard."},
     {image:A.stkPanHeat,kicker:"INFUSE",title:"Steep the cream",body:"In a saucepan, gently heat the cream, milk, smashed garlic, thyme, nutmeg, salt and pepper until steaming. Turn off the heat and let it steep for 20 minutes, then remove the garlic and thyme."},
