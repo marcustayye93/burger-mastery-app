@@ -1,4 +1,4 @@
-# v2.8.0 — Video placements (in progress)
+# v2.8.0 — Video placements (SHIPPED)
 
 ## Task (user approved: "Ship the 2 video files as per recommendation")
 Two video placements, three clips total:
@@ -36,4 +36,4 @@ This is a mini asset-generation task, NOT a full narrative film — the video-ge
 - [x] Grain clip wired to 2 lesson slides: flank "Slicing (non-negotiable)" (seq idx 24) + resting-serving "Why grain direction matters" (seq idx 145) via slide.video field; openSteakStory draw() renders slideVideo() with w960 image variant as poster
 - [x] CSS added: .story-slide video.slide-video + .chooser-half video.slide-video (absolute inset, object-fit:cover)
 - [x] Local browser verification passed: both chooser videos playing (readyState 4, currentTime advancing, jsDelivr src); __vidFail hides video and reveals .video-fallback img; both grain slides show playing video; zero console errors; all regression scripts green (6/32/160 both curricula, 0 consecutive repeats)
-- [ ] Deploy main+gh-pages, verify live
+- [x] Deployed to main + gh-pages (f3aaa34); live verified: sw.js v2.8.0, chooser videos playing on production, grain slide video playing at 25/160
