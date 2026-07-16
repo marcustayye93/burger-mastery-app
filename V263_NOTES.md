@@ -34,4 +34,12 @@
   4. Bump SW VERSION to v2.6.3, verify locally, deploy, verify live, report.
 
 ## Discipline chip current markup
-- renderShell/app.js: button#disciplineChip with hint 'Switch discipline', text 'MEAT MASTERY · BURGER ›' — find its CSS class in css and markup in app.js (search disciplineChip).
+- index.html line 24: button#disciplineChip now contains swap-arrows SVG + span#disciplineChipLabel.
+- syncChip() sets label: 'BURGER · SWITCH' / 'STEAK · SWITCH' / 'CHOOSE DISCIPLINE'.
+- CSS app.css ~line 154: bordered accent pill, 999px radius, accent tint bg, swap icon 13px.
+
+## v2.6.3 verification status
+- LOCAL (localhost:8901): PASS — pill renders top-left with icon+label, click opens chooser, __imgRetry unit tests pass (bad URL: 2 retries then fallback; good URL after forced retry: reloads with ?r= bust, img kept). All 7 side images load. No console errors.
+- DEPLOY: pushed main + gh-pages (commit 242ff9d). curl live confirms: sw.js v2.6.3, index.html has disciplineChipLabel, app.js has __imgRetry — all served correctly.
+- Sandbox browser session kept showing the old cached shell (HTTP cache on index.html); served files verified correct via curl. iPhone users get the update on next SW activation (v2.6.3 shell cache).
+- DONE. Remaining: report to user.
