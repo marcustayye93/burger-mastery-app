@@ -67,7 +67,7 @@ export const steakLessons={
 {image:A.stkPanSear,kicker:"GRADING",title:"The real-world gap",body:"Grading is a useful guide, not a guarantee. A well-handled Standard steak from a good butcher can outperform a poorly handled Prime steak from a supermarket."},
 {image:A.stkMise,kicker:"GRADING",title:"What to actually look for",body:"Even marbling distribution, bright colour, and a dry surface. Avoid meat that looks wet or has large, hard fat deposits."}]},
 {id:"sg-standard-prime-wagyu",title:"Standard vs Prime vs Wagyu-Style",minutes:7,slides:[
-{image:A.stkMise,kicker:"SOURCING & GRADES",title:"Standard grade",body:"Honest supermarket or commodity beef. Technique matters more than grade here. Good results are very achievable with proper cooking."},
+{image:A.stkRest,kicker:"SOURCING & GRADES",title:"Standard grade",body:"Honest supermarket or commodity beef. Technique matters more than grade here. Good results are very achievable with proper cooking."},
 {image:A.stkSlice,kicker:"GRADES",title:"Prime / grain-fed",body:"Visibly better marbling than Standard. More forgiving during cooking and delivers richer mouthfeel. Worth the premium for special meals."},
 {image:A.stkPanHeat,kicker:"GRADES",title:"Wagyu-style",body:"Extreme marbling that melts at relatively low temperatures. Requires moderate heat — high heat causes the fat to render too fast and smoke heavily."},
 {image:A.stkPanSear,kicker:"GRADES",title:"Practical recommendation",body:"For everyday cooking, good Standard or Prime is excellent. Reserve true Wagyu-style for occasions where you want maximum richness and are willing to cook more carefully."},
@@ -85,7 +85,7 @@ export const steakLessons={
 {image:A.stkBrine,kicker:"BUYING",title:"Supermarket red flags",body:"Meat sitting in pooled liquid, faded colour, or sell-by dates that are too far in the future. These are signs of older stock or poor handling."},
 {image:A.stkMise,kicker:"BUYING",title:"Practical rule",body:"For special meals or thick cuts, go to a good butcher. For weeknight cooking, a reputable supermarket premium range is usually fine."}]},
 {id:"sg-reading-labels",title:"Reading Labels and Provenance",minutes:5,slides:[
-{image:A.stkMise,kicker:"SOURCING & GRADES",title:"Country of origin",body:"Different countries have different feeding and aging practices. Grass-fed vs grain-fed changes flavour profile and fat composition."},
+{image:A.stkRest,kicker:"SOURCING & GRADES",title:"Country of origin",body:"Different countries have different feeding and aging practices. Grass-fed vs grain-fed changes flavour profile and fat composition."},
 {image:A.stkSlice,kicker:"LABELS",title:"Breed information",body:"Angus, Wagyu, Hereford and similar names are marketing terms to varying degrees. True full-blood Wagyu is rare and expensive outside specialist suppliers."},
 {image:A.stkBrine,kicker:"LABELS",title:"Aging claims",body:"“Dry-aged 21 days” is meaningful. “Aged for flavour” with no number is usually marketing speak. Ask for the actual aging method and duration."},
 {image:A.stkRest,kicker:"LABELS",title:"Organic / grass-fed claims",body:"These affect flavour more than tenderness. Grass-fed beef is often leaner and has a more mineral, grassy taste. It can dry out faster if overcooked."},
@@ -94,12 +94,12 @@ export const steakLessons={
 "prep-foundations":[
 {id:"pf-dry-brining-rules",title:"Dry Brining — The Correct Timing",minutes:7,slides:[
 {image:A.stkBrine,kicker:"PREP FOUNDATIONS",title:"The danger window",body:"Never salt a steak 10–40 minutes before cooking. In this window salt draws moisture to the surface but there is not enough time for it to be reabsorbed, leaving the surface wet."},
-{image:A.stkBrine,kicker:"DRY BRINING",title:"Two correct options only",body:"Salt immediately before cooking (surface stays dry and sears cleanly), or salt at least 45 minutes ahead (ideally 1–24 hours) so moisture is reabsorbed and the surface dries."},
+{image:A.stkProbe,kicker:"DRY BRINING",title:"Two correct options only",body:"Salt immediately before cooking (surface stays dry and sears cleanly), or salt at least 45 minutes ahead (ideally 1–24 hours) so moisture is reabsorbed and the surface dries."},
 {image:A.stkBrine,kicker:"DRY BRINING",title:"1-hour dry brine",body:"Salt, place on a rack uncovered in the fridge. Salt dissolves, gets pulled back into the meat, and seasons the outer layer while drying the surface for better searing."},
-{image:A.stkBrine,kicker:"DRY BRINING",title:"Overnight (24-hour) dry brine",body:"The pro move. Deep seasoning penetrates further and the surface becomes bone-dry — ideal for a hard, even crust. Do not cover the meat."},
+{image:A.stkButter,kicker:"DRY BRINING",title:"Overnight (24-hour) dry brine",body:"The pro move. Deep seasoning penetrates further and the surface becomes bone-dry — ideal for a hard, even crust. Do not cover the meat."},
 {image:A.stkMise,kicker:"DRY BRINING",title:"How much salt",body:"Roughly 1% of the steak's weight is a good starting point. You can always add finishing salt at the end. Too much early salt can make the exterior overly salty after searing."}]},
 {id:"pf-tempering",title:"Tempering — Why It Matters",minutes:5,slides:[
-{image:A.stkMise,kicker:"PREP FOUNDATIONS",title:"What tempering means",body:"Letting the steak sit at room temperature for 30–60 minutes before cooking so the centre is not refrigerator-cold when it hits the heat."},
+{image:A.stkSlice,kicker:"PREP FOUNDATIONS",title:"What tempering means",body:"Letting the steak sit at room temperature for 30–60 minutes before cooking so the centre is not refrigerator-cold when it hits the heat."},
 {image:A.stkProbe,kicker:"TEMPERING",title:"Why it helps",body:"A cold centre creates a bigger temperature gradient. The outside can overcook while the middle is still cold. Tempering reduces this gradient and improves evenness."},
 {image:A.stkMise,kicker:"TEMPERING",title:"How long is enough",body:"30–60 minutes is usually sufficient for steaks up to ~5 cm (2 in) thick. Very thick cuts (5.5 cm+ / 2+ in) benefit from closer to 90 minutes."},
 {image:A.stkRest,kicker:"TEMPERING",title:"Food safety note",body:"Do not leave meat out for hours. 30–90 minutes in a normal kitchen is safe. If your kitchen is very warm, keep it shorter."},
@@ -114,7 +114,7 @@ export const steakLessons={
 {image:A.stkPanHeat,kicker:"PREP FOUNDATIONS",title:"Why drying matters",body:"Moisture on the surface turns to steam when it hits the pan or grill. Steam prevents direct contact and delays Maillard browning (the crust)."},
 {image:A.stkMise,kicker:"DRYING",title:"Paper towel method",body:"Pat the steak very dry on all sides with paper towels just before seasoning or cooking. This is the simplest and most effective step most home cooks skip."},
 {image:A.stkBrine,kicker:"DRYING",title:"Dry brining helps",body:"A proper dry brine (especially 1–24 hours) naturally dries the surface as moisture is reabsorbed. This is one of the biggest advantages of dry brining."},
-{image:A.stkBrine,kicker:"DRYING",title:"Air drying in the fridge",body:"Leaving the steak uncovered on a rack for even 30–60 minutes helps. Overnight is even better. The fridge's dry air is very effective."},
+{image:A.stkProbe,kicker:"DRYING",title:"Air drying in the fridge",body:"Leaving the steak uncovered on a rack for even 30–60 minutes helps. Overnight is even better. The fridge's dry air is very effective."},
 {image:A.stkPanSear,kicker:"DRYING",title:"When you are in a rush",body:"At minimum, do a thorough paper towel pat-down right before the steak hits the heat. Even this small step makes a noticeable difference to crust quality."}]},
 {id:"pf-tools-mise-en-place",title:"Tools & Mise en Place for Steak",minutes:5,slides:[
 {image:A.stkProbe,kicker:"PREP FOUNDATIONS",title:"Instant-read thermometer",body:"Non-negotiable for consistent results. The difference between guessing and knowing the internal temperature is the difference between good and great steak."},
@@ -134,19 +134,19 @@ export const steakLessons={
 {image:A.stkGrill,kicker:"HEAT MASTERY",title:"Gas Grill overview",body:"Very similar physics to pan searing but with the option of convection when the lid is down. Excellent for larger quantities or when you want grill marks."},
 {image:A.stkProbe,kicker:"GAS GRILL",title:"Pull temperature",body:"Pull 4–6°C below target. The principle is the same as pan searing — the surface heat continues the cook during rest."},
 {image:A.stkGrill,kicker:"GAS GRILL",title:"Two-zone technique",body:"Hard sear over the hot zone, finish over the cooler zone with the lid down for convection. Move the steak as needed to control the rate."},
-{image:A.stkGrill,kicker:"GAS GRILL",title:"Best for",body:"Most cuts. Particularly good when you want pronounced grill flavour or are cooking multiple steaks at once."},
+{image:A.stkOven,kicker:"GAS GRILL",title:"Best for",body:"Most cuts. Particularly good when you want pronounced grill flavour or are cooking multiple steaks at once."},
 {image:A.stkPanHeat,kicker:"GAS GRILL",title:"Watch-outs",body:"Flare-ups from rendering fat (especially ribeye and wagyu-style). Keep the steak moving and have a cooler zone ready."}]},
 {id:"hm-sear-oven",title:"Sear + Oven — Gentle Finish",minutes:6,slides:[
 {image:A.stkOven,kicker:"HEAT MASTERY",title:"Sear + Oven overview",body:"Sear hard on the hob, then finish gently in a moderate oven (around 180°C). Excellent evenness on thicker steaks without needing reverse sear equipment."},
 {image:A.stkProbe,kicker:"SEAR + OVEN",title:"Pull temperature",body:"Pull 3–5°C below target. The gentler oven heat creates slightly less carryover than a pure pan cook."},
 {image:A.stkPanSear,kicker:"SEAR + OVEN",title:"Technique",body:"Sear hard on the hob until a good crust forms, then transfer the whole pan (oven-safe) into the oven to finish. Use a probe to know exactly when to pull."},
 {image:A.stkOven,kicker:"SEAR + OVEN",title:"Best for",body:"Thicker steaks (4–5.5 cm / 1.6–2+ in) where pure pan searing struggles to cook the centre evenly without overcooking the outside."},
-{image:A.stkOven,kicker:"SEAR + OVEN",title:"Watch-outs",body:"Oven temperature accuracy varies. A probe is essential. Also remember the pan is extremely hot when it comes out of the oven."}]},
+{image:A.stkReverseRack,kicker:"SEAR + OVEN",title:"Watch-outs",body:"Oven temperature accuracy varies. A probe is essential. Also remember the pan is extremely hot when it comes out of the oven."}]},
 {id:"hm-air-fry",title:"Air Fry — Convenient Even Cooking",minutes:5,slides:[
 {image:A.stkAirfry,kicker:"HEAT MASTERY",title:"Air Fry overview",body:"Circulating hot air cooks surprisingly evenly with minimal carryover. Convenient and relatively hands-off, though the crust is never as deep as a proper pan sear."},
 {image:A.stkProbe,kicker:"AIR FRY",title:"Pull temperature",body:"Pull only 1–2°C below target. Circulating air leaves almost no carryover, so you stay very close to the final temperature."},
 {image:A.stkAirfry,kicker:"AIR FRY",title:"Technique",body:"Usually 200°C, flipped once halfway. Use a probe — timing varies significantly with steak thickness and starting temperature."},
-{image:A.stkAirfry,kicker:"AIR FRY",title:"Best for",body:"Weeknight cooking and thinner-to-medium steaks (up to ~4 cm / 1.6 in). Good when you want minimal mess and monitoring."},
+{image:A.stkOven,kicker:"AIR FRY",title:"Best for",body:"Weeknight cooking and thinner-to-medium steaks (up to ~4 cm / 1.6 in). Good when you want minimal mess and monitoring."},
 {image:A.stkPanSear,kicker:"AIR FRY",title:"Limitations",body:"Crust is honest but never reaches true pan-sear depth. Not ideal for very thick cuts or when you want maximum Maillard flavour."}]},
 {id:"hm-reverse-sear",title:"Reverse Sear — The Thick-Cut Solution",minutes:7,slides:[
 {image:A.stkReverseRack,kicker:"HEAT MASTERY",title:"Reverse Sear overview",body:"Low oven first for wall-to-wall even interior, short rest while the pan heats, then a ripping final sear. The gold standard for thick cuts (5 cm+ / 2+ in)."},
@@ -156,18 +156,18 @@ export const steakLessons={
 {image:A.stkReverseRack,kicker:"REVERSE SEAR",title:"Watch-outs",body:"Too thin (under 4 cm / 1.6 in) and the low oven will overshoot quickly. Also requires planning — it is not a fast weeknight method."}]},
 {id:"hm-sous-vide",title:"Sous Vide — Precision and Forgiveness",minutes:7,slides:[
 {image:A.stkSousvide,kicker:"HEAT MASTERY",title:"Sous Vide overview",body:"Set the water bath to your exact target temperature. The steak cannot overshoot. Finish with a fast, hard sear for crust. Extremely consistent and forgiving."},
-{image:A.stkSousvide,kicker:"SOUS VIDE",title:"Bath temperature",body:"Set the bath to your exact final target temperature (e.g. 54°C for medium-rare). There is zero carryover from the bath itself."},
+{image:A.stkAirfry,kicker:"SOUS VIDE",title:"Bath temperature",body:"Set the bath to your exact final target temperature (e.g. 54°C for medium-rare). There is zero carryover from the bath itself."},
 {image:A.stkSousvide,kicker:"SOUS VIDE",title:"Time guidelines",body:"Minimum 1 hour for steaks up to 4 cm (1.6 in), 2 hours for thicker cuts. Going significantly longer (within reason) does not harm most steaks."},
 {image:A.stkPanSear,kicker:"SOUS VIDE",title:"Finishing",body:"Pat very dry, then sear hard for 45–60 seconds per side in a ripping hot pan or on a grill. This is purely for crust — the doneness is already perfect."},
 {image:A.stkSlice,kicker:"SOUS VIDE",title:"Best for",body:"Thick or expensive cuts where perfect doneness and edge-to-edge consistency matter most. Also excellent when you want to cook ahead and sear at the last minute."}]}
 ],
 "doneness-ladder":[
 {id:"dl-rare",title:"Rare — 49°C after rest",minutes:5,slides:[
-{image:A.stkSlice,kicker:"DONENESS LADDER",title:"What rare actually is",body:"Cool-to-warm red centre, maximum moisture retained, very little fat rendering. The muscle is barely cooked."},
+{image:A.stkProbe,kicker:"DONENESS LADDER",title:"What rare actually is",body:"Cool-to-warm red centre, maximum moisture retained, very little fat rendering. The muscle is barely cooked."},
 {image:A.stkMise,kicker:"RARE",title:"Best cuts for rare",body:"Flank, filet, and leaner cuts that you plan to slice thin. Fat-rich cuts (ribeye, picanha) are usually better at least medium-rare so the fat can melt."},
 {image:A.stkPanSear,kicker:"RARE",title:"Trade-offs",body:"Maximum juiciness but minimal flavour development from rendered fat and Maillard crust depth. Some people find it too raw-tasting."},
 {image:A.stkProbe,kicker:"RARE",title:"Safety note",body:"Whole-muscle steaks are generally considered lower risk than ground meat, but vulnerable people should still cook to at least medium."},
-{image:A.stkProbe,kicker:"RARE",title:"Pull strategy",body:"Because carryover is real, pull a few degrees below 49°C depending on method (especially important on pan or grill)."}]},
+{image:A.stkBrine,kicker:"RARE",title:"Pull strategy",body:"Because carryover is real, pull a few degrees below 49°C depending on method (especially important on pan or grill)."}]},
 {id:"dl-medium-rare",title:"Medium-Rare — 54°C after rest",minutes:6,slides:[
 {image:A.stkSlice,kicker:"DONENESS LADDER",title:"The sweet spot for most people",body:"Warm rosy centre, juicy with fat just beginning to melt. The most popular doneness for good reason — excellent balance of moisture and flavour."},
 {image:A.stkMise,kicker:"MEDIUM-RARE",title:"Best cuts",body:"Striploin, sirloin, rump, filet, and most everyday steaks. The versatile default recommendation for the majority of cuts."},
@@ -196,7 +196,7 @@ export const steakLessons={
 "resting-serving":[
 {id:"rs-why-resting-works",title:"Why Resting Works (and When to Skip It)",minutes:6,slides:[
 {image:A.stkRest,kicker:"RESTING & SERVING",title:"What happens during rest",body:"The muscle fibres relax and reabsorb some of the juices that were pushed toward the centre during cooking. This reduces the amount that pours out when you slice."},
-{image:A.stkRest,kicker:"RESTING",title:"How long to rest",body:"Roughly 5–10 minutes for standard thickness (4 cm / 1.6 in), up to 15 minutes for very thick cuts. The steak should be warm but not hot when served."},
+{image:A.stkProbe,kicker:"RESTING",title:"How long to rest",body:"Roughly 5–10 minutes for standard thickness (4 cm / 1.6 in), up to 15 minutes for very thick cuts. The steak should be warm but not hot when served."},
 {image:A.stkReverseRack,kicker:"RESTING",title:"When to skip resting entirely",body:"Reverse sear and sous vide + hard sear. In both cases the resting effectively happened before the final sear. Slice and serve immediately."},
 {image:A.stkRest,kicker:"RESTING",title:"Foil or no foil",body:"Loose foil is fine for pan-seared steaks. For reverse sear, many prefer no foil so the crust stays crisp. The difference is small."},
 {image:A.stkButter,kicker:"RESTING",title:"Practical habit",body:"Rest the steak while you finish any sides or sauce. It becomes automatic and prevents the common mistake of cutting into it too early."}]},
@@ -204,20 +204,20 @@ export const steakLessons={
 {image:A.stkSlice,kicker:"RESTING & SERVING",title:"Why grain direction matters",body:"Muscle fibres run in one direction. Cutting parallel to them leaves long, chewy strands. Cutting across them shortens the fibres and makes every bite more tender."},
 {image:A.stkMise,kicker:"SLICING",title:"How to identify the grain",body:"Look for the lines running through the meat (especially visible on flank, rump, and striploin). On most steaks they run roughly lengthwise."},
 {image:A.stkSlice,kicker:"SLICING",title:"Angle and thickness",body:"A slight 45° angle increases surface area and looks better on the plate. Thickness should be roughly finger-width for most cuts, thinner for flank and rump."},
-{image:A.stkSlice,kicker:"SLICING",title:"Picanha exception",body:"First slice with the grain into thick steaks (churrasco style), then slice those pieces against the grain to serve. This is the traditional Brazilian method."},
+{image:A.stkButter,kicker:"SLICING",title:"Picanha exception",body:"First slice with the grain into thick steaks (churrasco style), then slice those pieces against the grain to serve. This is the traditional Brazilian method."},
 {image:A.stkRest,kicker:"SLICING",title:"Serving order",body:"On cuts with a fat cap or spinalis (ribeye, picanha), consider separating and serving the richest part first or alongside."}]},
 {id:"rs-board-sauces-compound-butter",title:"Board Sauces & Compound Butters",minutes:6,slides:[
 {image:A.stkButter,kicker:"RESTING & SERVING",title:"Board sauce concept",body:"Chop herbs, garlic, chilli or anchovy on a board, add olive oil or butter, and let the resting steak's juices mix in. Simple, fresh, and dramatic."},
 {image:A.stkRest,kicker:"BOARD SAUCE",title:"Classic combination",body:"Parsley, garlic, chilli flakes, flaky salt, and good olive oil. The resting juices turn it into a light, savoury sauce that coats each slice."},
 {image:A.stkButter,kicker:"COMPOUND BUTTER",title:"Compound butter method",body:"Mix softened butter with garlic, herbs, lemon zest or mustard. Form into a log and chill. Slice a disc onto the resting steak — the residual heat melts it perfectly."},
-{image:A.stkButter,kicker:"COMPOUND BUTTER",title:"When to use each",body:"Board sauces are fresher and brighter. Compound butter is richer and more luxurious. Both beat bottled sauce for most steaks."},
+{image:A.stkRest,kicker:"COMPOUND BUTTER",title:"When to use each",body:"Board sauces are fresher and brighter. Compound butter is richer and more luxurious. Both beat bottled sauce for most steaks."},
 {image:A.stkSlice,kicker:"FINISHING",title:"Finishing salt timing",body:"Flaky salt on the sliced face just before serving gives crunch and seasoning exactly where the tongue lands first. Do not add it too early or it dissolves."}]},
 {id:"rs-plating-temperature",title:"Plating and Serving Temperature",minutes:5,slides:[
 {image:A.stkRest,kicker:"RESTING & SERVING",title:"Serve warm, not piping hot",body:"Steak continues to carry a little heat after resting. Serving it slightly cooler than maximum temperature actually improves flavour perception and texture."},
 {image:A.stkMise,kicker:"PLATING",title:"Warm plates",body:"A warm plate keeps the steak from cooling too fast. It is a small detail that makes a noticeable difference to the eating experience."},
 {image:A.stkButter,kicker:"PLATING",title:"Sauce placement",body:"Spoon board sauce or melting butter over the slices rather than under them. This keeps the crust crisp and lets the sauce coat each piece as it is picked up."},
 {image:A.stkSlice,kicker:"PLATING",title:"Simple is often best",body:"A perfectly cooked steak needs very little. Good flaky salt, a light board sauce or compound butter, and maybe a simple green salad or roasted vegetable is often enough."},
-{image:A.stkSlice,kicker:"PLATING",title:"The final test",body:"The first and last bite should feel balanced. If they do, every decision from cut selection through resting and slicing has succeeded."}]}
+{image:A.stkRest,kicker:"PLATING",title:"The final test",body:"The first and last bite should feel balanced. If they do, every decision from cut selection through resting and slicing has succeeded."}]}
 ]
 };
 // Flat slide sequence mirroring lessonSequence in data.js — one linear track through

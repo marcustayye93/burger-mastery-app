@@ -14,7 +14,7 @@ export const steakSides=[
   doneBody:"As the steak rests on top of this mixture, its hot juices melt the herbs and oil into a self-making sauce. Slice and drag the meat through it.",
   steps:[
     {image:A.stkMise,kicker:"THE IDEA",title:"A sauce made by the steak",body:"A board sauce uses the heat and juices of the resting steak to bloom fresh herbs. It is the lowest-effort, highest-impact sauce in steak cookery."},
-    {image:A.stkMise,kicker:"PREP",title:"Chop and pool",body:"Chop the rosemary and thyme finely. Smash the garlic clove — do not mince it, you just want its bruised oils. Pool the olive oil in the centre of your resting board and mix the herbs, salt and pepper into it."},
+    {image:A.stkBrine,kicker:"PREP",title:"Chop and pool",body:"Chop the rosemary and thyme finely. Smash the garlic clove — do not mince it, you just want its bruised oils. Pool the olive oil in the centre of your resting board and mix the herbs, salt and pepper into it."},
     {image:A.stkRest,kicker:"REST",title:"Rest the steak on the herbs",body:"When the steak comes off the heat, lay it directly on top of the herb pool. The residual heat will instantly wake the aromatics."},
     {image:A.stkSlice,kicker:"SERVE",title:"Slice and drag",body:"After the rest, slice the steak on the same board. The released meat juices will emulsify with the olive oil. Drag each slice through the mixture as you serve."}
   ]
@@ -31,7 +31,7 @@ export const steakSides=[
     {image:A.stkMise,kicker:"THE IDEA",title:"Built-in basting",body:"A coin of compound butter melting over a resting steak mimics the richness of a pan baste without the risk of burning the milk solids during the cook."},
     {image:A.garlicRoasted,kicker:"PREP",title:"Squeeze the garlic",body:"Squeeze the soft, sweet roasted garlic cloves out of their skins. Mash them into a paste with the side of your knife."},
     {image:A.stkButter,kicker:"MIX",title:"Fold it together",body:"In a bowl, combine the softened butter, roasted garlic paste, minced parsley, salt and pepper. Mash with a fork until the colour is even."},
-    {image:A.stkButter,kicker:"STORE",title:"Roll into a log",body:"Spoon the butter onto parchment paper or cling film. Roll it into a tight log, twist the ends, and chill until firm. Slice coins as needed."}
+    {image:A.stkRest,kicker:"STORE",title:"Roll into a log",body:"Spoon the butter onto parchment paper or cling film. Roll it into a tight log, twist the ends, and chill until firm. Slice coins as needed."}
   ]
 },
 {
@@ -44,7 +44,7 @@ export const steakSides=[
   doneBody:"The ultimate pairing for rich cuts like ribeye or picanha. The vinegar and fresh herbs slice straight through the heavy beef fat.",
   steps:[
     {image:A.stkMise,kicker:"THE IDEA",title:"The Argentine standard",body:"Chimichurri is not a pesto or a puree — it is a loose, acidic herb oil. It should taste sharp enough to wake up a heavy, fatty steak."},
-    {image:A.stkMise,kicker:"CHOP",title:"Hand chop only",body:"Finely chop the parsley and oregano by hand. Do not use a food processor — it will bruise the herbs, turn the oil bitter, and create a puree instead of a loose sauce."},
+    {image:A.garlicCloves,kicker:"CHOP",title:"Hand chop only",body:"Finely chop the parsley and oregano by hand. Do not use a food processor — it will bruise the herbs, turn the oil bitter, and create a puree instead of a loose sauce."},
     {image:A.garlicMinced,kicker:"MIX",title:"Build the base",body:"In a bowl, combine the minced garlic, chilli, vinegar and salt. Let this sit for 5 minutes — the vinegar will mellow the raw garlic bite."},
     {image:A.stkMise,kicker:"FINISH",title:"Fold in oil and herbs",body:"Stir in the chopped herbs, then pour the olive oil over the top. Do not whisk aggressively. Let it sit for at least 20 minutes before serving so the flavours knit."}
   ]
