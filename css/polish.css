@@ -718,3 +718,24 @@ img[data-bm-loaded="true"]{opacity:1;transition:opacity .35s var(--ease-out)}
   55%{transform:scaleY(.96)}
   75%{transform:scaleY(1)}
 }
+
+/* v2.9.1 — chooser video buffering state: bouncing mark covers the half until the clip can play */
+.chooser-half .chooser-loading{
+  position:absolute;inset:0;z-index:2;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--bg) 62%,transparent);
+  backdrop-filter:blur(6px);
+  opacity:1;
+  transition:opacity .32s ease;
+  pointer-events:none;
+}
+.chooser-half .chooser-loading.gone{opacity:0}
+.chooser-half .chooser-loading .splash-logo{width:64px;height:64px;overflow:visible;filter:drop-shadow(0 4px 14px rgba(0,0,0,.45))}
+.chooser-half .chooser-loading .bm-bun-top,
+.chooser-half .chooser-loading .bm-patty,
+.chooser-half .chooser-loading .bm-bun-bottom{transform-origin:256px 300px;transform-box:view-box}
+@media(prefers-reduced-motion:no-preference){
+  .chooser-half .chooser-loading .bm-bun-top{animation:bm-bun-top-bounce 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+  .chooser-half .chooser-loading .bm-bun-bottom{animation:bm-bun-bottom-bounce 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+  .chooser-half .chooser-loading .bm-patty{animation:bm-patty-squash 1.1s cubic-bezier(.34,1.56,.64,1) infinite}
+}

@@ -44,3 +44,11 @@
 - [x] Topbar 32px persistent logo on all 6 routes
 - [x] SW v2.9.0 + logo-mark.svg precached
 - [x] Local verify passed (animation running, all routes, no errors)
+
+## v2.9.1 (follow-up, SHIPPED)
+User: chooser (holding slide between burgers/steaks) lags 2-3 s while videos buffer; overlay the bouncing burger icon until video loads.
+Implemented:
+- app.js: chooserLoaderHTML (inline 64px bouncing mark, same SVG groups) appended inside each chooser half by panel(); wireChooserLoaders(el) hides it (.gone fade, then remove) on video canplay/playing/error, source error, readyState>=3 or 6 s timeout.
+- polish.css: .chooser-half .chooser-loading overlay (absolute inset, grid center, dim blur backdrop, z-index 2 same as labels, pointer-events none), reuses bm-bun-*-bounce/bm-patty-squash keyframes, reduced-motion safe.
+- sw.js VERSION bumped v2.9.1.
+Verified locally: overlay present+bouncing on open, fades once both videos canplay (readyState 4, playing), halves clickable, error path hides loader + shows static fallback, chooser dismisses cleanly.
