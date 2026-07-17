@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#090a0b",
   "theme_color": "#090a0b",
-  "description": "Master burgers and steaks — learn, design and cook better meat.",
+  "description": "Master burgers and steaks \u2014 learn, design and cook better meat.",
   "icons": [
     {
       "src": "./icons/icon-192.png",
@@ -31,5 +31,6 @@
       "type": "image/svg+xml",
       "purpose": "any"
     }
-  ]
+  ],
+  "orientation": "portrait-primary"
 }
