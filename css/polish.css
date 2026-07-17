@@ -764,3 +764,15 @@ button,a,summary,[role=button]{-webkit-tap-highlight-color:transparent}
 .detail-sheet{-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 /* Keep last content clear of the home indicator */
 main{padding-bottom:calc(38px + env(safe-area-inset-bottom,0px))}
+
+/* ===== v3.1.0 — beginner-first progressive disclosure ===== */
+/* Collapsible "More ingredients" block in the Builder. Collapsed by default for
+   first-time users so the panel leads with the four essentials; opens automatically
+   for anyone who has saved a build before. */
+.builder-more{border-top:1px solid var(--line);margin-top:18px;padding-top:2px}
+.builder-more summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:3px;padding:14px 36px 14px 4px;min-height:48px;position:relative;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.builder-more summary::-webkit-details-marker{display:none}
+.builder-more summary b{font-size:15px;font-weight:720;letter-spacing:-.015em}
+.builder-more summary span{font-size:12px;color:var(--muted)}
+.builder-more summary::after{content:"›";position:absolute;right:10px;top:50%;font-size:22px;line-height:1;color:var(--muted);transform:translateY(-50%) rotate(90deg);transition:transform .24s var(--ease-out)}
+.builder-more[open] summary::after{transform:translateY(-50%) rotate(-90deg)}
